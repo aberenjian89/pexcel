@@ -1,6 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import configureStore from './store/store';
+import Root from './components/root'
+
 
 document.addEventListener("DOMContentLoaded",()=>{
-    ReactDOM.render(<h1>Welcome TO PEXCEL</h1>,document.getElementById('root'))
+    let preloadstate =undefined;
+    if (window.currentUser){
+        preloadstate={
+            session:{
+                CurrentUser: window.currentUser
+            }
+        }
+    }
+    const store = configureStore(preloadstate);
+    window.store=store;
+    ReactDOM.render(<Root store={store}/>
+        ,document.getElementById('root'))
 });
