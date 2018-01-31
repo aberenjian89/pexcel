@@ -1,18 +1,22 @@
 import {connect} from 'react-redux';
-import {CreateUser} from '../../actions/session_action';
+import {CreateUser,ClearError} from '../../actions/session_action';
+import {withRouter} from 'react-router-dom'
 import SignUp from './signup'
 
 
-const mapStateToProps = (state) =>{
-
-};
-
-
-const mapDispatchToProps = (dispatch) =>(
+const mapStateToProps = (state) =>(
     {
-        CreateUser: (user) => dispatch(CreateUser(user))
+        errors: state.errors.session
     }
 );
 
 
-export default connect(null,mapDispatchToProps)(SignUp)
+const mapDispatchToProps = (dispatch) =>(
+    {
+        CreateUser: (user) => dispatch(CreateUser(user)),
+        ClearError: () => dispatch(ClearError())
+    }
+);
+
+
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(SignUp))

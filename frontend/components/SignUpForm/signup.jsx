@@ -10,7 +10,13 @@ class SignUp extends React.Component{
         };
 
         this.update = this.update.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
+    }
+
+
+    componentWillUnmount(){
+        this.props.ClearError();
     }
 
 
@@ -23,9 +29,22 @@ class SignUp extends React.Component{
         return this.props.CreateUser(this.state).then(() => this.props.history.push('/'))
     }
 
+    renderErrors(){
+        let errors="";
+        if (this.props.errors.length > 0){
+            errors=this.props.errors.map((err,id) => <li key={id}>{err}</li>)
+        }
+        return (
+            <ul>
+                {errors}
+            </ul>
+        )
+    }
+
     render(){
         return(
             <div>
+                {this.renderErrors()}
             <form>
                 <label>Username:
                     <input type="text" onChange={this.update('username')} value={this.state.username}/>

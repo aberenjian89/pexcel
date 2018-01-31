@@ -34,6 +34,7 @@ class Navbar extends React.Component{
         }
         return (
             <div>
+                
                 {display}
             </div>
         )
