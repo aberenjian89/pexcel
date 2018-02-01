@@ -1,14 +1,36 @@
-.navbar a{
-  display:flex;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.navbar ul{
+.navbar {
   display: flex;
-  flex-direction: row;
-
   justify-content: space-between;
-  width: 12%;
+  padding: 20px;
+}
+
+.links{
+  display: flex;
+  flex-direction:row;
+  width: 250px;
+  justify-content: space-between;
 
 }
+
+.links h1{
+  padding-right: 15px;
+}
+
+.links ul{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 120px;
+  padding-right: 5px;
+}
+
+
+
+
+.nav-login{
+  display:flex;
+  font-size: 15px;
+  justify-content: space-between;
+  width: 150px;
+}
+

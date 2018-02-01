@@ -38,7 +38,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'annotate'
   gem 'pry-rails'
-  gem 'guard-livereload'
 end
 
 group :development do
@@ -50,6 +49,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'guard-livereload', '~> 2.5', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
