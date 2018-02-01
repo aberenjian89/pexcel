@@ -6,6 +6,58 @@
 
 
 .header{
-  background-image: url("../../../resource/header-background.jpeg");
-
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  background-image: url("https://github.com/aberenjian89/pexcel/blob/master/resource/header-background.jpeg?raw=true") ;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: bottom 10px right 20px;
 }
+
+
+.header-container{
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  justify-content: center;
+  width: 700px;
+  height: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
+.header-container  h3{
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.header-container span{
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+
+
+.header-container-link  a{
+  width: 200px;
+  align-items: center;
+  border: 1px solid #0099e5;
+  background-color: #0099e5;
+  border-radius: 30px;
+  padding: 5px 20px;
+  color: #fff;
+  font-size: 12px;
+}
+
+
+
+
+

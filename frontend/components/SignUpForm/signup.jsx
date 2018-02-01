@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 class SignUp extends React.Component{
     constructor(props){
         super(props);
@@ -58,6 +58,10 @@ class SignUp extends React.Component{
                 <input type="text" onChange={this.update('email')} value={this.state.email}/>
                 <input type="submit" onClick={this.handleSubmit} value="Sign Up"/>
             </form>
+                <div className="signup-link">
+                    <span>Already have an account?</span>
+                    <Link to="/login"> Log in</Link>
+                </div>
             </div>
         )
     }

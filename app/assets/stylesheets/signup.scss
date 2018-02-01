@@ -49,6 +49,8 @@
   width: 100%;
   height: 40px;
   background-color: #34bf49;
+  border-color: #2fab41;
+  text-shadow: 0px 1px 0px #2fab41;
   color: #fff;
   font-weight: 200;
   font-size: 18px;
@@ -57,7 +59,7 @@
 .signup .signup-link{
   font-size: 12px;
   text-align: center;
-  margin-top: 170px;
+  margin-top: 50px;
 }
 
 .signup .subheader{
@@ -67,4 +69,7 @@
   color: #71767a;
 }
 
-
+.signup input[type=submit]:hover{
+  background-color: #41cb56;
+  cursor: pointer;
+}

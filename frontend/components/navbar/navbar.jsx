@@ -24,36 +24,90 @@ class Navbar extends React.Component{
 
 
     render(){
-        let display;
-        if (this.props.currentUser){
-            display =(
+        let usermenu;
+        let extramenu;
 
+        if (this.props.currentUser){
+            usermenu =(
                     <ul className="user-info">
                         <li><h3>Welcome {this.props.currentUser.username}</h3></li>
                         <li><Link onClick={this.logout} to='/login'>Logout</Link></li>
                     </ul>
 
                     )
-        }else{
-            display =(
-
-                    <ul className="nav-login">
-                        <li><Link to="/login">Log in</Link></li>
-                        <li><Link to="/signup">Sign up</Link></li>
-                        <li><Link onClick={this.loginDemo} to="/profile">Demo</Link></li>
-                    </ul>
-                )
-        }
-        return (
-            <div className="navbar">
-                <div className="links">
+            extramenu = (
+                <div className="links-currentuser">
                     <h1><Link to='/'>PEXCEL</Link></h1>
                     <ul>
                         <li><Link to="/">Discover</Link></li>
                         <li><Link to="/">About</Link></li>
                     </ul>
                 </div>
-                {display}
+            )
+        }else{
+
+            if (this.props.location.pathname === '/'){
+                usermenu=(
+                    <ul className="nav-login">
+                        <li><Link to="/login">Log in</Link></li>
+                        <li><Link activeClassName="signup" to="/signup">Sign up</Link></li>
+                        <li><Link onClick={this.loginDemo} to="/profile">Demo</Link></li>
+                    </ul>
+                )
+
+
+                extramenu = (
+                    <div className="links">
+                        <h1><Link to='/'>PEXCEL</Link></h1>
+                        <ul>
+                            <li><Link to="/">Discover</Link></li>
+                            <li><Link to="/">About</Link></li>
+                        </ul>
+                    </div>
+                )
+
+
+            }
+            else if (this.props.location.pathname === '/signup') {
+                usermenu=(
+                    <ul className="nav-session">
+                        <li><Link to="/login">Log in</Link></li>
+                        <li><Link onClick={this.loginDemo} to="/profile">Demo</Link></li>
+                    </ul>
+                )
+
+                extramenu = (
+                    <div className="links-currentuser">
+                        <h1><Link to='/'>PEXCEL</Link></h1>
+                        <ul>
+                            <li><Link to="/">Discover</Link></li>
+                            <li><Link to="/">About</Link></li>
+                        </ul>
+                    </div>)
+            }else{
+                usermenu=(
+                <ul className="nav-session">
+                    <li><Link to="/signup">Sign up</Link></li>
+                    <li><Link onClick={this.loginDemo} to="/profile">Demo</Link></li>
+                </ul>
+                )
+
+                extramenu = (
+                    <div className="links-currentuser">
+                        <h1><Link to='/'>PEXCEL</Link></h1>
+                        <ul>
+                            <li><Link to="/">Discover</Link></li>
+                            <li><Link to="/">About</Link></li>
+                        </ul>
+                    </div>)
+            }
+        }
+
+
+        return (
+            <div className="navbar">
+                {extramenu}
+                {usermenu}
             </div>
         )
     }

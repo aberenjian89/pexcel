@@ -9,11 +9,16 @@
   flex-direction:row;
   width: 250px;
   justify-content: space-between;
+  color: #fff;
 
 }
 
 .links h1{
   padding-right: 15px;
+}
+
+.links h1 a{
+  font-size: 20px;
 }
 
 .links ul{
@@ -24,13 +29,55 @@
   padding-right: 5px;
 }
 
-
-
+.links a{
+  color: #fff;
+  font-size: 13px;
+}
 
 .nav-login{
   display:flex;
+  font-size: 14px;
+  justify-content: space-between;
+  width: 190px;
+}
+
+.nav-login li a{
+  color: #fff;
+}
+
+.nav-login li a[activeClassname] {
+  background-color: #0099e5;
+  border-color: #0099e5;
+  border-radius: 35px;
+  padding: 5px 15px;
+}
+
+
+.nav-login li a[activeClassname]:hover{
+  background-color: #00aaff;
+}
+
+.nav-session{
+  display:flex;
   font-size: 15px;
   justify-content: space-between;
-  width: 150px;
+  width: 100px;
 }
+
+.links-currentuser{
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+  justify-content: space-between;
+  color: black;
+}
+
+.links-currentuser ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 120px;
+  padding-right: 5px;
+}
+
 
