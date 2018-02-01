@@ -1,17 +1,19 @@
 .session_parent{
   display: flex;
-  height: calc(100vh - 56px);
+  //height: calc(100vh - 56px);
+  height: 100vh;
   background-color: #eeeff2;
 }
 
 .session{
   //height: calc(80vh - 78px);
-  height: 450px;
+  height: 500px;
   background-color: #fff;
   margin: 65px auto;
-  width: 350px;
-  padding: 25px;
+  width: 400px;
+  padding: 40px;
   box-sizing: border-box;
+  font-size: 15px;
 }
 
 
@@ -23,13 +25,21 @@
 .session > h4 {
   margin-bottom: 20px;
   text-align: center;
+  color: #525558;
+  font-size: 16px;
+}
+
+
+.session label{
+  color:#71767a;
 }
 
 
 
 .session input[type=text],.session input[type=password]{
   width: 100%;
-  height: 20px;
+  height: 30px;
+  font-size: 14px;
 
 }
 
@@ -40,7 +50,7 @@
 }
 
 .session input[type=text]:focus,.session input[type=password]:focus{
-  border-color: blue;
+  border-color: #0099e5;
   -webkit-appearance: none;
   outline: 0;
 
@@ -49,7 +59,7 @@
 .session input[type=submit]{
   border-radius: 0;
   width: 100%;
-  height: 30px;
+  height: 40px;
   background-color: #34bf49;
   color: #fff;
   font-weight: 200;
@@ -59,7 +69,7 @@
 .session .signup-link{
   font-size: 12px;
   text-align: center;
-  margin-top: 150px;
+  margin-top: 170px;
 }
 
 
