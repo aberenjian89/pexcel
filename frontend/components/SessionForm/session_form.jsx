@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 
 class SessionForm extends React.Component{
@@ -54,15 +55,21 @@ class SessionForm extends React.Component{
         return(
             <div className="session">
                 {this.renderErrors()}
+                <h4>Log In to PEXCEL</h4>
                 <form>
-                    <label>Username:
-                        <input type="text" onChange={this.update('username')} value={this.state.username}/>
-                    </label>
-                    <label>Password:
-                        <input type="password" onChange={this.update('password')} value={this.state.password}/>
-                    </label>
-                    <input type= "submit" onClick={this.handleSubmit} value="Login"/>
+                    <label>Username</label><br/>
+                    <input type="text" onChange={this.update('username')} value={this.state.username}/><br/>
+                    <div className="password">
+                         <label>Password</label><br/>
+                         <Link to="#">Forgot Password?</Link>
+                    </div>
+                    <input type="password" onChange={this.update('password')} value={this.state.password}/><br/>
+                    <input type= "submit" onClick={this.handleSubmit} value="Log in"/>
                 </form>
+                <div className="signup-link">
+                    <span>Don't have an account?</span>
+                    <Link to="/signup">Sign Up</Link>
+                </div>
             </div>
         )
     }

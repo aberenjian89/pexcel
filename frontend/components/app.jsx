@@ -4,6 +4,7 @@ import SessionFormContainer from './SessionForm/session_form_container'
 import SignUpFormContainer from './SignUpForm/signup_form_container';
 import {AuthRoute,ProtectedRoute} from "../utils/routes_util";
 import NavbarContainer from "./navbar/navbar_container";
+import {SessionBackground} from "./session_background/session_background";
 
 class App extends React.Component{
 
@@ -17,7 +18,7 @@ class App extends React.Component{
             <div>
                 <NavbarContainer/>
                 <Switch>
-                    <AuthRoute path="/login" component={SessionFormContainer}/>
+                    <AuthRoute path="/login" component={SessionBackground}/>
                     <AuthRoute path="/signup" component={SignUpFormContainer} />
                 </Switch>
             </div>

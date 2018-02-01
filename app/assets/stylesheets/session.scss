@@ -1,0 +1,65 @@
+.session_parent{
+  display: flex;
+  height: calc(100vh - 56px);
+  background-color: #eeeff2;
+}
+
+.session{
+  //height: calc(80vh - 78px);
+  height: 450px;
+  background-color: #fff;
+  margin: 65px auto;
+  width: 350px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+
+.session form input{
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+
+.session > h4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+
+.session input[type=text],.session input[type=password]{
+  width: 100%;
+  height: 20px;
+
+}
+
+.password{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.session input[type=text]:focus,.session input[type=password]:focus{
+  border-color: blue;
+  -webkit-appearance: none;
+  outline: 0;
+
+}
+
+.session input[type=submit]{
+  border-radius: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #34bf49;
+  color: #fff;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.session .signup-link{
+  font-size: 12px;
+  text-align: center;
+  margin-top: 150px;
+}
+
+
