@@ -43,18 +43,19 @@ class SignUp extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="signup">
+                <h4>Join PEXCEL</h4>
+                <div className="subheader">
+                    <span>Share your photos, get inspired, and grow your skills.</span>
+                </div>
                 {this.renderErrors()}
             <form>
-                <label>Username:
-                    <input type="text" onChange={this.update('username')} value={this.state.username}/>
-                </label>
-                <label>Password:
-                    <input type="password" onChange={this.update('password')} value={this.state.password}/>
-                </label>
-                <label>Email:
-                    <input type="text" onChange={this.update('email')} value={this.state.email}/>
-                </label>
+                <label>Username</label>
+                <input type="text" onChange={this.update('username')} value={this.state.username}/>
+                <label>Password</label>
+                <input type="password" onChange={this.update('password')} value={this.state.password}/>
+                <label>Email</label>
+                <input type="text" onChange={this.update('email')} value={this.state.email}/>
                 <input type="submit" onClick={this.handleSubmit} value="Sign Up"/>
             </form>
             </div>
