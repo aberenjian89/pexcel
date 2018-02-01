@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/homefeed.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/homefeed.scss" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/navbar.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/navbar.scss" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/session.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/session.scss" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/signup.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/signup.scss" />
       <change beforePath="$PROJECT_DIR$/frontend/components/HomeFeed/header.jsx" afterPath="$PROJECT_DIR$/frontend/components/HomeFeed/header.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/SignUpForm/signup.jsx" afterPath="$PROJECT_DIR$/frontend/components/SignUpForm/signup.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/navbar.jsx" afterPath="$PROJECT_DIR$/frontend/components/navbar/navbar.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -25,36 +20,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="header.jsx" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/frontend/components/HomeFeed/header.jsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="63" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="homefeed.scss" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/homefeed.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="600">
-                  <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="navbar.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/navbar.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/components/app.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -114,10 +101,10 @@
         <option value="$PROJECT_DIR$/frontend/components/SignUpForm/signup.jsx" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/signup.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/session.scss" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/navbar.scss" />
         <option value="$PROJECT_DIR$/frontend/components/navbar/navbar.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/HomeFeed/header.jsx" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/homefeed.scss" />
+        <option value="$PROJECT_DIR$/frontend/components/HomeFeed/header.jsx" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/navbar.scss" />
       </list>
     </option>
   </component>
@@ -395,12 +382,12 @@
       <workItem from="1517205930267" duration="3141000" />
       <workItem from="1517339582483" duration="55661000" />
       <workItem from="1517460126867" duration="1137000" />
-      <workItem from="1517468094197" duration="18722000" />
+      <workItem from="1517468094197" duration="19932000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78661000" />
+    <option name="totallyTimeSpent" value="79871000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="62" width="1920" height="1018" extended-state="0" />
@@ -696,14 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/app.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/navbar/navbar_container.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -760,22 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/navbar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="107" column="36" lean-forward="false" selection-start-line="107" selection-start-column="36" selection-end-line="107" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/navbar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -792,18 +755,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/HomeFeed/header.jsx">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/homefeed.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="63" />
+        <state relative-caret-position="321">
+          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/homefeed.scss">
+    <entry file="file://$PROJECT_DIR$/frontend/components/app.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/navbar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/HomeFeed/header.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="72" lean-forward="false" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/navbar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
           <folding />
         </state>
       </provider>

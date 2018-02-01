@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  white-space: nowrap;
 }
 
 .links{
@@ -39,6 +40,7 @@
   font-size: 14px;
   justify-content: space-between;
   width: 190px;
+  line-height: 18px;
 }
 
 .nav-login li a{
