@@ -38,6 +38,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'annotate'
   gem 'pry-rails'
+  gem 'guard-livereload'
 end
 
 group :development do

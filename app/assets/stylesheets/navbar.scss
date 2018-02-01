@@ -1,0 +1,14 @@
+.navbar a{
+  display:flex;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.navbar ul{
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  width: 12%;
+
+}
