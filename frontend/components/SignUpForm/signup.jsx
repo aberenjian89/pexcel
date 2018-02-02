@@ -48,7 +48,9 @@ class SignUp extends React.Component{
                 <div className="subheader">
                     <span>Share your photos, get inspired, and grow your skills.</span>
                 </div>
-                {this.renderErrors()}
+                <div className="error-display">
+                    {this.renderErrors()}
+                </div>
             <form>
                 <label>Username</label>
                 <input type="text" onChange={this.update('username')} value={this.state.username}/>

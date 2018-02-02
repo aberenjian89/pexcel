@@ -31,7 +31,7 @@ class Navbar extends React.Component{
         if (this.props.currentUser){
             usermenu =(
                     <ul className="user-info">
-                        {/*<li><h3>Welcome {this.props.currentUser.username}</h3></li>*/}
+                        <li><h3>Welcome {this.props.currentUser.username}</h3></li>
                         <li>
                             <div className="dropdown">
                                 <i className="fas fa-user"></i>
@@ -49,10 +49,11 @@ class Navbar extends React.Component{
                         <li><i className="fas fa-cloud-upload-alt"></i></li>
                     </ul>
 
+
                     )
             extramenu = (
                 <div className="links-session">
-                    <h1><Link to='/'>PEXCEL</Link></h1>
+                    <h1><Link to='/profile'>PEXCEL</Link></h1>
                     <ul>
                         <li><Link to="/">Discover</Link></li>
                         <li><Link to="/">About</Link></li>
@@ -65,7 +66,7 @@ class Navbar extends React.Component{
                 usermenu=(
                     <ul className="nav-login">
                         <li><Link to="/login">Log in</Link></li>
-                        <li><Link activeClassName="signup" to="/signup">Sign Up</Link></li>
+                        <li><Link className="signup" to="/signup">Sign Up</Link></li>
                         <li><Link onClick={this.loginDemo} to="/profile">Demo</Link></li>
                     </ul>
                 )

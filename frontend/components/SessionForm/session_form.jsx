@@ -33,7 +33,6 @@ class SessionForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        debugger;
         return this.props.LoginUser(this.state)
             .then(() => this.props.history.push('/profile'))
     }
@@ -57,15 +56,17 @@ class SessionForm extends React.Component{
         return(
             <div className="session">
                 <h4>Log In to PEXCEL</h4>
-                {this.renderErrors()}
+                <div className="error-display">
+                    {this.renderErrors()}
+                </div>
                 <form>
                     <label>Username</label><br/>
-                    <input type="text" onChange={this.update('username')} value={this.state.username}/><br/>
+                    <input type="text" onChange={this.update('username')} value={this.state.username} required/><br/>
                     <div className="password">
                          <label>Password</label><br/>
                          <Link to="#">Forgot Password?</Link>
                     </div>
-                    <input type="password" onChange={this.update('password')} value={this.state.password}/><br/>
+                    <input type="password" onChange={this.update('password')} value={this.state.password} required/><br/>
                     <input type= "submit" onClick={this.handleSubmit} value="Log in"/>
                 </form>
                 <div className="signup-link">

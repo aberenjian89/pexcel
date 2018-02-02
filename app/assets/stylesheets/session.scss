@@ -65,7 +65,7 @@
 .session .signup-link{
   font-size: 12px;
   text-align: center;
-  margin-top: 170px;
+  padding-top: 137px;
 }
 
 
@@ -73,5 +73,16 @@
   background-color: #00aaff;
   cursor: pointer;
 }
+
+.signup-link{
+  position: relative;
+  bottom: 20px;
+}
+
+.error-display {
+  color: #B00100;
+  height: 30px;
+}
+
 
 

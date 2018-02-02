@@ -1,6 +1,6 @@
 .signup{
   //height: calc(80vh - 78px);
-  height: 500px;
+  height: 650px;
   background-color: #fff;
   margin: 65px auto;
   width: 400px;
@@ -9,6 +9,9 @@
   font-size: 15px;
 }
 
+.signup form{
+  padding-top: 35px;
+}
 
 .signup form input{
   margin-top: 6px;
@@ -59,7 +62,7 @@
 .signup .signup-link{
   font-size: 12px;
   text-align: center;
-  margin-top: 50px;
+  padding-top: 143px;
 }
 
 .signup .subheader{
@@ -72,4 +75,9 @@
 .signup input[type=submit]:hover{
   background-color: #00aaff;
   cursor: pointer;
+}
+
+.error-display{
+  color: #B00100;
+  height: 30px;
 }
