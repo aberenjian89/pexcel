@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 15px;
   white-space: nowrap;
 }
 
@@ -11,7 +11,49 @@
   width: 250px;
   justify-content: space-between;
   color: #fff;
+}
 
+
+.user-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.user-info .dropdown{
+  position: relative;
+  display: inline-block;
+}
+
+.user-info .dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.user-info .dropdown-content{
+  display: none;
+  position: absolute;
+  right: -4px;
+  top: 15px;
+  background-color: #fff;
+  border: 2px solid #fff;
+  min-width: 60px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.user-info .dropdown-content ul li a{
+  font-size: 12px;
+  color: #666666;
+}
+
+.user-info .dropdown-content ul li{
+  border: 1px solid #fff;
+  padding: 15px;
+  border-bottom: #999999;
 }
 
 .links h1{
@@ -63,10 +105,25 @@
   display:flex;
   font-size: 15px;
   justify-content: space-between;
-  width: 100px;
+  width: 130px;
 }
 
-.links-currentuser{
+.nav-session li:first-child > a{
+  background-color: #0099e5;
+  color: #fff;
+  padding: 15px 10px;
+}
+
+.nav-session li:first-child > a:hover{
+  background-color: #00aaff;
+}
+
+.nav-session li:last-child > a{
+  color: #666666;
+}
+
+
+.links-session{
   display: flex;
   flex-direction: row;
   width: 250px;
@@ -74,12 +131,23 @@
   color: black;
 }
 
-.links-currentuser ul{
+
+
+.links-session ul{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 120px;
   padding-right: 5px;
 }
+
+.links-session ul li a{
+  color: #666666;
+}
+
+.links-session h1 a{
+  color: black;
+}
+
 
 

@@ -4,6 +4,7 @@ import {AuthRoute,ProtectedRoute} from "../utils/routes_util";
 import NavbarContainer from "./navbar/navbar_container";
 import {SessionBackground} from "./session_background/session_background";
 import HomeFeed from "./HomeFeed/header";
+import ProfileContainer from './UserProfile/profile_container'
 
 class App extends React.Component{
 
@@ -17,7 +18,8 @@ class App extends React.Component{
             <div>
                 <NavbarContainer/>
                 <Switch>
-                    <Route exact path="/" component={HomeFeed}/>
+                    <AuthRoute exact path="/" component={HomeFeed}/>
+                    <ProtectedRoute path="/profile" component={SessionBackground} />
                     <AuthRoute path="/login" component={SessionBackground}/>
                     <AuthRoute path="/signup" component={SessionBackground} />
                 </Switch>

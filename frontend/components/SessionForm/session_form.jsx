@@ -16,7 +16,7 @@ class SessionForm extends React.Component{
 
     componentWillReceiveProps(nextProps){
         if (nextProps.loggedIn){
-            this.props.history.push('/')
+            this.props.history.push('/profile')
         }
     }
 
@@ -33,7 +33,9 @@ class SessionForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
+        debugger;
         return this.props.LoginUser(this.state)
+            .then(() => this.props.history.push('/profile'))
     }
 
 
@@ -54,8 +56,8 @@ class SessionForm extends React.Component{
     render(){
         return(
             <div className="session">
-                {this.renderErrors()}
                 <h4>Log In to PEXCEL</h4>
+                {this.renderErrors()}
                 <form>
                     <label>Username</label><br/>
                     <input type="text" onChange={this.update('username')} value={this.state.username}/><br/>

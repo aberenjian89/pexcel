@@ -1,5 +1,6 @@
 import {connect} from 'react-redux'
 import {LoginUser,CreateUser,ClearError} from "../../actions/session_action";
+import {withRouter} from 'react-router-dom'
 
 import SessionForm from './session_form'
 
@@ -16,4 +17,4 @@ const mapDispatchToProps = (dispatch,{match}) =>{
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(SessionForm)
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(SessionForm))

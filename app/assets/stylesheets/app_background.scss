@@ -1,0 +1,11 @@
+body{
+  min-height: 100vh;
+}
+
+
+.background{
+  display: flex;
+  min-height: calc(100vh - 56px);
+  //height: 100%;
+  background-color: #eeeff2;
+}

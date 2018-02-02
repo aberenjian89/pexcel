@@ -1,10 +1,3 @@
-.session_parent{
-  display: flex;
-  //height: calc(100vh - 56px);
-  height: 100vh;
-  background-color: #eeeff2;
-}
-
 .session{
   //height: calc(80vh - 78px);
   height: 500px;
@@ -61,9 +54,9 @@
   border-radius: 0;
   width: 100%;
   height: 40px;
-  background-color: #34bf49;
-  border-color: #2fab41;
-  text-shadow: 0px 1px 0px #2fab41;
+  background-color: #0099e5;
+  border-color: #0099e5;
+  text-shadow: 0px 1px 0px #0099e5;
   color: #fff;
   font-weight: 200;
   font-size: 18px;
@@ -77,7 +70,7 @@
 
 
 .session input[type=submit]:hover{
-  background-color: #41cb56;
+  background-color: #00aaff;
   cursor: pointer;
 }
 
