@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-
+import Spinner from '../Ui/Spinner'
 
 class SessionForm extends React.Component{
     constructor(props){
@@ -61,12 +61,12 @@ class SessionForm extends React.Component{
                 </div>
                 <form>
                     <label>Username</label><br/>
-                    <input type="text" onChange={this.update('username')} value={this.state.username} required/><br/>
+                    <input type="text" onChange={this.update('username')} value={this.state.username} /><br/>
                     <div className="password">
                          <label>Password</label><br/>
                          <Link to="#">Forgot Password?</Link>
                     </div>
-                    <input type="password" onChange={this.update('password')} value={this.state.password} required/><br/>
+                    <input type="password" onChange={this.update('password')} value={this.state.password} /><br/>
                     <input type= "submit" onClick={this.handleSubmit} value="Log in"/>
                 </form>
                 <div className="signup-link">
