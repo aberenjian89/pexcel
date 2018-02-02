@@ -4,11 +4,12 @@ import Spinner from '../Ui/Spinner'
 
 class HomeFeed  extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
+
     }
 
-
     render(){
+
         return (
             <div className="main-container">
                 <Spinner/>

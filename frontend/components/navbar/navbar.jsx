@@ -40,12 +40,11 @@ class Navbar extends React.Component{
                                         <li><Link to='/profile'>My Profile</Link></li>
                                         <li><Link to='/profile'>My Stats</Link></li>
                                         <li><Link to='/profile'>My Galleries</Link></li>
-                                        <li><Link onClick={this.logout} to='/login'>Logout</Link></li>
+                                        <li onClick={this.logout}><Link onClick={this.logout} to='/login'>Logout</Link></li>
                                     </ul>
                                 </div>
                             </div>
                         </li>
-                        <li><i className="fas fa-bell"></i></li>
                         <li><i className="fas fa-cloud-upload-alt"></i></li>
                     </ul>
 

@@ -10,6 +10,11 @@
 }
 
 
+.session form{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .session form input{
   margin-top: 6px;
   margin-bottom: 20px;
@@ -52,7 +57,7 @@
 
 .session input[type=submit]{
   border-radius: 0;
-  width: 100%;
+  width: 102%;
   height: 40px;
   background-color: #0099e5;
   border-color: #0099e5;

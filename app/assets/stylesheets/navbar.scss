@@ -28,12 +28,27 @@
   display: inline-block;
 }
 
+.user-info .dropdown > i{
+  cursor: pointer;
+}
+
+.user-info .dropdown > i:hover{
+  color: #0099e5;
+}
+
+.user-info li i{
+  cursor: pointer;
+}
+
+.user-info li i:hover{
+  color: #0099e5;
+}
+
 .user-info .dropdown:hover .dropdown-content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-
 
 .user-info .dropdown-content{
   display: none;
@@ -52,11 +67,23 @@
   color: #666666;
 }
 
-.user-info .dropdown-content ul li{
-  border: 1px solid #fff;
-  padding: 15px;
+.user-info .dropdown-content li{
+  padding: 8px;
   border-bottom: #999999;
+  cursor: pointer;
 }
+
+
+.user-info .dropdown-content ul li:hover a{
+  cursor: pointer;
+  color: #0099e5;
+}
+
+.user-info .dropdown-content ul li a:hover{
+  color: #0099e5;
+}
+
+
 
 .links h1{
   padding-right: 15px;
@@ -76,7 +103,7 @@
 
 .links a{
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .nav-login{
@@ -107,13 +134,13 @@
   display:flex;
   font-size: 15px;
   justify-content: space-between;
-  width: 130px;
+  width: 120px;
 }
 
 .nav-session li:first-child > a{
   background-color: #0099e5;
   color: #fff;
-  padding: 15px 10px;
+  padding: 18px 10px;
 }
 
 .nav-session li:first-child > a:hover{
@@ -145,10 +172,12 @@
 
 .links-session ul li a{
   color: #666666;
+  font-size: 14px;
 }
 
 .links-session h1 a{
   color: black;
+  font-size: 20px;
 }
 
 
