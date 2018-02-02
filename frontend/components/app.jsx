@@ -18,7 +18,7 @@ class App extends React.Component{
             <div>
                 <NavbarContainer/>
                 <Switch>
-                    <Route exact path="/" component={HomeFeed}/>
+                    <AuthRoute exact path="/" component={HomeFeed}/>
                     <ProtectedRoute exact  path="/profile" component={SessionBackground} />
                     <AuthRoute exect path="/login" component={SessionBackground}/>
                     <AuthRoute path="/signup" component={SessionBackground} />
