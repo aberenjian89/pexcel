@@ -7,5 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Image.destroy_all
+
 
 User.create(username:"Demo", password:12345678, email: "Demo@email.com" )
+User.create(username:"Ali2000",password: 12345678, email: "Ali@gmail.com")
+
+
+# Image.create(img_title: "andrik-langfield-petrides",
+#              img_location: cl_image_tag('Cars/andrik-langfield-petrides-305882.jpg'),
+#              author_id: 4,
+#              img_desc: "This is my card",
+#              date_take: "2012/12/13",
+#              category: "Cars"
+#              )
+
+
+
+

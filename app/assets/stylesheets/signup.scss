@@ -20,11 +20,15 @@
   margin-bottom: 20px;
 }
 
+.signup form input[type="text"],.signup form input[type="password"]{
+  padding: 5px;
+}
+
 .signup > h4 {
   margin-bottom: 20px;
   text-align: center;
   color: #525558;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 
@@ -51,7 +55,7 @@
 
 .signup input[type=submit]{
   border-radius: 0;
-  width: 102%;
+  width: 104%;
   height: 40px;
   background-color: #0099e5;
   border-color: #0099e5;
@@ -64,7 +68,7 @@
 .signup .signup-link{
   font-size: 12px;
   text-align: center;
-  padding-top: 143px;
+  padding-top: 100px;
 }
 
 .signup .subheader{

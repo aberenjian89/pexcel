@@ -6,6 +6,20 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :images,
+   primary_key: :id,
+   foreign_key: :author_id,
+   class_name: :Image
+
+  has_many :img_comments,
+     through: :images,
+     source: :comments
+
+  has_many :comments,
+     primary_key: :id,
+     foreign_key: :author_id,
+     class_name: :Comment
+
 
   def self.find_by_credentials(username,password)
     @user  = User.find_by(username: username)
