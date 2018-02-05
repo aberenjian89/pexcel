@@ -14,10 +14,7 @@ class ImageView extends React.Component{
         this.close = this.close.bind(this);
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    componentDidMount(){
-
+        this.delete = this.delete.bind(this)
     }
 
     close(){
@@ -32,7 +29,6 @@ class ImageView extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
         let image ={
             img_title: this.state.img_title,
             img_location: this.state.img_location,
@@ -40,6 +36,14 @@ class ImageView extends React.Component{
             category: this.state.category,
             date_taken: this.state.date_taken};
         return this.props.updateuserimg(this.props.UserId.id,this.state.id,image)
+            .then(() => this.close())
+    }
+
+
+    delete(e){
+        e.preventDefault();
+        debugger;
+        return this.props.deleteuserimg(this.props.UserId.id,this.props.image.id)
             .then(() => this.close())
     }
 
@@ -74,13 +78,11 @@ class ImageView extends React.Component{
                         <input type="text" onChange={this.update("category")} value={this.state.category}/><br/>
                         <input type="submit" value="Update"/>
                     </form>
+                    <button onClick={this.delete}>Delete</button>
                 </div>
 
             )
         }
-
-
-
 
 
         return(

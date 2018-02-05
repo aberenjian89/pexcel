@@ -10,7 +10,6 @@ class Profile extends React.Component{
 
 
     componentDidMount(){
-        debugger;
         this.props.fetchuserimgs(this.props.CurrentUser.id);
     }
 

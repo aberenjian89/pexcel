@@ -19,13 +19,11 @@ class Api::ImagesController < ApplicationController
   end
 
   def update
-    debugger
+
     @image = current_user.images.find(params[:id])
     if @image.update(image_params_update)
-      debugger
       render :show
     else
-      debugger
       render json: @image.errors.full_message
     end
   end
@@ -40,8 +38,12 @@ class Api::ImagesController < ApplicationController
   end
 
   def destroy
-    ### Delete Image
-
+    @image = current_user.images.find(params[:id])
+    if @image.destroy
+      render :show
+    else
+      render json: @image.errors.full_message
+    end
   end
 
   def show

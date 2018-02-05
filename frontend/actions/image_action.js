@@ -27,7 +27,7 @@ export const UpdateUserImg = (userId,imgId,img) => dispatch =>(
         .then((image) => dispatch(ReceiveImage(image)))
 );
 
-export const DeleteUserImg = (uesrId,imgId) => dispatch =>(
+export const DeleteUserImg = (userId,imgId) => dispatch =>(
     APIImage.deleteuserimg(userId,imgId)
         .then(() => dispatch(RemoveImage(imgId)))
 );

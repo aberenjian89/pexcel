@@ -43,7 +43,7 @@ export const updateuserimg = (userId,imgId,img) => {
 
 export const deleteuserimg = (userId,imgId) =>(
     $.ajax({
-        method: 'PATCH',
+        method: 'DELETE',
         url: `api/users/${userId}/images/${imgId}`
     })
 );

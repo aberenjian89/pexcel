@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
 import ImageView from './image_view'
 import {withRouter} from 'react-router-dom'
-import {FetchImg,UpdateUserImg} from './../../actions/image_action';
+import {FetchImg,UpdateUserImg,DeleteUserImg} from './../../actions/image_action';
 
 const mapStateToProps= (state,ownProps) =>{
     let viewtype = "Read";
@@ -20,7 +20,8 @@ const mapStateToProps= (state,ownProps) =>{
 const mapDisptachToProps = dispatch => (
     {
         fetchimg: (imgId) => dispatch(FetchImg(imgId)),
-        updateuserimg: (userId,imgId,img) => dispatch(UpdateUserImg(userId,imgId,img))
+        updateuserimg: (userId,imgId,img) => dispatch(UpdateUserImg(userId,imgId,img)),
+        deleteuserimg: (userId,imgId) => dispatch(DeleteUserImg(userId,imgId))
     }
 );
 
