@@ -18,23 +18,26 @@ export const fetchuserimg = (userId,imgId) => (
 
 // Upload Image
 
-export const createimg = (userId,img) => (
+export const createimg = (userId,image) => (
     $.ajax({
         method: 'POST',
-        url: `api/users/${userId}`,
-        data: {img}
+        url: `api/users/${userId}/images`,
+        contentType: false,
+        processData: false,
+        data: image
     })
 );
 
 // Update User Image
 
-export const updateuserimg = (userId,img) => (
-    $.ajax({
+export const updateuserimg = (userId,imgId,img) => {
+    debugger;
+    return $.ajax({
         method: 'PATCH',
-        url: `api/users/${userId}/images/${img.id}`,
+        url: `api/users/${userId}/images/${imgId}`,
         data : {img}
     })
-);
+};
 
 // Delete User Image
 

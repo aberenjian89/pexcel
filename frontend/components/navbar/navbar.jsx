@@ -1,14 +1,28 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Modal from 'react-modal';
+import UploadContainer from "../UserProfile/Upload/upload_container";
 
 class Navbar extends React.Component{
     constructor(props){
         super(props);
         this.state={username: "",
-        password: ""};
+        password: "",
+        modalIsOpen: true};
         this.logout= this.logout.bind(this);
         this.loginDemo = this.loginDemo.bind(this);
+        this.toggle = this.toggle.bind(this);
     }
+
+    componentWillMount() {
+        Modal.setAppElement('body');
+        this.setState({modalIsOpen: true})
+    }
+
+    componentWillReceiveProps(nextProps){
+        this.setState(nextProps.modalIsOpen)
+    }
+
 
     logout(){
         return this.props.logoutuser()
@@ -21,6 +35,16 @@ class Navbar extends React.Component{
         return this.props.loginuser({username: "Demo",password:12345678})
             .then(() => this.props.history.push('/profile'))
     }
+
+    toggle(){
+        debugger;
+        if (this.state.modalIsOpen===false){
+            return this.setState({modalIsOpen: true})
+        }else{
+            return this.setState({modalIsOpen: false})
+        }
+    }
+
 
 
 
@@ -45,11 +69,13 @@ class Navbar extends React.Component{
                                 </div>
                             </div>
                         </li>
-                        <li><i className="fas fa-cloud-upload-alt"></i></li>
+                        <li onClick={this.toggle} ><i className="fas fa-cloud-upload-alt"></i></li>
+                        {console.log(this.state.modalIsOpen)}
+                        {!this.state.modalIsOpen ? <UploadContainer/> : ""}
                     </ul>
 
 
-                    )
+                    );
             extramenu = (
                 <div className="links-session">
                     <h1><Link to='/profile'>PEXCEL</Link></h1>

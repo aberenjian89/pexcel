@@ -22,8 +22,8 @@ export const CreateImg = (userId,img) => dispatch =>(
       .then((image) => dispatch(ReceiveImage(image)))
 );
 
-export const UpdateUserImg = (userId,img) => dispatch =>(
-    APIImage.updateuserimg(userId,img)
+export const UpdateUserImg = (userId,imgId,img) => dispatch =>(
+    APIImage.updateuserimg(userId,imgId,img)
         .then((image) => dispatch(ReceiveImage(image)))
 );
 

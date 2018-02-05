@@ -40,8 +40,11 @@ group :development, :test do
   gem 'annotate'
   gem 'pry-rails'
   gem 'figaro'
-  gem 'paperclip'
-  gem 'aws-sdk', '< 2.0'
+   gem 'paperclip', '~> 4.2.1'
+  # gem 'aws-sdk', '< 2.0'
+  #gem 'paperclip'
+  gem 'aws-sdk-v1'
+  gem 'aws-sdk', '~> 2'
 end
 
 group :development do

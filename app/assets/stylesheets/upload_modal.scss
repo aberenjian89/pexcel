@@ -1,0 +1,88 @@
+.upload-modal{
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 15px;
+}
+
+
+.upload-image{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-left: 15px;
+}
+
+.new-image-form{
+  height: 350px;
+  background-color: #fff;
+ // margin: -10px auto;
+  width: 600px;
+  padding-left: 25px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.new-img-form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 350px;
+  height: 490px;
+  border: 2px solid #F7F7F7;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-right: 15px;
+}
+
+.new-img-form-container form{
+  padding-right: 10px;
+  padding-left: 10px;
+
+}
+
+.new-img-form-container form input[type="text"]{
+  padding: 8px;
+}
+
+.new-img-form-container label{
+  color:#71767a;
+  padding-bottom: 15px;
+}
+
+
+.new-img-form-container input[type=text]{
+  width: 100%;
+  height: 30px;
+  font-size: 14px;
+  padding-bottom: 15px;
+}
+
+.new-img-form-container input[type=submit]{
+  border-radius: 0;
+  width: 104%;
+  height: 40px;
+  background-color: #0099e5;
+  border-color: #0099e5;
+  text-shadow: 0px 1px 0px #0099e5;
+  color: #fff;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+
+.new-img-form-container input[type=submit]:hover{
+  background-color: #00aaff;
+  cursor: pointer;
+}
