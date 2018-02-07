@@ -93,11 +93,18 @@
   border-bottom: 1px solid #eeeff2;
 }
 
+.author-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-
-
-
-
+.author-info img{
+  display:flex;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
 
 
 //.image-view-container img{

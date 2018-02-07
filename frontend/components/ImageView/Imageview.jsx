@@ -14,8 +14,6 @@ class ImageView extends React.Component{
     componentDidMount(){
         this.props.fetchimg(this.props.imageid);
 
-        this.props.fetchauthorimage(this.props.image.author_id)
-
     }
 
     componentWillReceiveProps(nextProps){
@@ -44,7 +42,7 @@ class ImageView extends React.Component{
 
     render(){
 
-        
+
 
         let display;
         if (!this.props.UserId){
@@ -52,8 +50,8 @@ class ImageView extends React.Component{
                 <div className="info">
                     <div className="image-info">
                         <div className="author-info">
-                            <label>Username</label>
-                            <img/>
+                            <img src={this.props.image.author_img}/>
+                            <label>{this.props.image.author_username}</label>
                         </div>
                         <div>
                             <label>Title: <span>{this.props.image.img_title}</span></label>
