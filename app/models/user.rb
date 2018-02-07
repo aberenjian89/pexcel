@@ -27,7 +27,6 @@ class User < ApplicationRecord
            source: :followee
 
 
-
   has_many :images,
    primary_key: :id,
    foreign_key: :author_id,
@@ -66,6 +65,15 @@ class User < ApplicationRecord
     self.session_token = generate_session_token
     self.save
     self.session_token
+  end
+
+
+  def followed_user_ids
+    @followed_user_ids ||= out_follows.pluck(:followee_id)
+  end
+
+  def follows?(user)
+    followed_user_ids.include?(user.id)
   end
 
   private

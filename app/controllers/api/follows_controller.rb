@@ -12,6 +12,9 @@ class Api::FollowsController < ApplicationController
 
   end
 
+
+
+
   def destroy
     sleep(1)
 
