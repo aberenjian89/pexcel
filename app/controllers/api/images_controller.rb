@@ -1,4 +1,3 @@
-require 'dimensions'
 class Api::ImagesController < ApplicationController
   def index
     @images = Image.all
