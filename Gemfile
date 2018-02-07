@@ -31,6 +31,8 @@ gem 'jquery-rails'
 gem "paperclip", ">=3"
 gem 'aws-sdk-v1'
 gem 'aws-sdk', '~> 2'
+gem 'figaro'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -42,7 +44,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'annotate'
   gem 'pry-rails'
-  gem 'figaro'
    # gem 'paperclip', '~> 4.2.1'
   # gem 'aws-sdk', '< 2.0'
   #gem 'paperclip'
