@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only:[:create,:update,:show] do
       resources :images
+      resources :follows, only:[:create,:destroy]
     end
     get '/images', to: 'images#recent_images'
     resources :images, except:[:index,:update,:destroy,:create,:new,:edit] do
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
       resources :likes, only:[:create,:destroy]
     end
     resource :session, only:[:create,:destroy]
-    resources :follows, only:[:create,:destroy]
   end
 
 end

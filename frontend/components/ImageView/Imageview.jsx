@@ -51,22 +51,34 @@ class ImageView extends React.Component{
                     <div className="image-info">
                         <div className="author-info">
                             <img src={this.props.image.author_img}/>
-                            <label>{this.props.image.author_username}</label>
+                            <div className="author-state">
+                                 <label>{this.props.image.author_username}</label>
+                                 <label>0 Follows</label>
+                            </div>
                         </div>
-                        <div>
-                            <label>Title: <span>{this.props.image.img_title}</span></label>
+                        <div className="action-tools">
+                            <button className="follow-button">Follow</button>
+                            <button>Like</button>
                         </div>
-                        <div>
-                            <label>Description: <span>{this.props.image.img_desc}</span></label>
+                        <div className="img-title">
+                            <label>Title </label>
+                            <span>{this.props.image.img_title}</span>
                         </div>
-                        <div>
-                            <label>Location: <span>{this.props.image.img_location}</span></label>
+                        <div className="img-desc">
+                            <label>Description</label>
+                            <span>{this.props.image.img_desc}</span>
                         </div>
-                        <div>
-                            <label>Date Taken: <span>{this.props.image.date_taken}</span></label>
+                        <div className="img-location">
+                            <label>Location</label>
+                            <span>{this.props.image.img_location}</span>
                         </div>
-                        <div>
-                            <label>Category: <span>{this.props.image.category}</span></label>
+                        <div className="img-date">
+                            <label>Date Taken</label>
+                            <span>{this.props.image.date_taken}</span>
+                        </div>
+                        <div className="img-category">
+                            <label>Category</label>
+                            <span>{this.props.image.category}</span>
                         </div>
                     </div>
                 </div>)
