@@ -1,4 +1,4 @@
-
+require 'dimensions'
 class Api::ImagesController < ApplicationController
   def index
     @images = Image.all
@@ -11,10 +11,11 @@ class Api::ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     @image.author_id = current_user.id
-    if @image.save!
-      render :show
+    if @image.save
+      render  :show
     else
-      render json: @image.errors.full_messages
+
+      render json: @image.errors.full_messages, status: 422
     end
   end
 

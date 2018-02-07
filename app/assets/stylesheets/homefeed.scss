@@ -2,6 +2,7 @@
   display:flex;
   flex-direction: column;
   width: 100%;
+  z-index: 3;
 }
 
 
@@ -11,7 +12,7 @@
   height: 500px;
   background-image: url("https://github.com/aberenjian89/pexcel/blob/master/resource/header-background.jpeg?raw=true") ;
   position: absolute;
-  width: 100%;
+  //width: 100%;
   //justify-content: center;
   align-items: center;
   top: 0;
@@ -41,8 +42,6 @@
 
 }
 
-
-
 .header-container  h3{
   font-size: 36px;
   margin-bottom: 50px;
@@ -61,11 +60,6 @@
   display: block;
 }
 
-
-
-
-
-
  .header-container a {
    margin: 0 auto;
    width: 80px;
@@ -78,11 +72,11 @@
    font-size: 12px;
  }
 
-
-
 .header-container-link a:hover{
   background-color:#00aaff ;
 }
+
+
 
 
 

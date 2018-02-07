@@ -20,5 +20,26 @@
 
   <body>
     <%= yield %>
+    <script>
+        let _URL = window.URL || window.webkitURL;
+        $("#file").change(function(e) {
+            let file, img;
+
+            console.log("Hellloooooo");
+
+            if ((file = this.files[0])) {
+                img = new Image();
+                img.onload = function() {
+                    alert(this.width + " " + this.height);
+                };
+                img.onerror = function() {
+                    alert( "not a valid file: " + file.type);
+                };
+                img.src = _URL.createObjectURL(file);
+
+
+            }
+        });
+    </script>
   </body>
 </html>

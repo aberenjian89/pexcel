@@ -1,11 +1,11 @@
 import React from 'react'
-import ImageViewContainer from "../../ImageView/image_view_container";
+import ImageViewContainer from "../../ImageView/imageview_container";
 import {Link} from 'react-router-dom'
 
 
 class ImageIndexItem extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
         this.state =({modalIsOpen: true});
         this.toggle = this.toggle.bind(this)
     }
@@ -24,9 +24,13 @@ class ImageIndexItem extends React.Component{
 
     render(){
         return (
-            <div>
-                <li><img onClick={this.toggle} src={this.props.image.img_url} width="250" height="250"/></li>
-                 {!this.state.modalIsOpen ? <ImageViewContainer image={this.props.image}/> : ""}
+            <div className="photo_thumbnail">
+
+                <li>
+                    <Link to={`/image/${this.props.image.id}`}>
+                        <img src={this.props.image.img_url}/>
+                    </Link>
+                </li>
             </div>
         )
     }

@@ -2,6 +2,9 @@ import React from 'react';
 import SessionFormContainer from '../SessionForm/session_form_container'
 import SignUpFormContainer from '../SignUpForm/signup_form_container'
 import ProfileContainer from '../UserProfile/profile_container'
+import ImageViewContainer from '../ImageView/imageview_container'
+import ImageUploadContainer from '../UploadImage/imageupload_container'
+
 
 export const SessionBackground = ({match}) =>{
 
@@ -10,8 +13,12 @@ export const SessionBackground = ({match}) =>{
         display = <SignUpFormContainer/>
     }else if (match.path === '/login'){
         display = <SessionFormContainer/>
-    }else{
+    }else if (match.path === '/profile'){
         display = <ProfileContainer/>
+    }else if (match.path === '/image/:image_id'){
+        display = <ImageViewContainer/>
+    }else{
+        display = <ImageUploadContainer/>
     }
 
     return(

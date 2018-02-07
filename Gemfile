@@ -45,6 +45,7 @@ group :development, :test do
   #gem 'paperclip'
   gem 'aws-sdk-v1'
   gem 'aws-sdk', '~> 2'
+  gem 'dimensions'
 end
 
 group :development do

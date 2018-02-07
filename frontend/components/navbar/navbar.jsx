@@ -1,26 +1,20 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Modal from 'react-modal';
-import UploadContainer from "../UserProfile/Upload/upload_container";
 
 class Navbar extends React.Component{
     constructor(props){
         super(props);
         this.state={username: "",
-        password: "",
-        modalIsOpen: true};
+        password: ""};
         this.logout= this.logout.bind(this);
         this.loginDemo = this.loginDemo.bind(this);
-        this.toggle = this.toggle.bind(this);
     }
 
     componentWillMount() {
-        Modal.setAppElement('body');
         this.setState({modalIsOpen: true})
     }
 
     componentWillReceiveProps(nextProps){
-        this.setState(nextProps.modalIsOpen)
     }
 
 
@@ -36,14 +30,6 @@ class Navbar extends React.Component{
             .then(() => this.props.history.push('/profile'))
     }
 
-    toggle(){
-        debugger;
-        if (this.state.modalIsOpen===false){
-            return this.setState({modalIsOpen: true})
-        }else{
-            return this.setState({modalIsOpen: false})
-        }
-    }
 
 
 
@@ -69,9 +55,7 @@ class Navbar extends React.Component{
                                 </div>
                             </div>
                         </li>
-                        <li onClick={this.toggle} ><i className="fas fa-cloud-upload-alt"></i></li>
-                        {console.log(this.state.modalIsOpen)}
-                        {!this.state.modalIsOpen ? <UploadContainer/> : ""}
+                        <li><Link to={`/upload/${this.props.currentUser.id}/image`}><i className="fas fa-cloud-upload-alt"></i></Link></li>
                     </ul>
 
 

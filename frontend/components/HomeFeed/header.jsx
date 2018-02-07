@@ -1,6 +1,11 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Spinner from '../Ui/Spinner'
+import ImageGalleryGridContainer from '../ImageGrid/image_gallery_grid_container'
+
+
+
+
 
 class HomeFeed  extends React.Component{
     constructor(props){
@@ -12,7 +17,7 @@ class HomeFeed  extends React.Component{
 
         return (
             <div className="main-container">
-                <Spinner/>
+                {/*<Spinner/>*/}
                 <div className="header">
                     <div className="header-container">
                         <h3>Get inspired and share your best photos</h3>
@@ -22,6 +27,7 @@ class HomeFeed  extends React.Component{
                         {/*</div>*/}
                     </div>
                 </div>
+                <ImageGalleryGridContainer/>
             </div>
         )
     }

@@ -11,5 +11,6 @@ current_user.images.each do |image|
     json.date_taken image.date_taken
     json.category image.category
     json.img_url image.img.url
+    json.img_url_small image.img.url(:medium)
   end
 end

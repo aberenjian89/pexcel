@@ -5,4 +5,4 @@ json.img_desc @image.img_desc
 json.img_location @image.img_location
 json.date_taken @image.date_taken
 json.category @image.category
-json.img_url asset_path(@image.img.url)
+json.img_url @image.img.url
