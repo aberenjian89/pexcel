@@ -6,6 +6,8 @@ import Root from './components/root'
 
 import {FetchImg} from "./actions/image_action";
 
+
+
 document.addEventListener("DOMContentLoaded",()=>{
     let preloadstate =undefined;
     if (window.currentUser){

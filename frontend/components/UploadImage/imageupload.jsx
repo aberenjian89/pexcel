@@ -4,7 +4,7 @@ import React from 'react';
 class ImageUpload extends React.Component {
     constructor(props) {
         super(props);
-        this.state = ({show: true,image: "",imageUrl: ""});
+        this.state = ({show: true,image: "",imageUrl: "",value: false});
 
         this.updatefile= this.updatefile.bind(this);
         this.handlesubmit = this.handlesubmit.bind(this);
@@ -38,6 +38,7 @@ class ImageUpload extends React.Component {
 
     handlesubmit(e){
         e.preventDefault();
+        this.setState({value: true});
         let formData = new FormData();
         formData.append("image[img_title]",this.state.img_title);
         formData.append("image[img_desc]", this.state.img_desc);
@@ -88,7 +89,7 @@ class ImageUpload extends React.Component {
                 <div className="image-form">
                     <img src={this.state.imageUrl}/>
                     <div className="form">
-                        <form onSubmit={this.handlesubmit}>
+                        <form>
                             <label>Title:</label>
                             <input type="text" onChange={this.update("img_title")}/>
                             <label>Description:</label>
@@ -99,7 +100,7 @@ class ImageUpload extends React.Component {
                             <input type="text" onChange={this.update("date_taken")}/>
                             <label>Category:</label>
                             <input type="text" onChange={this.update("category")}/>
-                            <button><i className="fas fa-upload"></i><span>Upload</span></button>
+                            <button disabled={this.state.value} onClick={this.handlesubmit}><i className="fas fa-upload"></i><span>Upload</span></button>
                         </form>
                         {this.renderErrors()}
                     </div>

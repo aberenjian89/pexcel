@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+
     <%= javascript_include_tag 'application' %>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <% if current_user %>
@@ -12,34 +14,38 @@
         window.currentUser = {
             "id": <%= current_user.id %>,
             "username": "<%= current_user.username%>",
-            "img_url": "<%= current_user.img_url %>"
+            "img_url": "<%= current_user.img_url %>",
+            "number_followee": "<%= Follow.where("followee_id = ?",current_user.id).count%>",
+            "number_followers": "<%= Follow.where("follower_id = ?",current_user.id).count%>"
         };
+
+        function renderGrid() {
+            let blocks = document.getElementById("gallery-container").children;
+            let pad = 10, cols = 3, newleft, newtop;
+            for(let i=1; i< blocks.length;i++){
+                if (i % cols === 0){
+                    newtop = (blocks[i-cols].offsetTop + blocks[i-cols].offsetHeight) + pad;
+                    blocks[i].style.top = newtop+"px";
+                }else{
+                    if (blocks[i-cols]){
+                        newtop = (blocks[i-cols].offsetTop + blocks[i-cols].offsetHeight) + pad;
+                        blocks[i].style.top = newtop+"px";
+                    }
+                    newleft = (blocks[i-1].offsetLeft + blocks[i-1].offsetWidth) + pad;
+                    blocks[i].style.left = newleft+"px";
+                }
+            }
+        }
+        window.addEventListener("load",renderGrid,false);
+        window.addEventListener("resize",renderGrid,false)
+
+
       </script>
     <% end %>
   </head>
 
   <body>
     <%= yield %>
-    <script>
-        let _URL = window.URL || window.webkitURL;
-        $("#file").change(function(e) {
-            let file, img;
 
-            console.log("Hellloooooo");
-
-            if ((file = this.files[0])) {
-                img = new Image();
-                img.onload = function() {
-                    alert(this.width + " " + this.height);
-                };
-                img.onerror = function() {
-                    alert( "not a valid file: " + file.type);
-                };
-                img.src = _URL.createObjectURL(file);
-
-
-            }
-        });
-    </script>
   </body>
 </html>

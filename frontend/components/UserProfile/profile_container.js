@@ -6,7 +6,9 @@ import {FetchUserImgs} from "../../actions/image_action";
 const mapStateToProps = (state) =>{
     return {
         CurrentUser: state.session.CurrentUser,
-        UserImgs : Object.values(state.entities.images)
+        UserImgs : Object.values(state.entities.images),
+        follow : state.entities.follow
+
     }
 };
 
@@ -14,6 +16,7 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = dispatch =>{
     return {
         fetchuserimgs: (userId) => dispatch(FetchUserImgs(userId))
+
     }
 };
 

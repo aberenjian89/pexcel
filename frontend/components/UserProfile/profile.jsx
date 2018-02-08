@@ -13,6 +13,7 @@ class Profile extends React.Component{
 
     componentDidMount(){
         this.props.fetchuserimgs(this.props.CurrentUser.id);
+        window.renderGrid();
     }
 
     componentWillReceiveProps(nextProps){
@@ -38,6 +39,36 @@ class Profile extends React.Component{
 
         }
 
+        let followers;
+        let followee;
+
+
+        if (this.props.follow.number_followee){
+            if (parseInt(this.props.follow.number_followee) > 0){
+                followee = this.props.follow.number_followee
+            } else{
+                followee = 0;
+            }
+
+            if (parseInt(this.props.follow.number_followers) > 0){
+                followers = this.props.follow.number_followers
+            }else{
+                followers = 0;
+            }
+        }else{
+            if (parseInt(this.props.CurrentUser.number_followee) > 0){
+                followee = this.props.CurrentUser.number_followee
+            } else{
+                followee = 0;
+            }
+
+            if (parseInt(this.props.CurrentUser.number_followers) > 0){
+                followers = this.props.CurrentUser.number_followers
+            }else{
+                followers = 0;
+            }
+        }
+
        return(
                <div className="profile-container">
                    <div className="profile-status">
@@ -46,14 +77,14 @@ class Profile extends React.Component{
                        <h3>{this.props.CurrentUser.username} Profile</h3>
                        <div className="status">
                            <ul>
-                               <li>Followers: <span>{this.props.CurrentUser.number_followee > 0 ? this.props.CurrentUser.number_followee : 0 }</span></li>
-                               <li>Following: <span>{this.props.CurrentUser.number_followers > 0 ? this.props.CurrentUser.number_followers : 0}</span></li>
+                               <li>Followers: <span>{followee}</span></li>
+                               <li>Following: <span>{followers}</span></li>
                            </ul>
                        </div>
                    </div>
-                    <ul className="image-list">
+                   <div id="gallery-container">
                         {images}
-                    </ul>
+                    </div>
                </div>
 
        )

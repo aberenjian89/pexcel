@@ -45,7 +45,7 @@ class ImageView extends React.Component{
 
     delete(e){
         e.preventDefault();
-        return this.props.deleteuserimg(this.props.UserId.id,this.props.image.id)
+        return this.props.deleteuserimg(this.props.CurrentUser.id,this.props.image.id)
             .then(() => this.props.history.push('/profile'))
     }
 

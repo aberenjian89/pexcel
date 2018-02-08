@@ -20,8 +20,8 @@ class HomeFeed  extends React.Component{
                 {/*<Spinner/>*/}
                 <div className="header">
                     <div className="header-container">
-                        <h3>Get inspired and share your best photos</h3>
-                        <span>Find your home among the world's best photographers.</span>
+                        <h3 className="animated  slideInLeft">Get inspired and share your best photos</h3>
+                        <span className="animated slideInRight">Find your home among the world's best photographers.</span>
                         {/*<div className="header-container-link">*/}
                             {/*<Link to="/signup">JOIN PEXCEL</Link>*/}
                         {/*</div>*/}

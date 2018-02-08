@@ -14,7 +14,7 @@ export const CreateFollow = (FolloweeId) => dispatch =>(
 
 export const DeleteFollow = (UserId,FollowId) => dispatch =>(
     APIFollow.DeleteFollow(UserId,FollowId)
-        .then(() => dispatch(RemoveFollow(null)))
+        .then((follow) => dispatch(RemoveFollow(follow)))
 )
 
 
@@ -27,8 +27,9 @@ const ReceiveFollow = (follow) =>(
 );
 
 
-const RemoveFollow = () =>(
+const RemoveFollow = (follow) =>(
     {
         type:REMOVE_FOLLOW,
+        follow
     }
 );
