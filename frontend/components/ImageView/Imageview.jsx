@@ -45,15 +45,78 @@ class ImageView extends React.Component{
 
 
         let display;
-        if (!this.props.UserId){
+        if (this.props.CurrentUser){
+
+            if (this.props.CurrentUser.id === this.props.image.author_id){
+                display=(
+                    <div className="update_form">
+                        <form onSubmit={this.handleSubmit}>
+                            <label>Title</label>
+                            <input type="text" onChange={this.update("img_title")} value={this.state.img_title}/>
+                            <label>Description</label>
+                            <textarea  onChange={this.update("img_desc")} value={this.state.img_desc}/>
+                            <label>Location:</label>
+                            <input type="text" onChange={this.update("img_location")} value={this.state.img_location}/>
+                            <label>Date:</label>
+                            <input type="text" onChange={this.update("date_taken")} value={this.state.date_taken}/>
+                            <label>Category:</label>
+                            <input type="text" onChange={this.update("category")} value={this.state.category}/>
+                            <div className="button-collection">
+                                <button><i className="fas fa-edit"></i><span>Update</span></button>
+                                <button onClick={this.delete}><i className="fas fa-trash-alt"></i><span>Delete</span></button>
+                            </div>
+                        </form>
+                    </div>
+
+                )
+            }else{
+
+                display=(
+                    <div className="info">
+                        <div className="image-info">
+                            <div className="author-info">
+                                <img src={this.props.image.author_img}/>
+                                <div className="author-state">
+                                    <label>{this.props.image.author_username}</label>
+                                    <label>0 Follows</label>
+                                </div>
+                            </div>
+                            <div className="action-tools">
+                                <button className="follow-button">Follow</button>
+                                <button>Like</button>
+                            </div>
+                            <div className="img-title">
+                                <label>Title </label>
+                                <span>{this.props.image.img_title}</span>
+                            </div>
+                            <div className="img-desc">
+                                <label>Description</label>
+                                <span>{this.props.image.img_desc}</span>
+                            </div>
+                            <div className="img-location">
+                                <label>Location</label>
+                                <span>{this.props.image.img_location}</span>
+                            </div>
+                            <div className="img-date">
+                                <label>Date Taken</label>
+                                <span>{this.props.image.date_taken}</span>
+                            </div>
+                            <div className="img-category">
+                                <label>Category</label>
+                                <span>{this.props.image.category}</span>
+                            </div>
+                        </div>
+                    </div>)
+            }
+        }else{
             display=(
                 <div className="info">
                     <div className="image-info">
                         <div className="author-info">
                             <img src={this.props.image.author_img}/>
                             <div className="author-state">
-                                 <label>{this.props.image.author_username}</label>
-                                 <label>0 Follows</label>
+                                <label>{this.props.image.author_username}</label>
+                                <label>0 Follows</label>
                             </div>
                         </div>
                         <div className="action-tools">
@@ -82,28 +145,6 @@ class ImageView extends React.Component{
                         </div>
                     </div>
                 </div>)
-        }else{
-            display=(
-                <div className="update_form">
-                    <form onSubmit={this.handleSubmit}>
-                        <label>Title</label>
-                        <input type="text" onChange={this.update("img_title")} value={this.state.img_title}/>
-                        <label>Description</label>
-                        <textarea  onChange={this.update("img_desc")} value={this.state.img_desc}/>
-                        <label>Location:</label>
-                        <input type="text" onChange={this.update("img_location")} value={this.state.img_location}/>
-                        <label>Date:</label>
-                        <input type="text" onChange={this.update("date_taken")} value={this.state.date_taken}/>
-                        <label>Category:</label>
-                        <input type="text" onChange={this.update("category")} value={this.state.category}/>
-                        <div className="button-collection">
-                            <button><i className="fas fa-edit"></i><span>Update</span></button>
-                            <button onClick={this.delete}><i className="fas fa-trash-alt"></i><span>Delete</span></button>
-                        </div>
-                    </form>
-                </div>
-
-            )
         }
 
         return(

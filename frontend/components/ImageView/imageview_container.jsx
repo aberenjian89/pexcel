@@ -10,7 +10,7 @@ const mapStateToProps= (state,ownProps) =>{
     return {
         imageid : ownProps.match.params.image_id,
         image: state.entities.imageview,
-        UserId: state.session.CurrentUser,
+        CurrentUser: state.session.CurrentUser,
         author: state.entities.imageauthor
     }
 };

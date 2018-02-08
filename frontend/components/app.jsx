@@ -17,7 +17,7 @@ class App extends React.Component{
             <div>
                 <NavbarContainer/>
                 <Switch>
-                    <AuthRoute exact path="/" component={HomeFeed}/>
+                    <Route exact path="/" component={HomeFeed}/>
                     <Route path="/image/:image_id" component={SessionBackground}/>
                     <ProtectedRoute path="/upload/:user_id/image" component={SessionBackground}/>
                     <ProtectedRoute exact  path="/profile" component={SessionBackground} />
