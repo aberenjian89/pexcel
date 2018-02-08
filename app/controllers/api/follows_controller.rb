@@ -4,11 +4,9 @@ class Api::FollowsController < ApplicationController
     sleep(1)
 
     @follow = current_user.out_follows.create!(followee_id: params[:user_id])
+    @number_followee = Follow.where("followee_id = ?",params[:user_id]).count
 
-    respond_to do |format|
-      format.html { redirect_to request.referrer }
-      format.json { render json: @follow }
-    end
+    render :show
 
   end
 
@@ -17,13 +15,10 @@ class Api::FollowsController < ApplicationController
 
   def destroy
     sleep(1)
-
     @follow = current_user.out_follows.find_by(followee_id: params[:user_id])
+    @number_followee = Follow.where("followee_id = ?",params[:user_id]).count
     @follow.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to request.referrer }
-      format.json { render json: @follow }
-    end
+    render :show
   end
 end

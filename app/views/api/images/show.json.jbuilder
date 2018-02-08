@@ -8,3 +8,7 @@ json.img_url @image.img.url
 json.author_id @image.author_id
 json.author_username @image.user.username
 json.author_img @image.user.avatar.url
+json.number_followee Follow.where("followee_id = ?",@image.author_id).count
+if current_user
+  json.follow current_user.follows?(@image.user)
+end

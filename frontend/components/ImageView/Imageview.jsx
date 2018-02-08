@@ -7,12 +7,13 @@ class ImageView extends React.Component{
 
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.delete = this.delete.bind(this)
+        this.delete = this.delete.bind(this);
+        this.handlefollow = this.handlefollow.bind(this);
     }
 
 
     componentDidMount(){
-        this.props.fetchimg(this.props.imageid);
+        this.props.fetchimg(this.props.imageid)
 
     }
 
@@ -28,8 +29,17 @@ class ImageView extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        return this.props.updateuserimg(this.props.UserId.id,this.state.id,this.state)
+        debugger
+        return this.props.updateuserimg(this.props.CurrentUser.id,this.state.id,this.state)
             .then(() => this.props.history.push('/profile'))
+    }
+
+    handlefollow(isFollow){
+        if (isFollow){
+           return () => this.props.removeFollow(this.props.image.author_id)
+        }else{
+           return () => this.props.createFollow(this.props.image.author_id)
+        }
     }
 
 
@@ -41,9 +51,7 @@ class ImageView extends React.Component{
 
 
     render(){
-
-
-
+        let isFollow = this.props.image.follow;
         let display;
         if (this.props.CurrentUser){
 
@@ -78,12 +86,12 @@ class ImageView extends React.Component{
                                 <img src={this.props.image.author_img}/>
                                 <div className="author-state">
                                     <label>{this.props.image.author_username}</label>
-                                    <label>0 Follows</label>
+                                    {/*<label>{this.props.image.number_followee} Followers</label>*/}
                                 </div>
                             </div>
                             <div className="action-tools">
-                                <button className="follow-button">Follow</button>
-                                <button>Like</button>
+                                <button  onClick={this.handlefollow(isFollow)} className="follow-button">{isFollow ? "UnFollow" : "Follow"}</button>
+                                {/*<button>Like</button>*/}
                             </div>
                             <div className="img-title">
                                 <label>Title </label>
@@ -116,12 +124,8 @@ class ImageView extends React.Component{
                             <img src={this.props.image.author_img}/>
                             <div className="author-state">
                                 <label>{this.props.image.author_username}</label>
-                                <label>0 Follows</label>
+                                {/*<label>{this.props.image.number_followee} Followers</label>*/}
                             </div>
-                        </div>
-                        <div className="action-tools">
-                            <button className="follow-button">Follow</button>
-                            <button>Like</button>
                         </div>
                         <div className="img-title">
                             <label>Title </label>

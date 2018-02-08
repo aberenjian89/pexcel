@@ -46,10 +46,8 @@ class Profile extends React.Component{
                        <h3>{this.props.CurrentUser.username} Profile</h3>
                        <div className="status">
                            <ul>
-                               <li>Affection: <span>0</span></li>
-                               <li>Photo Views: <span>0</span></li>
-                               <li>Followers: <span>0</span></li>
-                               <li>Following: <span>0</span></li>
+                               <li>Followers: <span>{this.props.CurrentUser.number_followee > 0 ? this.props.CurrentUser.number_followee : 0 }</span></li>
+                               <li>Following: <span>{this.props.CurrentUser.number_followers > 0 ? this.props.CurrentUser.number_followers : 0}</span></li>
                            </ul>
                        </div>
                    </div>

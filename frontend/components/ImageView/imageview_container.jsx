@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom'
 import {UpdateUserImg,DeleteUserImg,FetchUserImg} from './../../actions/image_action';
 import {FetchUserImgs} from "../../actions/image_action";
 import {FetchImageView,FetchAuthorImage} from '../../actions/Image_view_action'
+import {CreateFollow,DeleteFollow} from "../../actions/follow_action";
 
 const mapStateToProps= (state,ownProps) =>{
 
@@ -21,7 +22,8 @@ const mapDisptachToProps = dispatch => (
         fetchuserimgs: (userId) => dispatch(FetchUserImgs(userId)),
         updateuserimg: (userId,imgId,img) => dispatch(UpdateUserImg(userId,imgId,img)),
         deleteuserimg: (userId,imgId) => dispatch(DeleteUserImg(userId,imgId)),
-        fetchauthorimage: (authorId) => dispatch(FetchAuthorImage(authorId))
+        createFollow : (FolloweeId) => dispatch(CreateFollow(FolloweeId)),
+        removeFollow : (followeeId) => dispatch(DeleteFollow(followeeId))
     }
 );
 

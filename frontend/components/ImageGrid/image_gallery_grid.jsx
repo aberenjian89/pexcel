@@ -6,8 +6,9 @@ import ImageIndexItem from '../UserProfile/ImageIndexItems/image_index_item';
 
 class ImageGalleryGrid extends React.Component{
     constructor(props){
-        super(props)
-        this.state = this.props.images || {}
+        super(props);
+        debugger;
+        // this.state = this.props.images || {};
     }
 
     componentDidMount(){
@@ -39,7 +40,6 @@ class ImageGalleryGrid extends React.Component{
             </div>
         );
     }
-
 }
 
 
