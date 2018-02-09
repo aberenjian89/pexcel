@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/image_gallery.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/image_gallery.scss" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/image_view.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/image_view.scss" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/HomeFeed/header.jsx" afterPath="$PROJECT_DIR$/frontend/components/HomeFeed/header.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/app.jsx" afterPath="$PROJECT_DIR$/frontend/components/app.jsx" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Footer/footer.jsx" afterPath="$PROJECT_DIR$/frontend/components/Footer/footer.jsx" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/navbar.jsx" afterPath="$PROJECT_DIR$/frontend/components/navbar/navbar.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -23,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="image_view.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/image_view.scss">
+      <file leaf-file-name="footer.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/components/Footer/footer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="75" column="28" lean-forward="false" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
+            <state relative-caret-position="330">
+              <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -55,6 +52,7 @@
       <find>deb</find>
       <find>debugger</find>
       <find>debugger`</find>
+      <find>button-co</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -73,7 +71,6 @@
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/views/api/follows/create.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/models/follow.rb" />
-        <option value="$PROJECT_DIR$/frontend/components/navbar/navbar.jsx" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/homefeed.scss" />
@@ -107,13 +104,14 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/upload.scss" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/frontend/components/ImageView/Imageview.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/Footer/footer.jsx" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/footer.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/image_gallery.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" />
         <option value="$PROJECT_DIR$/frontend/components/app.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/HomeFeed/header.jsx" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/image_view.scss" />
+        <option value="$PROJECT_DIR$/frontend/components/Footer/footer.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/navbar/navbar.jsx" />
       </list>
     </option>
   </component>
@@ -177,13 +175,6 @@
               <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
               <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -209,12 +200,6 @@
               <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
               <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -222,7 +207,7 @@
               <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ImageView" type="462c0819:PsiDirectoryNode" />
+              <item name="navbar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -377,12 +362,12 @@
       <workItem from="1517581908898" duration="18253000" />
       <workItem from="1517624218468" duration="8046000" />
       <workItem from="1517674182436" duration="135269000" />
-      <workItem from="1517969160603" duration="80966000" />
+      <workItem from="1517969160603" duration="81550000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342488000" />
+    <option name="totallyTimeSpent" value="343072000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -499,17 +484,6 @@
         <state relative-caret-position="150">
           <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="75" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/navbar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="85" column="47" lean-forward="false" selection-start-line="85" selection-start-column="47" selection-end-line="85" selection-end-column="47" />
-          <folding>
-            <marker date="1518045890102" expanded="true" signature="2052:2303" ph="..." />
-            <marker date="1518045890102" expanded="true" signature="2133:2280" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -860,16 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/Footer/footer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="66" lean-forward="false" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profile.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -904,9 +868,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/image_view.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="75" column="28" lean-forward="false" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/ImageView/Imageview.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2803">
+        <state relative-caret-position="603">
           <caret line="194" column="42" lean-forward="false" selection-start-line="194" selection-start-column="42" selection-end-line="194" selection-end-column="42" />
           <folding>
             <marker date="1518153046751" expanded="true" signature="2551:3975" ph="..." />
@@ -937,10 +909,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/image_view.scss">
+    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/navbar.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="75" column="28" lean-forward="false" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
+        <state relative-caret-position="356">
+          <caret line="155" column="0" lean-forward="true" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <folding>
+            <marker date="1518204715127" expanded="true" signature="2052:2315" ph="..." />
+            <marker date="1518204715127" expanded="true" signature="2133:2292" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/Footer/footer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
           <folding />
         </state>
       </provider>

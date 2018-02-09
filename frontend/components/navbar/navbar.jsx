@@ -64,8 +64,8 @@ class Navbar extends React.Component{
                 <div className="links-session">
                     <h1><Link to='/'>PEXCEL</Link></h1>
                     <ul>
-                        <li><Link to="/">Discover</Link></li>
-                        <li><Link to="/">About</Link></li>
+                        {/*<li><Link to="/">Discover</Link></li>*/}
+                        {/*<li><Link to="/">About</Link></li>*/}
                     </ul>
                 </div>
             )
@@ -110,8 +110,8 @@ class Navbar extends React.Component{
                         <div className="links">
                             <h1><Link to='/'>PEXCEL</Link></h1>
                             <ul>
-                                <li><Link to="/">Discover</Link></li>
-                                <li><Link to="/">About</Link></li>
+                                {/*<li><Link to="/">Discover</Link></li>*/}
+                                {/*<li><Link to="/">About</Link></li>*/}
                             </ul>
                         </div>
                     )
@@ -130,8 +130,8 @@ class Navbar extends React.Component{
                     <div className="links-session">
                         <h1><Link to='/'>PEXCEL</Link></h1>
                         <ul>
-                            <li><Link to="/">Discover</Link></li>
-                            <li><Link to="/">About</Link></li>
+                            {/*<li><Link to="/">Discover</Link></li>*/}
+                            {/*<li><Link to="/">About</Link></li>*/}
                         </ul>
                     </div>)
             }else{
@@ -146,8 +146,8 @@ class Navbar extends React.Component{
                     <div className="links-session">
                         <h1><Link to='/'>PEXCEL</Link></h1>
                         <ul>
-                            <li><Link to="/">Discover</Link></li>
-                            <li><Link to="/">About</Link></li>
+                            {/*<li><Link to="/">Discover</Link></li>*/}
+                            {/*<li><Link to="/">About</Link></li>*/}
                         </ul>
                     </div>)
             }
