@@ -192,7 +192,7 @@ class ImageView extends React.Component{
         return(
 
             <div className="image-view-container">
-                <img src={this.props.image.img_url}/>
+                <img className="responsive" src={this.props.image.img_url}/>
                 {display}
             </div>
         )

@@ -7,8 +7,16 @@
 
 }
 
-.image-view-container img{
-  max-width: 700px;
+//.image-view-container img{
+//  max-width: 700px;
+//  height: auto;
+//  padding-left: 50px;
+//}
+//
+
+.responsive {
+  width: 100%;
+  max-width: 600px;
   height: auto;
   padding-left: 50px;
 }
@@ -246,100 +254,11 @@
   background-color: #BBBBBB;
 }
 
-
-
 .error{
   margin: 60px
 }
 
 
-//.image-view-container img{
-//  width: auto;
-//  max-height: 700px;
-//}
-
-//.image-view-container form{
-//  display: flex;
-//  flex-direction: column;
-//  justify-content: center;
-//  width: 350px;
-//  height: 600px;
-//
-//}
-
-
-//.side-block {
-//  margin: 15px 0 15px 0;
-//  display: flex;
-//  flex-direction: column;
-//}
-//
-//.side-block label {
-//  margin: 0 0 8px 0;
-//  font-size: 18px;
-//}
-//
-//.side-block input {
-//  height: 80px;
-//  font-size: 14px;
-//  padding: 2px 0 2px 20px;
-//}
-//
-//.side-block textarea {
-//  height: 300px;
-//  font-size: 14px;
-//  padding: 2px 0 2px 10px;
-//  resize: none;
-//}
-//
-//
-//.side-buttons-block {
-//  font-size: 14px;
-//  padding: 2px 0 2px 0px;
-//  margin-top: 25px;
-//  display: flex;
-//  flex-direction: column;
-//  text-align: center;
-//  height: 180px;
-//}
-//
-//
-//.side-buttons-block button {
-//  width: 100%;
-//  margin-bottom: 10px;
-//  height: 100px;
-//  display: block;
-//  font-size: 18px;
-//  background-color: #0099e5;
-//  color: #fff;
-//  border: #0099e5;
-//}
-//
-//.side-buttons-block input{
-//  background-color: #0099e5;
-//  color: #fff;
-//  border:#0099e5;
-//}
-//
-//.side-buttons-block button:hover{
-//  background-color: #00aaff;
-//}
-//
-//.side-buttons-block input:hover{
-//  background-color: #00aaff;
-//}
-//.side-buttons-block input {
-//  width: 100%;
-//  margin-bottom: 10px;
-//  height: 100px;
-//  display: block;
-//  font-size: 18px;
-//}
-//
-//
-//
-//
-//
 
 
 
