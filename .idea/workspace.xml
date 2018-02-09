@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Edit Image.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Home Page.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Image .png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Login Page.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Profile Page.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/Search Result.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Uploaded Image .png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/upload.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/upload.scss" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/ImageGrid/image_gallery_grid.jsx" afterPath="$PROJECT_DIR$/frontend/components/ImageGrid/image_gallery_grid.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/UploadImage/imageupload.jsx" afterPath="$PROJECT_DIR$/frontend/components/UploadImage/imageupload.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/UserProfile/profile.jsx" afterPath="$PROJECT_DIR$/frontend/components/UserProfile/profile.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session_background/session_background.jsx" afterPath="$PROJECT_DIR$/frontend/components/session_background/session_background.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/store/store.js" afterPath="$PROJECT_DIR$/frontend/store/store.js" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
+      <change beforePath="$PROJECT_DIR$/docs/Screen Shot 2018-02-09 at 1.34.33 PM.png" afterPath="$PROJECT_DIR$/docs/HomePageScreenShot.png" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -178,6 +161,16 @@
               <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
               <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -331,12 +324,12 @@
       <workItem from="1517581908898" duration="18253000" />
       <workItem from="1517624218468" duration="8046000" />
       <workItem from="1517674182436" duration="135269000" />
-      <workItem from="1517969160603" duration="85292000" />
+      <workItem from="1517969160603" duration="85492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="346814000" />
+    <option name="totallyTimeSpent" value="347014000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
