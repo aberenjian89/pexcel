@@ -1,24 +1,18 @@
 class Image < ApplicationRecord
   validates :img_title,:img_location,:author_id,:img_desc,:date_taken,:category, presence: true
 
+  has_attached_file :img, default_url: "default.png",styles: { medium: "300x300>", thumb: "100x100>" }
+
+  validates_attachment_content_type :img, content_type: /\Aimage\/.*\z/
+
+
+
   validate :undefined_check_img_title, on: [:create,:update]
   validate :undefined_check_img_location, on: [:create,:update]
   validate :undefined_check_img_desc, on: [:create,:update]
   validate :undefined_check_date_taken, on: [:create,:update]
   validate :undefined_check_category, on: [:create,:update]
 
-
-  has_attached_file :img, default_url: "default.png",styles: { medium: "300x300>", thumb: "100x100>" }
-                    # :storage => :s3,
-                    # :s3_host_name => ENV["s3_region"],
-                    # :bucket => ENV["s3_bucket"],
-                    # :s3_credentials => {
-                    #     :bucket => ENV["s3_bucket"],
-                    #     :access_key_id => ENV["s3_access_key_id"],
-                    #     :secret_access_key => ENV["s3_secret_access_key"],
-                    #     :s3_region => ENV["s3_region"]
-                    # }
-  validates_attachment_content_type :img, content_type: /\Aimage\/.*\z/
 
   def undefined_check_img_title
      if  img_title == "undefined"
