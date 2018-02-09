@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import Spinner from '../Ui/Spinner'
 import ImageGalleryGridContainer from '../ImageGrid/image_gallery_grid_container'
+import Footer from '../Footer/footer'
 
 
 
@@ -28,6 +29,7 @@ class HomeFeed  extends React.Component{
                     </div>
                 </div>
                 <ImageGalleryGridContainer/>
+                <Footer/>
             </div>
         )
     }

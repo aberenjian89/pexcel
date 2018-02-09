@@ -69,6 +69,11 @@
   height: 40px;
   background-color: #0099e5;
   color: #fff;
+  cursor: pointer;
+}
+
+.button-collection button:hover{
+  background-color: #00aaff;
 }
 
 .button-collection button span{
@@ -150,13 +155,20 @@
   background-color: #0099e5;
   border: 1px solid #0099e5;
   color: #fff;
-  font-size: 9px;
-  width: 60px;
-  height: 20px;
+  font-size: 15px;
+  width: 80px;
+  height: 30px;
+  cursor: pointer;
+  text-align: center;
 }
 
 .follow-button{
   padding-right: 15px;
+  font-size: 18px;
+}
+
+.follow-button:hover{
+  background-color: #00aaff;
 }
 
 .img-title{

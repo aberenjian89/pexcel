@@ -4,7 +4,7 @@ import {AuthRoute,ProtectedRoute} from "../utils/routes_util";
 import NavbarContainer from "./navbar/navbar_container";
 import {SessionBackground} from "./session_background/session_background";
 import HomeFeed from "./HomeFeed/header";
-import Spinner from './Ui/Spinner'
+import Footer from './Footer/footer'
 class App extends React.Component{
 
     constructor(props){
