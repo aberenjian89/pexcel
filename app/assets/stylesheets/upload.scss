@@ -121,7 +121,18 @@
   resize: none;
 }
 
+.upload-button{
+  cursor: pointer;
+}
 
+
+.upload-button:disabled{
+  background-color: #BBBBBB;
+}
+
+.upload-button:disabled:hover{
+  background-color: #BBBBBB;
+}
 
 
 

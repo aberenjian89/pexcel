@@ -31,7 +31,6 @@ export const createimg = (userId,image) => (
 // Update User Image
 
 export const updateuserimg = (userId,imgId,img) => {
-    debugger;
     return $.ajax({
         method: 'PATCH',
         url: `api/users/${userId}/images/${imgId}`,

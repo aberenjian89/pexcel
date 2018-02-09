@@ -13,7 +13,7 @@ class Profile extends React.Component{
 
     componentDidMount(){
         this.props.fetchuserimgs(this.props.CurrentUser.id);
-        window.renderGrid();
+        //window.renderGrid();
     }
 
     componentWillReceiveProps(nextProps){
@@ -42,32 +42,10 @@ class Profile extends React.Component{
         let followers;
         let followee;
 
+        followee = this.props.CurrentUser.number_followee;
+        followers = this.props.CurrentUser.number_followers;
 
-        if (this.props.follow.number_followee){
-            if (parseInt(this.props.follow.number_followee) > 0){
-                followee = this.props.follow.number_followee
-            } else{
-                followee = 0;
-            }
 
-            if (parseInt(this.props.follow.number_followers) > 0){
-                followers = this.props.follow.number_followers
-            }else{
-                followers = 0;
-            }
-        }else{
-            if (parseInt(this.props.CurrentUser.number_followee) > 0){
-                followee = this.props.CurrentUser.number_followee
-            } else{
-                followee = 0;
-            }
-
-            if (parseInt(this.props.CurrentUser.number_followers) > 0){
-                followers = this.props.CurrentUser.number_followers
-            }else{
-                followers = 0;
-            }
-        }
 
        return(
                <div className="profile-container">
@@ -82,9 +60,11 @@ class Profile extends React.Component{
                            </ul>
                        </div>
                    </div>
-                   <div id="gallery-container">
-                        {images}
-                    </div>
+                   <div className="profile-gallery">
+                       <section id="profile-photos">
+                           {images}
+                       </section>
+                   </div>
                </div>
 
        )

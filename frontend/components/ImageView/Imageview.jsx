@@ -3,12 +3,22 @@ import React from 'react';
 class ImageView extends React.Component{
     constructor(props){
         super(props);
-        this.state= this.props.image || {};
-
+        this.state = ({
+           img_title: this.props.image.img_title,
+           img_desc: this.props.image.img_desc,
+           img_location: this.props.image.img_location,
+            img_url: this.props.image.img_url,
+            img_category: this.props.image.category,
+            author_id : this.props.image.author_id,
+            date_taken: this.props.image.date_taken,
+            value:false
+        }) || {};
+        //this.state = this.props.image || {}
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.delete = this.delete.bind(this);
         this.handlefollow = this.handlefollow.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
 
@@ -22,6 +32,7 @@ class ImageView extends React.Component{
     }
 
     update(type){
+
         return (e) =>{
             this.setState({[type]: e.target.value})
         }
@@ -29,7 +40,7 @@ class ImageView extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
+        this.setState({value: true});
         return this.props.updateuserimg(this.props.CurrentUser.id,this.state.id,this.state)
             .then(() => this.props.history.push('/profile'))
     }
@@ -43,8 +54,34 @@ class ImageView extends React.Component{
     }
 
 
+    renderErrors(){
+        let errors="";
+
+        if (this.props.Imageerror.length > 0){
+            errors=this.props.Imageerror.map((err,id) => <li key={id}>{err}</li>)
+            if (this.state.value !==false)
+            {
+                this.setState({value: false});
+
+            }
+
+        }
+
+
+        return (
+            <ul className="errors">
+                {errors}
+            </ul>
+        )
+    }
+
+
+
+
+
     delete(e){
         e.preventDefault();
+       this.setState({value: true});
         return this.props.deleteuserimg(this.props.CurrentUser.id,this.props.image.id)
             .then(() => this.props.history.push('/profile'))
     }
@@ -70,10 +107,11 @@ class ImageView extends React.Component{
                             <label>Category:</label>
                             <input type="text" onChange={this.update("category")} value={this.state.category}/>
                             <div className="button-collection">
-                                <button><i className="fas fa-edit"></i><span>Update</span></button>
-                                <button onClick={this.delete}><i className="fas fa-trash-alt"></i><span>Delete</span></button>
+                                <button className="update-button" disabled={this.state.value}><i className="fas fa-edit"></i><span>Update</span></button>
+                                <button className="delete-button" disabled={this.state.value} onClick={this.delete}><i className="fas fa-trash-alt"></i><span>Delete</span></button>
                             </div>
                         </form>
+                        {this.renderErrors()}
                     </div>
 
                 )

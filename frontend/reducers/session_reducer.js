@@ -16,10 +16,10 @@ const SessionReducer=(state=__initialstate,action)=>{
         case RECEIVE_CURRENT_USER:
            return merge({},{CurrentUser: action.user});
         case RECEIVE_FOLLOW:
-
-            return state;
+            return merge({},state,{CurrentUser: action.follow});
         case REMOVE_FOLLOW:
-            return state;
+            newState = merge({},state,{CurrentUser: action.follow});
+            return newState;
         case REMOVE_CURRENT_USER:
            return __initialstate;
         default:

@@ -19,12 +19,11 @@ class Api::ImagesController < ApplicationController
   end
 
   def update
-
     @image = current_user.images.find(params[:id])
     if @image.update(image_params_update)
       render :show
     else
-      render json: @image.errors.full_message
+      render json: @image.errors.full_messages, status: 422
     end
   end
 
@@ -33,7 +32,7 @@ class Api::ImagesController < ApplicationController
     if @image
       render :show
     else
-      render json: @image.errors.full_message
+      render json: @image.errors.full_messages, status: 422
     end
   end
 
@@ -42,7 +41,7 @@ class Api::ImagesController < ApplicationController
     if @image.destroy
       render :show
     else
-      render json: @image.errors.full_message
+      render json: @image.errors.full_messages, status: 422
     end
   end
 
@@ -51,7 +50,7 @@ class Api::ImagesController < ApplicationController
     if @image
       render :show
     else
-      render json: @image.errors.full_message
+      render json: @image.errors.full_messages, status: 422
     end
   end
 

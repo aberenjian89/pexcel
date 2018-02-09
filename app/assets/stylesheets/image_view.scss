@@ -230,6 +230,27 @@
 
 
 
+.update-button:disabled{
+  background-color: #BBBBBB;
+}
+
+.delete-button:disabled{
+  background-color: #BBBBBB;
+}
+
+.update-button:disabled:hover{
+  background-color: #BBBBBB;
+}
+
+.delete-button:disabled:hover{
+  background-color: #BBBBBB;
+}
+
+
+
+.error{
+  margin: 60px
+}
 
 
 //.image-view-container img{

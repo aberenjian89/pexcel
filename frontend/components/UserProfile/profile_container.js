@@ -7,7 +7,6 @@ const mapStateToProps = (state) =>{
     return {
         CurrentUser: state.session.CurrentUser,
         UserImgs : Object.values(state.entities.images),
-        follow : state.entities.follow
 
     }
 };

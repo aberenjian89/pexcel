@@ -1,9 +1,8 @@
 import React from 'react'
 import ImageIndexItem from '../UserProfile/ImageIndexItems/image_index_item';
+import StackGrid from 'react-stack-grid'
 import Masonry from 'react-masonry-component'
-import MasonryInfiniteScroller from 'react-masonry-infinite'
-
-
+import {Link} from 'react-router-dom'
 
 class ImageGalleryGrid extends React.Component{
     constructor(props){
@@ -35,29 +34,13 @@ class ImageGalleryGrid extends React.Component{
 
         }
 
-        let masonryOptions = {
-            transitionDuration: 1000
-        };
-
         return(
 
             <div className="gallery">
-                {/*<div>*/}
-                    {/*/!*<ul className="gallery-menu">*!/*/}
-                        {/*/!*<li>People</li>*!/*/}
-                        {/*/!*<li>Landscapes</li>*!/*/}
-                        {/*/!*<li>Nature</li>*!/*/}
-                        {/*/!*<li>City</li>*!/*/}
-                        {/*/!*<li>Animals</li>*!/*/}
-                    {/*/!*</ul>*!/*/}
-                {/*</div>*/}
                 <h1>The Top Photos</h1>
-                <div id="gallery-container">
-                    {/*<ul className="image-list">*/}
-                        {/*{images}*/}
-                    {/*</ul>*/}
+                <section id="photos">
                     {images}
-                </div>
+                </section>
             </div>
         );
     }

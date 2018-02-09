@@ -15,8 +15,8 @@
             "id": <%= current_user.id %>,
             "username": "<%= current_user.username%>",
             "img_url": "<%= current_user.img_url %>",
-            "number_followee": "<%= Follow.where("followee_id = ?",current_user.id).count%>",
-            "number_followers": "<%= Follow.where("follower_id = ?",current_user.id).count%>"
+            "number_followee": <%= Follow.where("followee_id = ?",current_user.id).count%>,
+            "number_followers": <%= Follow.where("follower_id = ?",current_user.id).count%>
         };
 
         function renderGrid() {

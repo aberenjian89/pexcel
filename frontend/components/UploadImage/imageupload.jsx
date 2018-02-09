@@ -37,8 +37,13 @@ class ImageUpload extends React.Component {
 
 
     handlesubmit(e){
-        e.preventDefault();
+        // e.preventDefault();
+        // let $el = $(e.target);
+        // $el.contextmenu = "  Uploading ...";
+        // e.currentTarget.disabled = true ;
+
         this.setState({value: true});
+
         let formData = new FormData();
         formData.append("image[img_title]",this.state.img_title);
         formData.append("image[img_desc]", this.state.img_desc);
@@ -64,6 +69,7 @@ class ImageUpload extends React.Component {
         let errors="";
         if (this.props.Imageerror.length > 0){
             errors=this.props.Imageerror.map((err,id) => <li key={id}>{err}</li>)
+            this.setState({value: false})
         }
 
         return (
@@ -81,7 +87,7 @@ class ImageUpload extends React.Component {
 
             action = (
                 <div className="button-container">
-                    <label className="fileContainer"><input id="file" type="file" onChange={this.updatefile}/><i class="fas fa-image"></i><span>Choose a file</span></label>
+                    <label className="fileContainer"><input id="file" type="file" onChange={this.updatefile}/><i className="fas fa-image"></i><span>Choose a file</span></label>
                 </div>);
         }else{
 
@@ -100,7 +106,7 @@ class ImageUpload extends React.Component {
                             <input type="text" onChange={this.update("date_taken")}/>
                             <label>Category:</label>
                             <input type="text" onChange={this.update("category")}/>
-                            <button disabled={this.state.value} onClick={this.handlesubmit}><i className="fas fa-upload"></i><span>Upload</span></button>
+                            <button className="upload-button" disabled={this.state.value} onClick={this.handlesubmit}><i className="fas fa-upload"></i><span>Upload</span></button>
                         </form>
                         {this.renderErrors()}
                     </div>

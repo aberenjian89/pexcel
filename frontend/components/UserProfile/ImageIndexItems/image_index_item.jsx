@@ -24,13 +24,11 @@ class ImageIndexItem extends React.Component{
 
     render(){
         return (
-            <div className="photo_thumbnail">
-                <div>
-                    <Link to={`/image/${this.props.image.id}`}>
-                        <img src={this.props.image.img_url}/>
-                    </Link>
-                </div>
-            </div>
+            <li>
+                <Link  to={`/image/${this.props.image.id}`}>
+                    <img className="photo-index-child" src={this.props.image.img_url_small}/>
+                </Link>
+            </li>
         )
     }
 }
