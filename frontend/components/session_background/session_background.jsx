@@ -4,6 +4,7 @@ import SignUpFormContainer from '../SignUpForm/signup_form_container'
 import ProfileContainer from '../UserProfile/profile_container'
 import ImageViewContainer from '../ImageView/imageview_container'
 import ImageUploadContainer from '../UploadImage/imageupload_container'
+import Footer from "../Footer/footer";
 
 
 export const SessionBackground = ({match}) =>{

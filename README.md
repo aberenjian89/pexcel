@@ -1,24 +1,6 @@
-# README
+# PEXCEL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pexcel is a web application similar 500px which allow user to upload
+their own photos  and share it with other users. it will also allow user explore other 
+user's photos. User also able to add/edit image information.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

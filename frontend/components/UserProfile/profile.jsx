@@ -13,7 +13,7 @@ class Profile extends React.Component{
 
     componentDidMount(){
         this.props.fetchuserimgs(this.props.CurrentUser.id);
-        //window.renderGrid();
+
     }
 
     componentWillReceiveProps(nextProps){

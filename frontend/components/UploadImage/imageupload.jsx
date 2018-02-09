@@ -50,7 +50,6 @@ class ImageUpload extends React.Component {
         formData.append("image[img_location]", this.state.img_location);
         formData.append("image[date_taken]", this.state.date_taken);
         formData.append("image[category]",this.state.category);
-        console.log(this.state.image);
         formData.append("image[img]", this.state.image);
 
         return this.props.createimg(this.props.UserId,formData)
@@ -106,6 +105,13 @@ class ImageUpload extends React.Component {
                             <input type="text" onChange={this.update("date_taken")}/>
                             <label>Category:</label>
                             <input type="text" onChange={this.update("category")}/>
+                            {/*<select onChange={this.update("category")}>*/}
+                                {/*<option selected>Uncategorized</option>*/}
+                                {/*<option value="volvo">Volvo</option>*/}
+                                {/*<option value="saab">Saab</option>*/}
+                                {/*<option value="opel">Opel</option>*/}
+                                {/*<option value="audi">Audi</option>*/}
+                            {/*</select>*/}
                             <button className="upload-button" disabled={this.state.value} onClick={this.handlesubmit}><i className="fas fa-upload"></i><span>Upload</span></button>
                         </form>
                         {this.renderErrors()}

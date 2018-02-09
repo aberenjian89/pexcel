@@ -12,7 +12,6 @@ class ImageGalleryGrid extends React.Component{
 
     componentDidMount(){
         this.props.fetchallimage();
-       // window.renderGrid();
 
     }
 
