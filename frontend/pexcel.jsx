@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-import Root from './components/root'
+import Root from './components/root';
 
 
 import {FetchImg} from "./actions/image_action";
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             session:{
                 CurrentUser: window.currentUser
             }
-        }
+        };
     }
     const store = configureStore(preloadstate);
     window.store=store;
@@ -23,5 +23,5 @@ document.addEventListener("DOMContentLoaded",()=>{
     window.getState = store.getState;
     window.FetchImg = FetchImg;
     ReactDOM.render(<Root store={store}/>
-        ,document.getElementById('root'))
+        ,document.getElementById('root'));
 });

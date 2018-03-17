@@ -1,0 +1,250 @@
+body{
+  height: 100% !important;
+}
+.wrapper{
+  position: relative;
+}
+
+.heading-container{
+  background: linear-gradient(rgba(black,.7),
+          rgba(black,.7)),
+  url("https://s3.amazonaws.com/pexcel-aa/images/imgs/000/000/Web-img/tianjin-2185510_1920.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+
+  .header-content{
+    display: flex;
+    justify-content: center;
+    .header{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      span:first-child{
+        font-size: 40px;
+        font-weight: 400;
+      }
+      span:nth-child(2){
+        font-size: 25px;
+        font-weight: 400;
+      }
+      span{
+        margin-bottom: 5%;
+      }
+      span h1, span h2, a{
+        font-family: 'Raleway', sans-serif;
+        color: #EFEFEF;
+      }
+      a{
+        border:1px solid #EFEFEF;
+        padding: 20px 40px 20px 40px;
+        border-radius: 30px;
+      }
+      a:hover{
+        background: #EFEFEF;
+        color:#2E2F30;
+      }
+    }
+  }
+}
+
+
+.nav{
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 5px 10px 30px;
+  .logo{
+    display: flex;
+    color: white;
+    width: 40%;
+    justify-content: flex-start;
+    span a{
+      font-family: 'Raleway', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #EFEFEF;
+    }
+    a:hover{
+      color: #ff6600;
+    }
+  }
+
+  .navbar {
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    width: 40%;
+    li a{
+      color: #EFEFEF;
+      font-family: 'Raleway', sans-serif;
+      font-size: 18px;
+      padding-bottom: 20px;
+      line-height: 2;
+      transition: border-bottom-width 0.3s ease-in-out;
+
+    }
+
+    a:hover{
+      border-bottom: 1.5px solid #ff6600;
+      color: #ff6600;
+    }
+
+  }
+}
+
+.footer-container{
+  background: linear-gradient(rgba(black,.7),
+          rgba(black,.7)),
+  url("https://s3.amazonaws.com/pexcel-aa/images/imgs/000/000/Web-img/pexels-photo-915972+(1).jpeg");
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1300px;
+
+  .footer-content{
+
+    background: rgba(black,0.5);
+    height: 60%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 15px 10px 15px 10px ;
+    .menus{
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 5% ;
+      .li-menu{
+        width: 20%;
+        justify-content: center;
+      }
+      span{
+        color: #EFEFEF;
+        font-family: 'Raleway', sans-serif;
+
+      }
+    }
+    .menu-content{
+      display: flex;
+      margin-left: 8%;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      li {
+        margin-bottom: 5%;
+        font-family: 'Raleway', sans-serif;
+
+        color: #EFEFEF;
+      }
+    }
+
+  }
+
+}
+
+
+.gallery{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 900px;
+
+  display: none;
+  padding: 2rem;
+
+  @media screen and (min-width: 768px) {
+    padding: 4rem;
+  }
+
+  @supports(display: grid) {
+    display: block;
+  }
+
+
+  .grid{
+    display: grid;
+    grid-template-columns: 20% auto;
+
+
+  }
+}
+
+
+
+@media (max-width: 800px) {
+  .header{
+    span:first-child{
+      font-size: 20px !important;
+    }
+    span:nth-child(2){
+      font-size: 15px !important;
+    }
+    a{
+      font-size: 12px !important;
+      padding: 15px 20px 15px 20px !important;
+    }
+  }
+
+  .navbar{
+    li a{
+      font-size: 15px !important;
+      line-height: 1.75 !important;
+    }
+  }
+
+  .logo{
+    span {
+      font-size: 20px !important;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .header{
+    span:first-child{
+      font-size: 17px !important;
+    }
+    span:nth-child(2){
+      font-size: 10px !important;
+    }
+    a{
+      font-size: 12px !important;
+      padding: 15px 20px 15px 20px !important;
+    }
+  }
+
+  .navbar{
+    width: 60% !important;
+    li a{
+      font-size: 15px !important;
+      line-height: 1.5 !important;
+    }
+  }
+
+  .logo{
+    width: auto !important;
+    span {
+      font-size: 20px !important;
+    }
+  }
+}
+
+
+
+
+

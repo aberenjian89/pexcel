@@ -17,7 +17,7 @@ const configureStore=(preloadedstate={})=>(
     createStore(
         RootReducer,
         preloadedstate,
-        applyMiddleware(thunk)
+        applyMiddleware(...middlewares)
     )
 );
 

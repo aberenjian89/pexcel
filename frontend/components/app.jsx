@@ -1,10 +1,8 @@
 import React from 'react';
 import {Route,Switch,Redirect} from 'react-router-dom'
 import {AuthRoute,ProtectedRoute} from "../utils/routes_util";
-import NavbarContainer from "./navbar/navbar_container";
-import {SessionBackground} from "./session_background/session_background";
-import HomeFeed from "./HomeFeed/header";
-import Footer from './Footer/footer'
+import Landing from './splash/landing'
+
 class App extends React.Component{
 
     constructor(props){
@@ -15,14 +13,8 @@ class App extends React.Component{
     render(){
         return (
             <div>
-                <NavbarContainer/>
                 <Switch>
-                    <Route exact path="/" component={HomeFeed}/>
-                    <Route path="/image/:image_id" component={SessionBackground}/>
-                    <ProtectedRoute path="/upload/:user_id/image" component={SessionBackground}/>
-                    <ProtectedRoute exact  path="/profile" component={SessionBackground} />
-                    <AuthRoute exect path="/login" component={SessionBackground}/>
-                    <AuthRoute path="/signup" component={SessionBackground} />
+                    <Route to="/" component={Landing}/>
                     <Redirect to="/"/>
                 </Switch>
             </div>
