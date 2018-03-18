@@ -1,0 +1,50 @@
+.auth-container {
+
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex: 1;
+  height: 100vh;
+
+  .auth-image {
+    background: linear-gradient(rgba(black, .9),
+            rgba(black, .7)),
+    url("https://s3.amazonaws.com/pexcel-aa/images/imgs/000/000/Web-img/pexels-photo-593316.jpeg");
+    background-size: cover;
+    background-position: 95% 20%;
+    overflow: hidden;
+    width: 60%;
+    height: 100vh;
+    border: 1px solid black;
+  }
+
+
+  .auth-form{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    div{
+      display: flex;
+
+    }
+  }
+
+
+
+
+
+
+
+
+  @media (max-width: 800px) {
+    .auth-image {
+      width: 50% !important;
+      background-position: 100% 20% !important;
+    }
+  }
+
+
+
+
+}

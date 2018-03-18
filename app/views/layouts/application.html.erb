@@ -26,27 +26,14 @@
   </head>
 
   <body>
+  <div class="spinner-container">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+
     <%= yield %>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script>
-        $(function(){
-
-            var $container = $('#container');
-            console.log("Hello");
-            $container.imagesLoaded( function(){
-                $container.masonry({
-                    itemSelector : '.masonryImage'
-                });
-            });
-
-        });
-    </script>
-    <script>
-        $('.grid').masonry({
-            itemSelector: '.grid-item',
-            columnWidth: 160
-        });
-
-    </script>
   </body>
 </html>
