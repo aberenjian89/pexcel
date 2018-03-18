@@ -42,7 +42,10 @@ class Gallery extends React.Component{
         return (
 
             <div className="gallery-container">
-
+                <div className="gallery-header">
+                    <span>The top photos, chosen by you</span>
+                    <span>Discover what’s trending according to photographers around the world</span>
+                </div>
                 <div className="gallery">
                     <main className="main">
                         {images}
