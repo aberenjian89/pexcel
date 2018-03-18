@@ -40,10 +40,14 @@ class Gallery extends React.Component{
         }
 
         return (
-            <div className="gallery">
-                <main className="main">
-                    {images}
-                </main>
+
+            <div className="gallery-container">
+
+                <div className="gallery">
+                    <main className="main">
+                        {images}
+                    </main>
+                </div>
             </div>
         );
     }

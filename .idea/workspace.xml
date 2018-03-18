@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/jquery.montage.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/jquery.montage.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/js/jquery.montage.js.bak" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/js/jquery.montage.min.js.bak" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/slideshow.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/landing.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/landing.scss" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       <change beforePath="$PROJECT_DIR$/frontend/components/splash/Home_Gallery/gallery.jsx" afterPath="$PROJECT_DIR$/frontend/components/splash/Home_Gallery/gallery.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -38,14 +31,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4764025">
+    <splitter split-orientation="horizontal" split-proportion="0.6669635">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="gallery.jsx" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/components/splash/Home_Gallery/gallery.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="418">
-                  <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+                <state relative-caret-position="343">
+                  <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -58,8 +51,8 @@
           <file leaf-file-name="landing.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/landing.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="307">
-                  <caret line="182" column="17" lean-forward="false" selection-start-line="182" selection-start-column="17" selection-end-line="182" selection-end-column="17" />
+                <state relative-caret-position="57">
+                  <caret line="192" column="52" lean-forward="false" selection-start-line="192" selection-start-column="52" selection-end-line="192" selection-end-column="52" />
                   <folding />
                 </state>
               </provider>
@@ -180,7 +173,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-148" />
+    <option name="x" value="-89" />
     <option name="y" value="23" />
     <option name="width" value="1428" />
     <option name="height" value="737" />
@@ -437,12 +430,12 @@
       <workItem from="1521174572084" duration="17707000" />
       <workItem from="1521227187142" duration="4965000" />
       <workItem from="1521238585416" duration="13782000" />
-      <workItem from="1521318614984" duration="7117000" />
+      <workItem from="1521318614984" duration="8992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="452225000" />
+    <option name="totallyTimeSpent" value="454100000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -454,7 +447,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-148" y="23" width="1428" height="737" extended-state="0" />
+    <frame x="-89" y="23" width="1428" height="737" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1897547" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -726,18 +719,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/splash/Home_Gallery/gallery.jsx">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/landing.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="57">
+          <caret line="192" column="52" lean-forward="false" selection-start-line="192" selection-start-column="52" selection-end-line="192" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/landing.scss">
+    <entry file="file://$PROJECT_DIR$/frontend/components/splash/Home_Gallery/gallery.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="182" column="17" lean-forward="false" selection-start-line="182" selection-start-column="17" selection-end-line="182" selection-end-column="17" />
+        <state relative-caret-position="343">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
