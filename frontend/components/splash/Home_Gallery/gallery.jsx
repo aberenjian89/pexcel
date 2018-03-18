@@ -1,5 +1,4 @@
 import React from 'react';
-import Masonary from 'react-masonry-component'
 
 class Gallery extends React.Component{
     constructor(props) {
@@ -9,34 +8,44 @@ class Gallery extends React.Component{
 
     componentDidMount(){
         if (this.state.images.length <= 0){
-            this.props.fetchimages()
+            this.props.fetchimages();
         }
     }
 
+
     componentWillReceiveProps(nextProps){
-        this.setState({images:nextProps.images})
+        this.setState({images:nextProps.images});
     }
 
 
     render(){
         let images =[];
+        let flag =false;
+        let fclass ="";
         if (this.state.images){
             images =this.state.images.map((image)=>{
+                if (flag){
+                    fclass="figure1";
+                    flag= false;
+                }else{
+                    fclass="figure2";
+                    flag=true
+                }
                 return(
-                    <div key={image.id} className="img-container">
-                         <img src={image.img_url_small}/>
-                    </div>
-                )
+                        <figure key={image.id} className={fclass}>
+                            <img className="figure-img" src={image.img_url}/>
+                        </figure>
+                );
             });
         }
 
         return (
-            <section className="gallery">
-                <div className="grid">
-                 {images}
-                </div>
-            </section>
-        )
+            <div className="gallery">
+                <main className="main">
+                    {images}
+                </main>
+            </div>
+        );
     }
 }
 

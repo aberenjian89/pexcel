@@ -5,14 +5,13 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 
     <%= javascript_include_tag 'application' %>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
-
-    <% if current_user %>
+  <% if current_user %>
       <script>
         window.currentUser = {
             "id": <%= current_user.id %>,
@@ -28,6 +27,26 @@
 
   <body>
     <%= yield %>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script>
+        $(function(){
 
+            var $container = $('#container');
+            console.log("Hello");
+            $container.imagesLoaded( function(){
+                $container.masonry({
+                    itemSelector : '.masonryImage'
+                });
+            });
+
+        });
+    </script>
+    <script>
+        $('.grid').masonry({
+            itemSelector: '.grid-item',
+            columnWidth: 160
+        });
+
+    </script>
   </body>
 </html>
