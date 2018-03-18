@@ -3,48 +3,288 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  flex: 1;
   height: 100vh;
 
   .auth-image {
-    background: linear-gradient(rgba(black, .9),
+    background: linear-gradient(rgba(black, .7),
             rgba(black, .7)),
     url("https://s3.amazonaws.com/pexcel-aa/images/imgs/000/000/Web-img/pexels-photo-593316.jpeg");
     background-size: cover;
     background-position: 95% 20%;
     overflow: hidden;
-    width: 60%;
+    width: 70%;
     height: 100vh;
     border: 1px solid black;
+
+    .quote-img{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #ff6600;
+
+      span{
+        font-size: 40px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+      }
+
+      span:first-child{
+        margin-bottom: 5%;
+      }
+    }
+
+
   }
 
 
-  .auth-form{
+  .auth-forms{
     display: flex;
     flex-direction: column;
     height: 100vh;
+    width: 60%;
     justify-content: center;
-    div{
+
+    .main-container{
       display: flex;
+      flex-direction: column;
+      height: 80%;
+      animation:  fadein 3s;
+      transition: animation 0.3s ease-out;
+    }
+
+    .hidden-container{
+      animation: fadeout 5s;
+    }
+
+    .auth-header{
+      display: flex;
+      justify-content: center;
+      font-family: 'Raleway', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+
+    .form-container{
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+     form{
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      height: 80%;
+      align-items: center;
+       div{
+        display: flex;
+        flex-direction: column;
+        height: 16%;
+        width: 60%;
+        margin-bottom: 5%;
+        label{
+          font-family: 'Raleway', sans-serif;
+          color: #666666;
+          font-size: 15px;
+          font-weight: 400;
+          margin-bottom: 4%;
+        }
+
+         input[type="password"],input[type="text"]{
+           border: none;
+           border-bottom: 1px solid #999999;
+           font-family: 'Raleway', sans-serif;
+           color: #2E2F30;
+           max-width: 90%;
+           min-width: 50%;
+           height: 40%;
+           font-size: 15px;
+           font-weight: 400;
+           padding-left: 5px;
+         }
+
+         input[type="password"]:focus,input[type="text"]:focus{
+           border-bottom: 1px solid #ff6600;
+         }
+
+      }
+      .signin{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+        width: 80%;
+        input{
+          border:none;
+          cursor:pointer;
+        }
+        input,a{
+          font-family: 'Raleway', sans-serif;
+          font-weight: 400;
+          font-size: 15px;
+          color: #666666 ;
+        }
+
+        a{
+          padding: 10px 30px 10px 30px;
+          border: 1px solid #666666;
+          border-radius: 30px;
+          cursor: pointer;
+        }
+        
+        input:hover{
+          color: #ff6600
+        }
+
+        a:hover{
+          background: #ff6600;
+          border: 1px solid #ff6600;
+          color: #EFEFEF;
+        }
+      }
+
+
+       .signup{
+         display: flex;
+         flex-direction: row;
+         justify-content: space-around;
+         align-content: center;
+         align-items: center;
+         width: 70%;
+         input{
+           border:none;
+           cursor:pointer;
+         }
+         input,a{
+           font-family: 'Raleway', sans-serif;
+           font-weight: 400;
+           font-size: 15px;
+           color: #666666 ;
+         }
+
+         a{
+           padding: 10px 30px 10px 30px;
+           border: 1px solid #666666;
+           border-radius: 30px;
+           cursor: pointer;
+         }
+
+         input:hover{
+           color: #ff6600
+         }
+
+         a:hover{
+           background: #ff6600;
+           border: 1px solid #ff6600;
+           color: #EFEFEF;
+         }
+       }
+
 
     }
   }
-
-
-
-
 
 
 
 
   @media (max-width: 800px) {
+
+    .auth-header{
+      font-size: 20px !important;
+    }
+
     .auth-image {
-      width: 50% !important;
+      width: 70% !important;
       background-position: 100% 20% !important;
     }
+
+    .form-container{
+      form{
+        label{
+          font-size: 12px !important;
+        }
+        input{
+          font-size: 12px !important;
+        }
+
+        .signin{
+          input,a{
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            color: #666666 ;
+          }
+          a{
+            padding: 10px 20px 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+          }
+        }
+
+        .signup{
+          input,a{
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            color: #666666 ;
+          }
+          a{
+            padding: 10px 5px 10px 5px;
+            border-radius: 30px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
   }
+}
 
 
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-o-keyframes fadein { /* Opera */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
 
 
+@keyframes fadeout {
+  from {
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+}
+
+@-moz-keyframes fadein { /* Firefox */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
 }

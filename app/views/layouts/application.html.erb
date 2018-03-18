@@ -21,6 +21,8 @@
             "number_followers": <%= Follow.where("follower_id = ?",current_user.id).count%>
         };
 
+
+
       </script>
     <% end %>
   </head>

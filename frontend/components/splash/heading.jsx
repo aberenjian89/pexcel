@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 
 export const Heading = () =>(
     <div className="heading-container">
@@ -11,7 +11,7 @@ export const Heading = () =>(
                 <span>
                     <h2>Find your home among the world's best photographers</h2>
                 </span>
-                <a href="#">JOIN PEXCEL</a>
+                <Link to="/signup">JOIN PEXCEL</Link>
             </div>
         </div>
     </div>
