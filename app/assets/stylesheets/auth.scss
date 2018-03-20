@@ -6,7 +6,7 @@
   height: 100vh;
 
   .auth-image {
-    background: linear-gradient(rgba(black, .7),
+    background: linear-gradient(rgba(black, .5),
             rgba(black, .7)),
     url("https://s3.amazonaws.com/pexcel-aa/images/imgs/000/000/Web-img/pexels-photo-593316.jpeg");
     background-size: cover;
@@ -72,6 +72,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+
     }
      form{
       display: flex;
@@ -104,7 +105,10 @@
            font-size: 15px;
            font-weight: 400;
            padding-left: 5px;
+
          }
+
+
 
          input[type="password"]:focus,input[type="text"]:focus{
            border-bottom: 1px solid #ff6600;
@@ -128,7 +132,6 @@
           font-size: 15px;
           color: #666666 ;
         }
-
         a{
           padding: 10px 30px 10px 30px;
           border: 1px solid #666666;
@@ -158,6 +161,11 @@
          input{
            border:none;
            cursor:pointer;
+         }
+
+         input[name="username"]{
+           //background-image: url("https://use.fontawesome.com/releases/v5.0.8/svgs/solid/user.svg");
+           background-color: #ff6600;
          }
          input,a{
            font-family: 'Raleway', sans-serif;
