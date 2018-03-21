@@ -54,6 +54,21 @@
       transition: animation 0.3s ease-out;
     }
 
+    .error-container{
+      display: flex;
+      justify-content: center;
+      height: 5%;
+      margin-top: 5%;
+    }
+
+
+    .error-signup-container{
+      display: flex;
+      justify-content: center;
+      height: 10%;
+      margin-top: 6%;
+    }
+
     .hidden-container{
       animation: fadeout 5s;
     }

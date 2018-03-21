@@ -9,13 +9,17 @@ class Newuser extends React.Component{
         this.state = {username: "",password: "",email: ""};
         this.signuphandle = this.signuphandle.bind(this);
         this.formHandle = this.formHandle.bind(this);
+    }
 
-
+    componentWillMount(){
+        if (this.props.errors.length > 0){
+            this.props.ClearError();
+        }
     }
 
 
     signuphandle(){
-        this.props.CreateUser(this.state)
+       return this.props.CreateUser(this.state)
             .then((user) => this.props.history.push("/profile"))
     }
 
@@ -29,10 +33,25 @@ class Newuser extends React.Component{
 
 
     render(){
+
+        let errors = "";
+        if (this.props.errors){
+            errors=this.props.errors.map((err,idx)=>{
+                return (
+                    <li key={idx}>{err}</li>
+                )
+            })
+        }
+
         return(
             <div className="main-container">
                 <div className="auth-header">
                     <span>Sign Up</span>
+                </div>
+                <div className="error-signup-container">
+                    <ul>
+                        {errors}
+                    </ul>
                 </div>
                 <div className="form-container">
                     <form>
