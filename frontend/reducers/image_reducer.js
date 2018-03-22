@@ -1,4 +1,4 @@
-import {RECEIVE_ALL_IMAGES,RECEIVE_IMAGE,REMOVE_IMAGE} from "../actions/image_action";
+import {RECEIVE_ALL_IMAGES,RECEIVE_IMAGE,REMOVE_IMAGE,RECEIVE_USER_IMAGES} from "../actions/image_action";
 import merge from 'lodash/merge'
 
 const ImageReducer = (state={},action)=>{

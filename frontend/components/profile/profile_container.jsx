@@ -7,7 +7,8 @@ import {withRouter} from 'react-router-dom'
 
 const mapStateToProps = (state,{match}) =>(
     {
-        CurrentUser: state.session.CurrentUser
+        CurrentUser: state.session.CurrentUser,
+        UserImgs: state.entities.imageauthor
 
     }
 );

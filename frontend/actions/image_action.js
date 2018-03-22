@@ -3,11 +3,12 @@ export const RECEIVE_ALL_IMAGES = "RECEIVE_ALL_IMAGES";
 export const RECEIVE_IMAGE = "RECEIVE_IMAGE";
 export const REMOVE_IMAGE = "REMOVE_IMAGE";
 export const RECEIVE_IMAGE_ERROR = "RECEIVE_IMAGE_ERROR";
+export const RECEIVE_USER_IMAGES = "RECEIVE_USER_IMAGES";
 
 
 export const FetchUserImgs = (UserId) => dispatch =>(
     APIImage.fetchuserimgs(UserId)
-        .then((images) => dispatch(ReceiveAllImages(images)),
+        .then((images) => dispatch(RecieveUserImages(images)),
         err => dispatch(ReceiveImageError(err.responseJSON)))
 );
 
@@ -64,6 +65,12 @@ const ReceiveImage = (image) =>({
 const RemoveImage = (imgId) => ({
     type: REMOVE_IMAGE,
     imgId
+});
+
+
+const RecieveUserImages = (images)=>({
+    type : RECEIVE_USER_IMAGES,
+    images
 });
 
 

@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/auth.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/auth.scss" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" />
+      <change beforePath="$PROJECT_DIR$/frontend/actions/image_action.js" afterPath="$PROJECT_DIR$/frontend/actions/image_action.js" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/profile/gallery.jsx" afterPath="$PROJECT_DIR$/frontend/components/profile/gallery.jsx" />
       <change beforePath="$PROJECT_DIR$/frontend/components/profile/profile.jsx" afterPath="$PROJECT_DIR$/frontend/components/profile/profile.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/settings.jsx" afterPath="$PROJECT_DIR$/frontend/components/profile/settings.jsx" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/profile/profile_container.jsx" afterPath="$PROJECT_DIR$/frontend/components/profile/profile_container.jsx" />
+      <change beforePath="$PROJECT_DIR$/frontend/reducers/image_author_reducer.js" afterPath="$PROJECT_DIR$/frontend/reducers/image_author_reducer.js" />
+      <change beforePath="$PROJECT_DIR$/frontend/reducers/image_reducer.js" afterPath="$PROJECT_DIR$/frontend/reducers/image_reducer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -34,11 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="profile.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profile.scss">
+      <file leaf-file-name="profile.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="139" column="35" lean-forward="true" selection-start-line="139" selection-start-column="35" selection-end-line="139" selection-end-column="35" />
+            <state relative-caret-position="218">
+              <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -88,9 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/components/session_background/session_background.jsx" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/upload.scss" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/models/image.rb" />
         <option value="$PROJECT_DIR$/frontend/components/UploadImage/imageupload.jsx" />
@@ -131,14 +130,17 @@
         <option value="$PROJECT_DIR$/frontend/actions/session_action.js" />
         <option value="$PROJECT_DIR$/frontend/components/session/newuser_form.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/session/login_form.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/profile/profile_container.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/profile/gallery.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/profile/discover.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/app.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/profile/settings.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/profile/profile.jsx" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/auth.scss" />
+        <option value="$PROJECT_DIR$/frontend/components/profile/profile_container.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/profile/gallery.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/profile/profile.jsx" />
+        <option value="$PROJECT_DIR$/frontend/actions/image_action.js" />
+        <option value="$PROJECT_DIR$/frontend/reducers/image_reducer.js" />
+        <option value="$PROJECT_DIR$/frontend/reducers/image_author_reducer.js" />
       </list>
     </option>
   </component>
@@ -225,6 +227,12 @@
               <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
               <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -247,6 +255,12 @@
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="splash" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -426,12 +440,12 @@
       <workItem from="1521485379061" duration="3952000" />
       <workItem from="1521569166048" duration="4414000" />
       <workItem from="1521668812016" duration="13082000" />
-      <workItem from="1521698762918" duration="10349000" />
+      <workItem from="1521698762918" duration="12345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="507055000" />
+    <option name="totallyTimeSpent" value="509051000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -525,15 +539,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/cable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/cycler.js" />
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/jssor.slider-27.1.0.min.js" />
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/css_reset.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -713,13 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/actions/image_action.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-118">
-          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/session/login_container.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -731,16 +729,6 @@
     <entry file="file://$PROJECT_DIR$/app/assets/images/default.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile_container.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="false" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/landing.scss">
@@ -791,11 +779,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile.jsx">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/auth.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        <state relative-caret-position="-1548">
+          <caret line="120" column="36" lean-forward="false" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profile.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1098">
+          <caret line="139" column="35" lean-forward="true" selection-start-line="139" selection-start-column="35" selection-end-line="139" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile_container.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/reducers/entities_reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/reducers/image_reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="33" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#106#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -807,18 +831,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/auth.scss">
+    <entry file="file://$PROJECT_DIR$/frontend/actions/image_action.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1548">
-          <caret line="120" column="36" lean-forward="false" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
+        <state relative-caret-position="-490">
+          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profile.scss">
+    <entry file="file://$PROJECT_DIR$/frontend/reducers/image_author_reducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="139" column="35" lean-forward="true" selection-start-line="139" selection-start-column="35" selection-end-line="139" selection-end-column="35" />
+        <state relative-caret-position="270">
+          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
           <folding />
         </state>
       </provider>
