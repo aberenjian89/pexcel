@@ -28,20 +28,34 @@
   }
   .link-container{
     display: flex;
-    justify-content:flex-end;
+    justify-content:space-between;
     margin-right: 4%;
+    div{
+      display: flex;
+      width: 40%;
+      margin-left: 5%;
+      line-height: 2.9;
+      span{
+        font-family: 'Raleway', sans-serif;
+        color: #ff6600;
+        animation: fadein 2s;
+        font-size: 15px;
+        font-weight: 400;
+      }
+    }
+
 
     ul{
       display: flex;
       width: 40%;
       justify-content: space-between;
-      margin-bottom: 2%;
+      line-height: 2.5;
       li {
         transition: transform 0.3s ease-in-out;
         span{
           font-family: 'Raleway', sans-serif;
           color: #EFEFEF;
-          padding-bottom: 15%;
+          padding-bottom: 12%;
           transition: border-bottom 0.3s ease-in-out;
         }
 
@@ -164,7 +178,67 @@
       }
     }
   }
+}
 
+.user-gallery-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .user-gallery{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    margin-top: 2%;
+    .main{
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .figure-img{
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: fadein 5s;
+    }
+
+
+    @media (min-width: 600px){
+      main{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+      }
+
+      .user-figure1{
+        grid-column: span 2;
+        grid-row: span 3;
+      }
+
+      .user-figure2{
+        grid-column: span 2;
+      }
+
+    }
+
+    @media (max-width: 600px){
+      main{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+      }
+
+      .user-figure1{
+        grid-column: span 2;
+        grid-row: span 3;
+      }
+
+      .user-figure2{
+        grid-column: span 2;
+      }
+    }
+  }
 }
 
 
@@ -211,11 +285,18 @@
 @media (max-width: 500px) {
   .link-container {
     justify-content: flex-end !important;
+    div{
+      line-height: 2.8 !important;
+      span{
+        font-size: 13px;
+        line-height: 2.8;
+      }
+    }
     ul {
       width: 80% !important;
       li {
         span {
-          font-size: 16px !important;
+          font-size: 13px !important;
         }
       }
     }
@@ -226,6 +307,33 @@
       width: 50% !important;
       display: flex;
       object-fit: cover;
+    }
+  }
+}
+
+
+@media (max-width: 400px){
+  .nav-profile{
+    .logo{
+      span a{
+        font-size: 15px !important;
+      }
+    }
+  }
+  .link-container{
+    div{
+      span{
+        font-size: 10px !important;
+        line-height: 4.5;
+
+      }
+    }
+    ul{
+      li{
+        span{
+          font-size: 10px !important;
+        }
+      }
     }
   }
 }

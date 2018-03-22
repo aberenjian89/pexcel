@@ -8,7 +8,7 @@ import Settings from './settings';
 class Profile extends React.Component{
     constructor(props){
         super(props);
-        this.state = {display: <Gallery CurrentUser={this.props.CurrentUser}/>,
+        this.state = {display: <Discover/>,
                       UserImgs: ""};
         this.logout = this.logout.bind(this);
         this.switch = this.switch.bind(this);
@@ -25,8 +25,6 @@ class Profile extends React.Component{
     componentWillReceiveProps(nextProps){
         this.setState({UserImgs: nextProps.UserImgs})
     }
-
-
 
 
 
@@ -57,6 +55,9 @@ class Profile extends React.Component{
                         <span><Link to="/">PEXCEL</Link></span>
                     </div>
                     <div className="link-container">
+                        <div>
+                            <span>Welcome {this.props.CurrentUser.username}</span>
+                        </div>
                         <ul>
                             <li><span onClick={this.switch("discover")}>Discover</span></li>
                             <li><span onClick={this.switch("gallery")}>Gallery</span></li>
