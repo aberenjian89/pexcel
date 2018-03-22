@@ -1,12 +1,14 @@
 import React from  'react'
 import {Link} from 'react-router-dom'
-import Display from './discover'
+import Discover from './discover'
+import Gallery from './gallery'
+import Settings from './settings';
 
 
 class Profile extends React.Component{
     constructor(props){
         super(props);
-        this.state = {display: ""};
+        this.state = {display: <Discover/>};
         this.logout = this.logout.bind(this);
         this.switch = this.switch.bind(this);
     }
@@ -18,24 +20,21 @@ class Profile extends React.Component{
             .then(() => this.props.history.push("/"))
     }
 
+
     switch(name){
         if (name === "discover"){
-            this.setState({display: <Display/>})
+           return () => this.setState({display: <Discover/>})
+        }else if (name === "gallery"){
+           return () => this.setState({display: <Gallery/>})
+        }else if (name === "profile"){
+           return () => this.setState({display: <Settings CurrentUser={this.props.CurrentUser}/>})
         }
     }
 
 
 
+
     render(){
-
-
-
-        let user_profile;
-        if (this.props.CurrentUser.img_url === ""){
-            user_profile = "https://s3.amazonaws.com/pexcel-aa/images/imgs/000/000/Web-img/avatar.png"
-        }else{
-            user_profile = this.props.CurrentUser.img_url;
-        }
         return (
             <div className="profile-container">
                 <div className="nav-profile">
@@ -44,25 +43,12 @@ class Profile extends React.Component{
                     </div>
                     <div className="link-container">
                         <ul>
-                            <li><span>Discover</span></li>
-                            <li><span to="/gallery">Gallery</span></li>
-                            <li><span>Upload</span></li>
-                            <li><span to="/profile">Profile</span></li>
+                            <li><span onClick={this.switch("discover")}>Discover</span></li>
+                            <li><span onClick={this.switch("gallery")}>Gallery</span></li>
+                            <li><span onClick={this.switch("upload")}>Upload</span></li>
+                            <li><span onClick={this.switch("profile")}>Profile</span></li>
                             <li onClick={this.logout}><span>Logout</span></li>
                         </ul>
-                    </div>
-                </div>
-                <div className="profile-header">
-                    <div className="profile-picture">
-                        <img src={user_profile}/>
-                    </div>
-                    <div className="profile-info">
-                        <ul>
-                            <li>Followers:<span>{this.props.CurrentUser.number_followers}</span></li>
-                            <li>Following:<span>{this.props.CurrentUser.number_followee}</span></li>
-                            <li>Posts:<span>0</span></li>
-                        </ul>
-
                     </div>
                 </div>
                 <div className="profile-content">
