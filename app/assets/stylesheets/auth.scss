@@ -118,6 +118,7 @@
         }
 
          input[type="password"],input[type="text"]{
+           -webkit-appearance: none;
            border: none;
            border-bottom: 1px solid #999999;
            font-family: 'Raleway', sans-serif;

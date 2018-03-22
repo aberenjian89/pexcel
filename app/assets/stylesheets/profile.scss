@@ -1,7 +1,7 @@
 .profile-container{
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
 }
 
 .nav-profile{
@@ -62,8 +62,7 @@
   justify-content: center;
   width: 100%;
   align-items: center;
-  position: absolute;
-  top: 10%;
+  animation: fadein 2s;
   .profile-header{
     display: flex;
     justify-content: space-between;
@@ -108,11 +107,61 @@
 
   .user-form{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    width: 70%;
+    animation: fadein 3s;
+
     form{
       display: flex;
       flex-direction: column;
+      width: 85%;
+      div{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 10%;
+        label{
+          font-family: 'Raleway', sans-serif;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 1.5;
+        }
+        input[type="text"],input[type="password"]{
+          width: 60%;
+          height: 10%;
+          font-size: 14px;
+          font-family: 'Raleway', sans-serif;
+          -webkit-appearance: none;
+          border:none;
+          border-bottom: 1px solid #999999;
+          transition: border-bottom-color 0.2s ease-in-out;
 
+        }
+        input[type="text"]:focus,input[type="password"]:focus{
+          border-bottom-color: #ff6600;
+        }
+      }
+      div:nth-child(5){
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        input{
+          border:1px solid #999999;
+          cursor: pointer;
+          font-family: 'Raleway', sans-serif;
+          font-size: 18px;
+          border-radius: 7%;
+        }
+        input:hover{
+          color: #EFEFEF;
+          background-color: #ff6600;
+          border-color: #ff6600;
+
+        }
+      }
     }
   }
 
@@ -155,24 +204,25 @@
       }
     }
   }
+
 }
 
 
-@media (max-width: 500px){
-  .link-container{
+@media (max-width: 500px) {
+  .link-container {
     justify-content: flex-end !important;
-    ul{
+    ul {
       width: 80% !important;
-      li{
-        span{
+      li {
+        span {
           font-size: 16px !important;
         }
       }
     }
   }
 
-  .profile-picture{
-    img{
+  .profile-picture {
+    img {
       width: 50% !important;
       display: flex;
       object-fit: cover;
@@ -181,3 +231,48 @@
 }
 
 
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-o-keyframes fadein { /* Opera */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
+
+@keyframes fadeout {
+  from {
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+}
+
+@-moz-keyframes fadein { /* Firefox */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}

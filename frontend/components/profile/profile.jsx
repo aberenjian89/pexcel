@@ -8,7 +8,7 @@ import Settings from './settings';
 class Profile extends React.Component{
     constructor(props){
         super(props);
-        this.state = {display: <Discover/>};
+        this.state = {display: <Settings CurrentUser={this.props.CurrentUser}/>};
         this.logout = this.logout.bind(this);
         this.switch = this.switch.bind(this);
     }
@@ -25,7 +25,7 @@ class Profile extends React.Component{
         if (name === "discover"){
            return () => this.setState({display: <Discover/>})
         }else if (name === "gallery"){
-           return () => this.setState({display: <Gallery/>})
+           return () => this.setState({display: <Gallery  CurrentUser={this.props.CurrentUser}/>})
         }else if (name === "profile"){
            return () => this.setState({display: <Settings CurrentUser={this.props.CurrentUser}/>})
         }
@@ -51,9 +51,7 @@ class Profile extends React.Component{
                         </ul>
                     </div>
                 </div>
-                <div className="profile-content">
-                    {this.state.display}
-                </div>
+                {this.state.display}
             </div>
         )
     }
