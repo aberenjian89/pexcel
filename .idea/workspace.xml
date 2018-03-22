@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/auth.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/auth.scss" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/app.jsx" afterPath="$PROJECT_DIR$/frontend/components/app.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/login_form.jsx" afterPath="$PROJECT_DIR$/frontend/components/session/login_form.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/newuser_form.jsx" afterPath="$PROJECT_DIR$/frontend/components/session/newuser_form.jsx" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/profile/profile.jsx" afterPath="$PROJECT_DIR$/frontend/components/profile/profile.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -33,14 +31,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.57320875">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="profile.jsx" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="411">
-                  <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+                <state relative-caret-position="369">
+                  <caret line="60" column="41" lean-forward="false" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -48,26 +46,32 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.jsx" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/components/app.jsx">
+          <file leaf-file-name="discover.jsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/components/profile/discover.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="240">
+                  <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="profile_container.jsx" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile_container.jsx">
+          <file leaf-file-name="settings.jsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/components/profile/settings.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#35#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="270">
+                  <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gallery.jsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/components/profile/gallery.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -79,18 +83,8 @@
           <file leaf-file-name="profile.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profile.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="534">
-                  <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="landing.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/landing.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="29" />
+                <state relative-caret-position="348">
+                  <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -131,9 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/image_view.scss" />
-        <option value="$PROJECT_DIR$/frontend/components/Footer/footer.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/navbar/navbar.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/session_background/session_background.jsx" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/upload.scss" />
@@ -177,11 +168,14 @@
         <option value="$PROJECT_DIR$/frontend/actions/session_action.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/auth.scss" />
         <option value="$PROJECT_DIR$/frontend/components/session/newuser_form.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/app.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/session/login_form.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/profile/profile_container.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/profile/profile.jsx" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" />
+        <option value="$PROJECT_DIR$/frontend/components/profile/gallery.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/profile/settings.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/app.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/profile/discover.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/profile/profile.jsx" />
       </list>
     </option>
   </component>
@@ -201,7 +195,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+    <option name="x" value="612" />
+    <option name="y" value="71" />
     <option name="width" value="1280" />
     <option name="height" value="737" />
   </component>
@@ -245,6 +240,13 @@
               <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="javascripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -264,6 +266,13 @@
               <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEXCEL" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PEXCEL" type="b2602c69:ProjectViewProjectNode" />
@@ -447,12 +456,12 @@
       <workItem from="1521318614984" duration="30150000" />
       <workItem from="1521485379061" duration="3952000" />
       <workItem from="1521569166048" duration="4414000" />
-      <workItem from="1521668812016" duration="7210000" />
+      <workItem from="1521668812016" duration="13082000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="490834000" />
+    <option name="totallyTimeSpent" value="496706000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -464,7 +473,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="24" width="1280" height="737" extended-state="6" />
+    <frame x="1" y="23" width="1280" height="737" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22213247" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -546,10 +555,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/components/UploadImage/imageupload.jsx" />
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/app_background.scss" />
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/homefeed.scss" />
-    <entry file="file://$PROJECT_DIR$/frontend/components/HomeFeed/header.jsx" />
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/cable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -702,16 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/session/auth.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -775,32 +770,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/session/login_form.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile_container.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/app.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/default.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/landing.scss">
@@ -811,21 +783,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile.jsx">
+    <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile_container.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/profile/gallery.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/profile/settings.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/session/auth.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/session/login_form.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/app.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/profile/discover.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profile.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="348">
+          <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="60" column="41" lean-forward="false" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

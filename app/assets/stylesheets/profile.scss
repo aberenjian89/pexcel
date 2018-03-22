@@ -22,6 +22,9 @@
       font-size: 30px;
       font-weight: 700;
     }
+    a:hover{
+      color: #EFEFEF;
+    }
     margin-top: 1%;
   }
   .link-container{
@@ -50,6 +53,48 @@
         }
       }
     }
+  }
+}
+
+.profile-header{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 5% 10% 5% 10%;
+  .profile-picture{
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 30%;
+    padding: 2%;
+    img{
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+  .profile-info{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+      ul{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        li{
+          font-family: 'Raleway', sans-serif;
+          font-size: 18px;
+          font-weight: 700;
+          span{
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+            padding-left: 8%;
+            font-weight: 400;
+          }
+
+        }
+      }
   }
 }
 
