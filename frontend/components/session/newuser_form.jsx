@@ -18,7 +18,8 @@ class Newuser extends React.Component{
     }
 
 
-    signuphandle(){
+    signuphandle(e){
+       e.preventDefault();
        return this.props.CreateUser(this.state)
             .then((user) => this.props.history.push("/profile"))
     }
@@ -38,7 +39,7 @@ class Newuser extends React.Component{
         if (this.props.errors){
             errors=this.props.errors.map((err,idx)=>{
                 return (
-                    <li key={idx}>{err}</li>
+                    <li key={idx}><span>{err}</span></li>
                 )
             })
         }

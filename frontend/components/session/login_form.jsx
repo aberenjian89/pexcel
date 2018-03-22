@@ -20,8 +20,6 @@ class Login extends React.Component {
 
     loginhandle(e) {
         e.preventDefault();
-
-
         return this.props.LoginUser(this.state)
             .then((user) => this.props.history.push("/profile"))
     }
@@ -36,10 +34,10 @@ class Login extends React.Component {
     render() {
         let errors = "";
 
-        if (this.props.errors){
+        if (this.props.errors.length > 0){
             errors=this.props.errors.map((err,idx)=>{
                 return (
-                    <li key={idx}>{err}</li>
+                    <li key={idx}><span>{err}</span></li>
                 )
             })
         }
