@@ -13,6 +13,7 @@ body{
   background-position: 50% 50%;
   height: 700px;
   display: flex;
+  background-attachment: fixed;
   flex-direction: column;
   justify-content: center;
   position: absolute;
@@ -109,6 +110,7 @@ body{
   height: 600px;
   display: flex;
   flex-direction: column;
+  background-attachment: fixed;
   justify-content: center;
   align-items: center;
   position: absolute;

@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Typed from 'typed.js'
 
 class Login extends React.Component {
     constructor(props) {

@@ -3,15 +3,21 @@ import {Link} from 'react-router-dom'
 import Discover from './discover'
 import Gallery from './gallery'
 import Settings from './settings';
+import Upload from './upload';
+import Modal from 'react-responsive-modal'
 
 
 class Profile extends React.Component{
     constructor(props){
         super(props);
         this.state = {display: <Discover/>,
-                      UserImgs: ""};
+                      UserImgs: "",
+                      open: false};
         this.logout = this.logout.bind(this);
         this.switch = this.switch.bind(this);
+        this.onCloseModal = this.onCloseModal.bind(this);
+        this.onOpenModal = this.onOpenModal.bind(this);
+
     }
 
 
@@ -24,6 +30,14 @@ class Profile extends React.Component{
 
     componentWillReceiveProps(nextProps){
         this.setState({UserImgs: nextProps.UserImgs})
+    }
+
+    onOpenModal(){
+        this.setState({open: true})
+    }
+
+    onCloseModal(){
+        this.setState({open: false})
     }
 
 
@@ -42,16 +56,7 @@ class Profile extends React.Component{
         }else if (name === "profile"){
            return () => this.setState({display: <Settings CurrentUser={this.props.CurrentUser}/>})
         }else {
-            let upload = (
-                <div className="upload-modal">
-                    <div className="modal-content">
-                        <span className="close">&times;</span>
-                        <p>Some text in the Modal..</p>
-                    </div>
-                </div>
-            );
-            debugger;
-            return () => this.setState({display: upload})
+            return () => this.setState({display: <Upload Props={this.props}/>})
         }
 
     }
