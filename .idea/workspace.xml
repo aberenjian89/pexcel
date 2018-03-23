@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/profile.jsx" afterPath="$PROJECT_DIR$/frontend/components/profile/profile.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/upload.jsx" afterPath="$PROJECT_DIR$/frontend/components/profile/upload.jsx" />
-    </list>
+    <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -38,7 +35,7 @@
             <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile.jsx">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="217">
-                  <caret line="59" column="79" lean-forward="false" selection-start-line="59" selection-start-column="79" selection-end-line="59" selection-end-column="79" />
+                  <caret line="59" column="80" lean-forward="false" selection-start-line="59" selection-start-column="80" selection-end-line="59" selection-end-column="80" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -458,12 +455,12 @@
       <workItem from="1521485379061" duration="3952000" />
       <workItem from="1521569166048" duration="4414000" />
       <workItem from="1521668812016" duration="13082000" />
-      <workItem from="1521698762918" duration="36558000" />
+      <workItem from="1521698762918" duration="36613000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="533264000" />
+    <option name="totallyTimeSpent" value="533319000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -902,7 +899,7 @@
     <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
-          <caret line="59" column="79" lean-forward="false" selection-start-line="59" selection-start-column="79" selection-end-line="59" selection-end-column="79" />
+          <caret line="59" column="80" lean-forward="false" selection-start-line="59" selection-start-column="80" selection-end-line="59" selection-end-column="80" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
