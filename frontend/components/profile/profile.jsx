@@ -17,6 +17,7 @@ class Profile extends React.Component{
         this.switch = this.switch.bind(this);
         this.onCloseModal = this.onCloseModal.bind(this);
         this.onOpenModal = this.onOpenModal.bind(this);
+        this.hidModal = this.hidModal.bind(this);
 
     }
 
@@ -55,12 +56,18 @@ class Profile extends React.Component{
            return () => this.setState({display: <Gallery  CurrentUser={this.props.CurrentUser} UserImgs={this.props.UserImgs}/>})
         }else if (name === "profile"){
            return () => this.setState({display: <Settings CurrentUser={this.props.CurrentUser}/>})
-        }else {
-            return () => this.setState({display: <Upload Props={this.props}/>})
+        }else{
+            return () => document.getElementById('modal').style.display= "block";
         }
 
     }
 
+    hidModal(){
+        if (this.state.hide === "block"){
+            this.setState({hide: "none"});
+            return () => document.getElementById('modal').style.display= this.state.hide;
+        }
+    }
 
 
 
@@ -69,7 +76,7 @@ class Profile extends React.Component{
             <div className="profile-container">
                 <div className="nav-profile">
                     <div className="logo">
-                        <span><Link to="/">PEXCEL</Link></span>
+                        <span><Link to="/">CAPTURE</Link></span>
                     </div>
                     <div className="link-container">
                         <div>
@@ -85,6 +92,11 @@ class Profile extends React.Component{
                     </div>
                 </div>
                 {this.state.display}
+                <div id="modal" className="upload-modal">
+                    <div className="modal-content">
+                            <Upload/>
+                    </div>
+                </div>
             </div>
         )
     }
