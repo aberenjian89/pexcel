@@ -146,6 +146,23 @@
         align-content: center;
         align-items: center;
         width: 80%;
+        button{
+          border: 1px solid #666666;
+          cursor: pointer;
+          padding: 8px 35px 8px 35px;
+          font-family: 'Raleway', sans-serif;
+          font-weight: 400;
+          font-size: 15px;
+          border-radius: 30px;
+          color: #666666;
+        }
+        button:hover{
+          color: #EFEFEF;
+          background-color: #ff6600;
+          border-color: #ff6600;
+        }
+
+
         input{
           border:none;
           cursor:pointer;

@@ -186,7 +186,10 @@ body{
     span:first-child{
       font-size: 25px;
       font-weight: 400;
+      padding-bottom: 2%;
       margin-bottom: 2%;
+      border-bottom: 2px solid #ff6600;
+      transition: border-bottom 0.2s ease-in;
     }
     span:nth-child(2){
       font-size: 20px;

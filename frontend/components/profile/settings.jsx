@@ -4,6 +4,12 @@ import React from 'react'
 class Settings extends React.Component{
     constructor(props){
         super(props);
+        this.state = { imageStatus: "loading" };
+
+    }
+
+    handleImageLoaded() {
+        this.setState({ imageStatus: "loaded" });
     }
 
     render(){
@@ -18,7 +24,7 @@ class Settings extends React.Component{
             <div className="settings-container">
                 <div className="profile-header">
                     <div className="profile-picture">
-                        <img src={user_profile}/>
+                        <img src={user_profile} onLoad={this.handleImageLoaded.bind(this)}/>
                     </div>
                     <div className="profile-info">
                         <ul>

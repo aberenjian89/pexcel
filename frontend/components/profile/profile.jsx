@@ -41,7 +41,19 @@ class Profile extends React.Component{
            return () => this.setState({display: <Gallery  CurrentUser={this.props.CurrentUser} UserImgs={this.props.UserImgs}/>})
         }else if (name === "profile"){
            return () => this.setState({display: <Settings CurrentUser={this.props.CurrentUser}/>})
+        }else {
+            let upload = (
+                <div className="upload-modal">
+                    <div className="modal-content">
+                        <span className="close">&times;</span>
+                        <p>Some text in the Modal..</p>
+                    </div>
+                </div>
+            );
+            debugger;
+            return () => this.setState({display: upload})
         }
+
     }
 
 
