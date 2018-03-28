@@ -76,7 +76,7 @@ class Profile extends React.Component{
             <div className="profile-container">
                 <div className="nav-profile">
                     <div className="logo">
-                        <span><Link to="/">CAPTURE</Link></span>
+                        <span><Link to="/">PEXCEL</Link></span>
                     </div>
                     <div className="link-container">
                         <div>
