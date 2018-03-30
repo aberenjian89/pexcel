@@ -3,11 +3,13 @@ import ImageIndexItem from './ImageIndexItem'
 
 
 class Upload extends React.Component{
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {images: [],upload: this};
-        this.readfile = this.readfile.bind(this);
+        this.state = {images: [], upload: this};
+        this.readfiledrag = this.readfiledrag.bind(this);
         this.datagenerate = this.datagenerate.bind(this);
+        this.readfile = this.readfile.bind(this);
+        this.removeImage = this.removeImage(this);
     }
 
     componentDidMount(){
@@ -20,7 +22,7 @@ class Upload extends React.Component{
                 console.log(e.dataTransfer.files);
                 let arr = e.dataTransfer.files;
                 for (let i = 0 ;i< arr.length  ; i++){
-                    upload.readfile(arr[i])
+                    upload.readfiledrag(arr[i])
                 }
                // upload.readfile(e)
             };
@@ -38,7 +40,7 @@ class Upload extends React.Component{
         }())
     }
 
-    readfile(file){
+    readfiledrag(file){
         let fileReader = new FileReader();
         let array = this.state.images;
 
@@ -47,6 +49,12 @@ class Upload extends React.Component{
             let image = {
                 file: "",
                 url: "",
+                img_title:"",
+                img_location:"",
+                author_id: "",
+                img_desc:"",
+                date_taken:"",
+                category:""
             };
             image.file = file;
             image.url = fileReader.result;
@@ -64,12 +72,50 @@ class Upload extends React.Component{
         return new Date();
     }
 
+    readfile(e){
+        let file = e.currentTarget.files[0];
+        let fileReader = new FileReader();
+        let array = this.state.images;
+
+        fileReader.onloadend = () =>{
+            let image = {
+                file: "",
+                url: "",
+                img_title:"",
+                img_location:"",
+                author_id: "",
+                img_desc:"",
+                date_taken:"",
+                category:""
+            };
+            image.file = file;
+            image.url = fileReader.result;
+            array.push(image);
+            this.setState({images: array})
+        };
+
+        debugger;
+        if (file){
+            fileReader.readAsDataURL(file)
+        }
+
+    }
+
+    removeImage(){
+        return (idx) => {
+            let array = this.state.images;
+            array = array.slice(0,idx-1).concat(array.slice(idx+1,array.length))
+            this.setState({images: array})
+        }
+
+    }
+
     render(){
         let images="";
         let flag =false;
         let fclass ="";
         if (this.state.images.length > 0){
-            images =this.state.images.map((image)=>{
+            images =this.state.images.map((image,idx)=>{
                 if (flag){
                     fclass="figure1";
                     flag= false;
@@ -78,7 +124,15 @@ class Upload extends React.Component{
                     flag=true
                 }
                 return(
-                    <ImageIndexItem class={fclass} image_url ={image.url}/>
+                        <figure key={idx} className={fclass}>
+                            <div className="img-container">
+                                <img className="figure-img" src={image.url}/>
+                                <input id="checkbox" type="checkbox"/>
+                                <button key={idx} onClick={(idx) => this.removeImage }>
+                                    <i className="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </figure>
                 );
             });
         }
@@ -90,10 +144,10 @@ class Upload extends React.Component{
                {/*</p>*/}
 
                    <figure className="dropzone" id="dropzone">
-                       Drop files here to Upload
-                       {/*<form>*/}
-                           {/*<input type="file" multiple onChange={this.readfile}/>*/}
-                       {/*</form>*/}
+                       <form>
+                           <input name="myFile" type="file" multiple onChange={this.readfile}/>
+                           <label htmlFor="myFile">Drop files here to Upload</label>
+                       </form>
                    </figure>
                    <main className="main">
                        {images}
