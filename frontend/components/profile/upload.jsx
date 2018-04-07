@@ -10,6 +10,7 @@ class Upload extends React.Component{
         this.datagenerate = this.datagenerate.bind(this);
         this.readfile = this.readfile.bind(this);
         this.removeImage = this.removeImage(this);
+
     }
 
     componentDidMount(){
@@ -102,9 +103,11 @@ class Upload extends React.Component{
     }
 
     removeImage(){
-        return (idx) => {
+        return (e) => {
+            let idx = parseInt(e.currentTarget.name);
             let array = this.state.images;
-            array = array.slice(0,idx-1).concat(array.slice(idx+1,array.length))
+
+            array = array.slice(0,idx).concat(array.slice(idx+1,array.length));
             this.setState({images: array})
         }
 
@@ -128,7 +131,7 @@ class Upload extends React.Component{
                             <div className="img-container">
                                 <img className="figure-img" src={image.url}/>
                                 <input id="checkbox" type="checkbox"/>
-                                <button key={idx} onClick={(idx) => this.removeImage }>
+                                <button name={idx} key={idx} onClick={this.removeImage}>
                                     <i className="fas fa-trash-alt"></i>
                                 </button>
                             </div>
