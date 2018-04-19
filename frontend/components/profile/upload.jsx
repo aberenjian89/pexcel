@@ -141,9 +141,7 @@ class Upload extends React.Component{
 
         return (
            <div className="upload-container">
-               {/*<p onClick={() => document.getElementById('modal').style.display='none'}>*/}
-                   {/*Ali*/}
-               {/*</p>*/}
+               
 
                    <figure className="dropzone" id="dropzone">
                        <form>
