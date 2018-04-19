@@ -35,27 +35,45 @@
 
   .img-container{
     position: relative;
-    input{
-      display: none;
-      position: absolute;
-      top:0;
-      margin:0;
-    }
-    input:checked{
-      display: block;
+    background: none;
+    img{
+      transition: opacity 0.5s ease;
     }
     button{
       position: absolute;
       top:0;
-      left: 80%;
+      left:0;
+      display: none;
+      border: none;
+      background-color: #ff6600;
+      size: 18px;
+      height: 15%;
+      width: 15%;
+      i{
+        color: #EFEFEF;
+      }
     }
-
   }
 
   .img-container:hover{
     input {
       display: block;
     }
+    button{
+      display: block;
+    }
+  }
+
+  .img-container button:hover{
+      background-color: #EFEFEF;
+      i{
+        color: #ff6600;
+      }
+  }
+
+  .img-container button i:hover{
+    color: #ff6600;
+
   }
 
 
@@ -117,11 +135,7 @@
 
   }
 
-
-
 }
-
-
 
 .dropzone{
   max-width: 80%;
@@ -143,6 +157,10 @@
       position: absolute;
       cursor: pointer;
     }
+    label{
+      cursor: pointer;
+    }
+    cursor: pointer;
   }
 }
 
@@ -150,6 +168,18 @@
   border-color: #000;
   color: #000;
 }
+
+.image_form{
+  position: absolute;
+  width: 40%;
+  right: 0;
+  top: 16%;
+  left: 50%;
+  border: 1px black solid;
+  height: auto;
+  overflow: hidden;
+}
+
 
 
 
