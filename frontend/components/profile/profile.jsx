@@ -1,3 +1,4 @@
+
 import React from  'react'
 import {Link} from 'react-router-dom'
 import Discover from './discover'
@@ -57,7 +58,7 @@ class Profile extends React.Component{
         }else if (name === "profile"){
            return () => this.setState({display: <Settings CurrentUser={this.props.CurrentUser}/>})
         }else{
-            return () => document.getElementById('modal').style.display= "block";
+            return () => this.setState({display: <Upload/>})
         }
 
     }
@@ -92,11 +93,6 @@ class Profile extends React.Component{
                     </div>
                 </div>
                 {this.state.display}
-                <div id="modal" className="upload-modal">
-                    <div className="modal-content">
-                            <Upload/>
-                    </div>
-                </div>
             </div>
         )
     }

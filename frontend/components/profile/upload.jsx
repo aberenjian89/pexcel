@@ -7,38 +7,38 @@ class Upload extends React.Component{
         super(props);
         this.state = {images: [], upload: this};
         this.readfiledrag = this.readfiledrag.bind(this);
-        this.datagenerate = this.datagenerate.bind(this);
         this.readfile = this.readfile.bind(this);
         this.removeImage = this.removeImage(this);
 
     }
 
     componentDidMount(){
+
         let upload = this;
+
         (function(){
             let dropzone = document.getElementById('dropzone');
             dropzone.ondrop = function(e){
                 e.preventDefault();
-                this.className = 'dropzone';
-                console.log(e.dataTransfer.files);
-                let arr = e.dataTransfer.files;
-                for (let i = 0 ;i< arr.length  ; i++){
-                    upload.readfiledrag(arr[i])
+                this.className = 'dropzone'
+                let arr  = e.dataTransfer.files;
+                for (var i = 0; i < arr.length; i++) {
+                   upload.readfiledrag(arr[i])
                 }
-               // upload.readfile(e)
-            };
+            }
 
             dropzone.ondragover = function(){
                 this.className = 'dropzone dragover';
                 return false;
-            };
+            }
 
             dropzone.ondragleave = function(){
                 this.className = 'dropzone';
-                return false
-            };
+                return false;
+            }
+        })
 
-        }())
+   
     }
 
     readfiledrag(file){
@@ -67,10 +67,6 @@ class Upload extends React.Component{
         if (file){
             fileReader.readAsDataURL(file)
         }
-    }
-
-    datagenerate(){
-        return new Date();
     }
 
     readfile(e){
@@ -114,49 +110,15 @@ class Upload extends React.Component{
     }
 
     render(){
-        let images="";
-        let flag =false;
-        let fclass ="";
-        if (this.state.images.length > 0){
-            images =this.state.images.map((image,idx)=>{
-                if (flag){
-                    fclass="figure1";
-                    flag= false;
-                }else{
-                    fclass="figure2";
-                    flag=true
-                }
-                return(
-                        <figure key={idx} className="figure2">
-                            <div className="img-container">
-                                <img className="figure-img" src={image.url} alt={image.img_title}/>
-                                <button name={idx} key={idx} onClick={this.removeImage}>
-                                    <i className="fas fa-trash-alt"></i>
-                                </button>
-                            </div>
-                        </figure>
-                );
-            });
-        }
-
-        return (
-           <div className="upload-container">
-               
-                       <figure className="dropzone" id="dropzone">
-                           <form>
-                               <input name="myFile" type="file" onChange={this.readfile}/>
-                               <label htmlFor="myFile">Click to Upload file or Drop files here to Upload</label>
-                           </form>
-                       </figure>
-                       <div className="upload-content">
-                           <main className="main">
-                               {images}
-                           </main>
-                       </div>
-                    <div className="image_form">
-
-                    </div>
-           </div>
+       return (
+            <div className="upload-container">
+                <figure className="dropzone" id="dropzone">
+                    <label> Drag & Drops </label>
+                    <label>Browse
+                        <input type="file" name="myFile" multiple onChange={this.readfile}/>       
+                    </label>       
+                </figure>
+            </div>
         )
     }
 }
