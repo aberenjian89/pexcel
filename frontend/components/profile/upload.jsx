@@ -127,7 +127,7 @@ class Upload extends React.Component{
                     flag=true
                 }
                 return(
-                        <figure key={idx} className={fclass}>
+                        <figure key={idx} className="figure2">
                             <div className="img-container">
                                 <img className="figure-img" src={image.url} alt={image.img_title}/>
                                 <button name={idx} key={idx} onClick={this.removeImage}>
@@ -142,19 +142,20 @@ class Upload extends React.Component{
         return (
            <div className="upload-container">
                
+                       <figure className="dropzone" id="dropzone">
+                           <form>
+                               <input name="myFile" type="file" onChange={this.readfile}/>
+                               <label htmlFor="myFile">Click to Upload file or Drop files here to Upload</label>
+                           </form>
+                       </figure>
+                       <div className="upload-content">
+                           <main className="main">
+                               {images}
+                           </main>
+                       </div>
+                    <div className="image_form">
 
-                   <figure className="dropzone" id="dropzone">
-                       <form>
-                           <input name="myFile" type="file" onChange={this.readfile}/>
-                           <label htmlFor="myFile">Click to Upload file or Drop files here to Upload</label>
-                       </form>
-                   </figure>
-                   <main className="main">
-                       {images}
-                   </main>
-                   <div className="image_form">
-
-                   </div>
+                    </div>
            </div>
         )
     }
