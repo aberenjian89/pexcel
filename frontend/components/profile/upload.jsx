@@ -112,12 +112,10 @@ class Upload extends React.Component{
     render(){
        return (
             <div className="upload-container">
-                <figure className="dropzone" id="dropzone">
-                    <label> Drag & Drops </label>
-                    <label>Browse
-                        <input type="file" name="myFile" multiple onChange={this.readfile}/>       
-                    </label>       
-                </figure>
+                <div className="dropzone" id="dropzone">
+                    <label> Drag & Drops or Browse </label>
+                    <input type="file"  name="myFile" multiple onChange={this.readfile}/>       
+                </div>
             </div>
         )
     }
