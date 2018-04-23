@@ -39,10 +39,28 @@
       cursor: pointer;
       display: block;
     }
-
+  }
+  .dropzone.dragover{
+    border-color: #000;
+    color: #000;
   }
 
-  .dragover{
-    border: 2px dashed #808;
+
+  .images-container{
+    margin: 5% auto;
   }
+
+  .img-container{
+    display: flex;
+    flex-direction: row;
+    img{
+      width: 30%;
+      height: auto;
+    }
+  }
+
+
+
+
+
 }
