@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  require 'sidekiq/web'
+
+  mount Sidekiq::Web, at: "/sidekiq"
+  mount Blazer::Engine, at: "blazer"
+
   root 'static_pages#root'
   namespace :api, defaults: {format: :json} do
     resources :users, only:[:create,:update,:show] do

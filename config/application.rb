@@ -24,5 +24,6 @@ module PEXCEL
             :s3_region => ENV["AWS_REGION"]
         }
     }
+    config.active_job.queue_adapter = :sidekiq
   end
 end
