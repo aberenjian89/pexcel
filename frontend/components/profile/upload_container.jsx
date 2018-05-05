@@ -7,6 +7,6 @@ import {CreateImg} from "../../actions/image_action";
 
 const mapStateToProps = (state,{match}) =>(
     {
-CurrentUser: state.session.CurrentUser,
+      CurrentUser: state.session.CurrentUser
     }
 );
