@@ -1,5 +1,4 @@
 import React from 'react';
-import ImageIndexItem from './ImageIndexItem'
 
 
 class Upload extends React.Component{
@@ -130,7 +129,20 @@ class Upload extends React.Component{
 
 
     uploadimages(){
-        
+
+        for(let i=0 ; i < this.state.images ; i++){
+            let formData = new FormData();
+            formData.append("image[img_title]",this.state.images[i].img_title);
+            formData.append("image[img_desc]",this.state.images[i].img_desc);
+            formData.append("image[img_location]",this.state.images[i].img_location);
+            formData.append("image[date_taken]",this.state.images[i].date_taken);
+            formData.append("image[category]",this.state.images[i].category);
+            formData.append("image[img]",this.state.images[i].file)
+
+        }
+
+        let formData = new FormData();
+
     }
 
     render(){
@@ -145,23 +157,23 @@ class Upload extends React.Component{
                             <div className="img-form">
                                 <div className="img-title-container">
                                     <label> Title:</label>
-                                    <input type="text" name="img_title" value={img.img_title} onChange={this.handleChange(idx)} />
+                                    <input type="text" name="img_title" value={img.img_title} onChange={this.handleChange(idx)} required/>
                                 </div>
                                 <div className="img-location-container">
                                      <label> Location:</label>
-                                     <input type="text" name="img_location" value={img.img_location}  onChange={this.handleChange(idx)} />
+                                     <input type="text" name="img_location" value={img.img_location}  onChange={this.handleChange(idx)} required/>
                                 </div>
                                 <div className="img-desc-container">
                                      <label> Description:</label>
-                                     <input type="text" name="img_desc" value={img.img_desc} onChange={this.handleChange(idx)}/>
+                                     <input type="text" name="img_desc" value={img.img_desc} onChange={this.handleChange(idx)} required/>
                                 </div>
                                 <div className="img-datataken-container"> 
                                      <label> Date Taken:</label>
-                                     <input type="date" name="date_taken" value={img.date_taken} onChange={this.handleChange(idx)}/>
+                                     <input type="date" name="date_taken" value={img.date_taken} onChange={this.handleChange(idx)} required/>
                                 </div>
                                 <div className="img-category">
                                     <label> Category: </label>
-                                    <select name="category" value={img.category} onChange={this.handleChange(idx)}>
+                                    <select name="category" value={img.category} onChange={this.handleChange(idx)} required>
                                         <option value="uncategorized">Uncategorized</option>
                                         <option value="abstract">Abstract</option>
                                         <option value="aerial">Aerial</option>
@@ -209,7 +221,7 @@ class Upload extends React.Component{
             <div className="upload-container">
                 <div className="dropzone" id="dropzone">
                     <label> Drag & Drops or Browse </label>
-                    <input type="file"  name="myFile" title="" multiple onChange={this.readfile}/>
+                    <input type="file"  name="myFile" title="" onChange={this.readfile}/>
                 </div>
                 <div className="images-container">
                     {images}
