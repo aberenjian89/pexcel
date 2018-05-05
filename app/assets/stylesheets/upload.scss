@@ -48,15 +48,44 @@
 
   .images-container{
     margin: 5% auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .img-container{
     display: flex;
     flex-direction: row;
+    padding: 5% 2% 5% 2%;
+    justify-content: flex-end;
+    align-items: center;
+    height: 25%;
     img{
-      width: 30%;
+      width: 50%;
       height: auto;
     }
+
+    .img-content{
+      //min-width: 80%;
+      //max-width: 80%;
+    }
+
+    .img-form{
+      padding: 1%;
+      border:1px solid black;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 10%;
+      width: 35%;
+      div{
+        padding: 2%;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+
   }
 
 

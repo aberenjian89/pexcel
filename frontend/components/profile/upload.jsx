@@ -113,29 +113,29 @@ class Upload extends React.Component{
        if (this.state.images.length > 0 ){
             images = this.state.images.map((img,idx) =>{
                 return (
-                        <div className="img-container">
-                            <div>
+                        <div className="img-container" key={idx}>
+                            <div className="img-content">
                                  <img src={img.url} key={idx} />
                             </div>
                             <div className="img-form">
                                 <div className="img-title-container">
-                                    <label> Title </label>
+                                    <label> Title:</label>
                                     <input type="text" name="img_title" />
                                 </div>
                                 <div className="img-location-container">
-                                     <label> Location </label>
+                                     <label> Location:</label>
                                      <input type="text" name="img_location" />
                                 </div>
                                 <div className="img-desc-container">
-                                     <label> Description </label>
+                                     <label> Description:</label>
                                      <input type="text" name="img_desc" />
                                 </div>
                                 <div className="img-datataken-container"> 
-                                     <label> Date Taken </label>
+                                     <label> Date Taken:</label>
                                      <input type="text" name="date_taken" />
                                 </div>
                                 <div>
-                                    <label> Category </label>
+                                    <label> Category: </label>
                                     <select name="category">
                                         <option value="uncategorized">Uncategorized</option>
                                         <option value="abstract">Abstract</option>
