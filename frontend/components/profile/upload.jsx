@@ -10,6 +10,7 @@ class Upload extends React.Component{
         this.readfile = this.readfile.bind(this);
         this.removeImage = this.removeImage.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.uploadimages = this.uploadimages.bind(this);
 
     }
 
@@ -127,6 +128,11 @@ class Upload extends React.Component{
         }
     }
 
+
+    uploadimages(){
+        
+    }
+
     render(){
        let images;
        if (this.state.images.length > 0 ){
@@ -193,6 +199,12 @@ class Upload extends React.Component{
                     );
             })
        }
+       let submit;
+       if (this.state.images.length > 0){
+           submit=<button className="submit">Upload</button>
+       }else{
+           submit=<button className="submit-disable" disabled>Upload</button>
+       }
        return (
             <div className="upload-container">
                 <div className="dropzone" id="dropzone">
@@ -202,6 +214,7 @@ class Upload extends React.Component{
                 <div className="images-container">
                     {images}
                 </div>
+                {submit}
             </div>
         )
     }
