@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import Discover from './discover'
 import Gallery from './gallery'
 import Settings from './settings';
-import Upload from './upload';
+import UploadContainer from './upload_container';
 import Modal from 'react-responsive-modal'
 
 
@@ -58,7 +58,7 @@ class Profile extends React.Component{
         }else if (name === "profile"){
            return () => this.setState({display: <Settings CurrentUser={this.props.CurrentUser}/>})
         }else{
-            return () => this.setState({display: <Upload/>})
+            return () => this.setState({display: <UploadContainer/>})
         }
 
     }

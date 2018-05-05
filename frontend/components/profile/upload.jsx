@@ -9,7 +9,7 @@ class Upload extends React.Component{
         this.readfile = this.readfile.bind(this);
         this.removeImage = this.removeImage.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.uploadimages = this.uploadimages.bind(this);
+        this.uploadImages = this.uploadImages.bind(this);
 
     }
 
@@ -128,20 +128,22 @@ class Upload extends React.Component{
     }
 
 
-    uploadimages(){
-
-        for(let i=0 ; i < this.state.images ; i++){
+    uploadImages(){
+        let promise;
+        for(let i=0 ; i < this.state.images.length ; i++){
             let formData = new FormData();
             formData.append("image[img_title]",this.state.images[i].img_title);
             formData.append("image[img_desc]",this.state.images[i].img_desc);
             formData.append("image[img_location]",this.state.images[i].img_location);
             formData.append("image[date_taken]",this.state.images[i].date_taken);
             formData.append("image[category]",this.state.images[i].category);
-            formData.append("image[img]",this.state.images[i].file)
+            formData.append("image[img]",this.state.images[i].file);
+
+            promise = this.props.createImg(this.props.CurrentUser.id,formData)
 
         }
 
-        let formData = new FormData();
+        return promise.then(()=> this.props.history.push('/profile'))
 
     }
 
@@ -213,7 +215,7 @@ class Upload extends React.Component{
        }
        let submit;
        if (this.state.images.length > 0){
-           submit=<button className="submit">Upload</button>
+           submit=<button onClick={this.uploadImages} className="submit">Upload</button>
        }else{
            submit=<button className="submit-disable" disabled>Upload</button>
        }

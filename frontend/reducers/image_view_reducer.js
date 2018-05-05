@@ -1,7 +1,6 @@
 import {RECEIVE_IMAGE_VIEW} from "../actions/Image_view_action";
 import merge from 'lodash/merge'
 import {RECEIVE_FOLLOW, REMOVE_FOLLOW} from "../actions/follow_action";
-import {RECEIVE_IMAGE_ERROR} from "../actions/image_action";
 
 
 

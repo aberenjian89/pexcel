@@ -10,3 +10,13 @@ const mapStateToProps = (state,{match}) =>(
       CurrentUser: state.session.CurrentUser
     }
 );
+
+
+const mapDispatchToProps =(dispatch) =>(
+    {
+        createImg: (userId,img) => dispatch(CreateImg(userId,img))
+    }
+);
+
+
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Upload));

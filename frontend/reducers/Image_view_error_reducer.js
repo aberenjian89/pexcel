@@ -11,7 +11,7 @@ const ImageViewErrorReducer = (state= _initialState,action)=>{
         case RECEIVE_IMAGE_VIEW:
             return _initialState;
         case RECEIVE_IMAGE_VIEW_ERROR:
-            return action.error;
+            return Object.assign({}, state,action.error);
         default:
             return state;
     }
