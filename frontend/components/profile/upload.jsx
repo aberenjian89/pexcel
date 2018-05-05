@@ -8,7 +8,8 @@ class Upload extends React.Component{
         this.state = {images: [], upload: this};
         this.readfiledrag = this.readfiledrag.bind(this);
         this.readfile = this.readfile.bind(this);
-        this.removeImage = this.removeImage(this);
+        this.removeImage = this.removeImage.bind(this);
+        this.handleChange = this.handleChange.bind(this);
 
     }
 
@@ -87,6 +88,7 @@ class Upload extends React.Component{
             };
             image.file = file;
             image.url = fileReader.result;
+            image.img_title = file.name;
             array.push(image);
             this.setState({images: array})
         };
@@ -101,11 +103,28 @@ class Upload extends React.Component{
         return (e) => {
             let idx = parseInt(e.currentTarget.name);
             let array = this.state.images;
-
             array = array.slice(0,idx).concat(array.slice(idx+1,array.length));
             this.setState({images: array})
         }
 
+    }
+
+    handleChange(idx){
+        return (e)=>{
+            let array = this.state.images;
+            if (e.currentTarget.name === "img_title"){
+                array[idx].img_title = e.target.value;
+            }else if (e.currentTarget.name === "img_location"){
+                array[idx].img_location = e.target.value;
+            }else if (e.currentTarget.name === "img_desc"){
+                array[idx].img_desc = e.target.value;
+            }else if (e.currentTarget.name === "date_taken"){
+                array[idx].date_taken = e.target.value;
+            }else if (e.currentTarget.name === "category"){
+                array[idx].category = e.target.value
+            }
+            this.setState({images: array})
+        }
     }
 
     render(){
@@ -120,23 +139,23 @@ class Upload extends React.Component{
                             <div className="img-form">
                                 <div className="img-title-container">
                                     <label> Title:</label>
-                                    <input type="text" name="img_title" />
+                                    <input type="text" name="img_title" value={img.img_title} onChange={this.handleChange(idx)} />
                                 </div>
                                 <div className="img-location-container">
                                      <label> Location:</label>
-                                     <input type="text" name="img_location" />
+                                     <input type="text" name="img_location" value={img.img_location}  onChange={this.handleChange(idx)} />
                                 </div>
                                 <div className="img-desc-container">
                                      <label> Description:</label>
-                                     <input type="text" name="img_desc" />
+                                     <input type="text" name="img_desc" value={img.img_desc} onChange={this.handleChange(idx)}/>
                                 </div>
                                 <div className="img-datataken-container"> 
                                      <label> Date Taken:</label>
-                                     <input type="text" name="date_taken" />
+                                     <input type="date" name="date_taken" value={img.date_taken} onChange={this.handleChange(idx)}/>
                                 </div>
-                                <div>
+                                <div className="img-category">
                                     <label> Category: </label>
-                                    <select name="category">
+                                    <select name="category" value={img.category} onChange={this.handleChange(idx)}>
                                         <option value="uncategorized">Uncategorized</option>
                                         <option value="abstract">Abstract</option>
                                         <option value="aerial">Aerial</option>
@@ -165,8 +184,11 @@ class Upload extends React.Component{
                                         <option value="wedding">Wedding</option>
                                         <option value="nude">Nude</option>
                                     </select>
-                                </div> 
-                            </div>                          
+                                </div>
+                                <div>
+                                    <button onClick={this.removeImage()} name={idx}>Remove</button>
+                                </div>
+                            </div>
                         </div>
                     );
             })
@@ -175,7 +197,7 @@ class Upload extends React.Component{
             <div className="upload-container">
                 <div className="dropzone" id="dropzone">
                     <label> Drag & Drops or Browse </label>
-                    <input type="file"  name="myFile" multiple onChange={this.readfile}/>       
+                    <input type="file"  name="myFile" title="" multiple onChange={this.readfile}/>
                 </div>
                 <div className="images-container">
                     {images}

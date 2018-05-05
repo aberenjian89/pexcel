@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/upload.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/upload.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/profile/upload.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/profile/upload.jsx" afterDir="false" />
     </list>
@@ -32,14 +31,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5242326">
+    <splitter split-orientation="horizontal" split-proportion="0.52230126">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="upload.jsx" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/components/profile/upload.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="928">
-                  <caret line="137" column="53" selection-start-line="137" selection-start-column="53" selection-end-line="137" selection-end-column="53" />
+                <state relative-caret-position="808">
+                  <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -63,8 +62,8 @@
           <file leaf-file-name="upload.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/upload.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="916">
-                  <caret line="79" column="15" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
+                <state relative-caret-position="959">
+                  <caret line="104" column="24" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -193,7 +192,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1087" />
+    <option name="x" value="974" />
     <option name="y" value="23" />
     <option name="width" value="1865" />
     <option name="height" value="1337" />
@@ -414,7 +413,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="563622000" />
+    <option name="totallyTimeSpent" value="569221000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -426,7 +425,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1087" y="23" width="1865" height="1337" extended-state="0" />
+    <frame x="974" y="23" width="1865" height="1337" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17050938" />
@@ -795,8 +794,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/profile/upload.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="928">
-          <caret line="137" column="53" selection-start-line="137" selection-start-column="53" selection-end-line="137" selection-end-column="53" />
+        <state relative-caret-position="808">
+          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -805,8 +804,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/upload.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="916">
-          <caret line="79" column="15" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
+        <state relative-caret-position="959">
+          <caret line="104" column="24" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
         </state>
       </provider>
     </entry>
