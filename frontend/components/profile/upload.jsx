@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ProfileContainer from './profile_container'
 
 class Upload extends React.Component{
     constructor(props) {
@@ -130,6 +130,10 @@ class Upload extends React.Component{
 
     uploadImages(){
         let promise;
+        debugger;
+        let $submit = $("#submit");
+        $submit.removeClass('submit');
+        $submit.addClass('submit-disable');
         for(let i=0 ; i < this.state.images.length ; i++){
             let formData = new FormData();
             formData.append("image[img_title]",this.state.images[i].img_title);
@@ -143,7 +147,7 @@ class Upload extends React.Component{
 
         }
 
-        return promise.then(()=> this.props.history.push('/profile'))
+        return promise.then(()=> this.props.history.push('/gallery'))
 
     }
 
@@ -215,21 +219,24 @@ class Upload extends React.Component{
        }
        let submit;
        if (this.state.images.length > 0){
-           submit=<button onClick={this.uploadImages} className="submit">Upload</button>
+           submit=<button id="submit" onClick={this.uploadImages} className="submit">Upload</button>
        }else{
            submit=<button className="submit-disable" disabled>Upload</button>
        }
        return (
-            <div className="upload-container">
-                <div className="dropzone" id="dropzone">
-                    <label> Drag & Drops or Browse </label>
-                    <input type="file"  name="myFile" title="" onChange={this.readfile}/>
+           <div>
+                <ProfileContainer/>
+                <div className="upload-container">
+                    <div className="dropzone" id="dropzone">
+                        <label> Drag & Drops or Browse </label>
+                        <input type="file"  name="myFile" title="" onChange={this.readfile}/>
+                    </div>
+                    <div className="images-container">
+                        {images}
+                    </div>
+                    {submit}
                 </div>
-                <div className="images-container">
-                    {images}
-                </div>
-                {submit}
-            </div>
+           </div>
         )
     }
 }

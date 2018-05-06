@@ -1,11 +1,21 @@
 import React from 'react'
+import ProfileContainer from './profile_container'
 
 
 class Gallery extends React.Component{
     constructor(props){
         super(props)
+
     }
 
+
+
+    componentDidMount(){
+        debugger;
+        if (!this.props.UserImgs){
+            this.props.FetchUserImgs(this.props.CurrentUser.id)
+        }
+    }
 
     render(){
         let images =[];
@@ -29,11 +39,14 @@ class Gallery extends React.Component{
             });
         }
         return (
-            <div className="user-gallery-container">
-                <div className="user-gallery">
-                    <main className="user-main">
-                        {images}
-                    </main>
+            <div>
+                <ProfileContainer/>
+                <div className="user-gallery-container">
+                    <div className="user-gallery">
+                        <main className="user-main">
+                            {images}
+                        </main>
+                    </div>
                 </div>
             </div>
         )

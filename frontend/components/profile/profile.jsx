@@ -1,11 +1,6 @@
-
 import React from  'react'
 import {Link} from 'react-router-dom'
 import Discover from './discover'
-import Gallery from './gallery'
-import Settings from './settings';
-import UploadContainer from './upload_container';
-import Modal from 'react-responsive-modal'
 
 
 class Profile extends React.Component{
@@ -15,10 +10,7 @@ class Profile extends React.Component{
                       UserImgs: "",
                       open: false};
         this.logout = this.logout.bind(this);
-        this.switch = this.switch.bind(this);
-        this.onCloseModal = this.onCloseModal.bind(this);
-        this.onOpenModal = this.onOpenModal.bind(this);
-        this.hidModal = this.hidModal.bind(this);
+
 
     }
 
@@ -34,42 +26,11 @@ class Profile extends React.Component{
         this.setState({UserImgs: nextProps.UserImgs})
     }
 
-    onOpenModal(){
-        this.setState({open: true})
-    }
-
-    onCloseModal(){
-        this.setState({open: false})
-    }
-
-
-
     logout(){
         debugger;
         return this.props.Logout()
             .then(() => this.props.history.push("/"))
     }
-
-    switch(name){
-        if (name === "discover"){
-           return () => this.setState({display: <Discover/>})
-        }else if (name === "gallery"){
-           return () => this.setState({display: <Gallery  CurrentUser={this.props.CurrentUser} UserImgs={this.props.UserImgs}/>})
-        }else if (name === "profile"){
-           return () => this.setState({display: <Settings CurrentUser={this.props.CurrentUser}/>})
-        }else{
-            return () => this.setState({display: <UploadContainer/>})
-        }
-
-    }
-
-    hidModal(){
-        if (this.state.hide === "block"){
-            this.setState({hide: "none"});
-            return () => document.getElementById('modal').style.display= this.state.hide;
-        }
-    }
-
 
 
     render(){
@@ -84,15 +45,14 @@ class Profile extends React.Component{
                             <span>Welcome {this.props.CurrentUser.username}</span>
                         </div>
                         <ul>
-                            <li><span onClick={this.switch("discover")}>Discover</span></li>
-                            <li><span onClick={this.switch("gallery")}>Gallery</span></li>
-                            <li><span onClick={this.switch("upload")}>Upload</span></li>
-                            <li><span onClick={this.switch("profile")}>Profile</span></li>
+                            <li><Link to="/discover">Discover</Link></li>
+                            <li><Link to="/gallery">Gallery</Link></li>
+                            <li><Link to="/upload">Upload</Link></li>
+                            <li><Link to="/profile">Profile</Link></li>
                             <li onClick={this.logout}><span>Logout</span></li>
                         </ul>
                     </div>
                 </div>
-                {this.state.display}
             </div>
         )
     }

@@ -13,9 +13,9 @@ class Navbar extends React.Component {
             debugger;
             display = (
                 <ul className="navbar">
-                    <li><Link to="/discover">About</Link></li>
+                    <li><Link to="/about">About</Link></li>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/profile">Demo</Link></li>
+                    <li><Link to="/discover">Demo</Link></li>
                 </ul>
             )
         }else{

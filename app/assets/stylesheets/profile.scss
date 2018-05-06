@@ -52,6 +52,19 @@
       line-height: 2.5;
       li {
         transition: transform 0.3s ease-in-out;
+        a{
+          font-family: 'Raleway', sans-serif;
+          color: #EFEFEF;
+          padding-bottom: 12%;
+          transition: border-bottom 0.3s ease-in-out;
+        }
+
+        a:hover{
+          color: #ff6600;
+          border-bottom: 1px solid #ff6600;
+          cursor: pointer;
+        }
+
         span{
           font-family: 'Raleway', sans-serif;
           color: #EFEFEF;
@@ -64,6 +77,7 @@
           border-bottom: 1px solid #ff6600;
           cursor: pointer;
         }
+
       }
     }
   }
@@ -253,7 +267,7 @@
     ul{
      width: 60% !important;
      li{
-       span{
+       a{
          font-size: 16px !important;
        }
      }
@@ -288,7 +302,7 @@
     justify-content: flex-end !important;
     div{
       line-height: 2.8 !important;
-      span{
+      a{
         font-size: 13px;
         line-height: 2.8;
       }
@@ -296,7 +310,7 @@
     ul {
       width: 80% !important;
       li {
-        span {
+        a {
           font-size: 13px !important;
         }
       }
@@ -323,7 +337,7 @@
   }
   .link-container{
     div{
-      span{
+      a{
         font-size: 10px !important;
         line-height: 4.5;
 
@@ -331,7 +345,7 @@
     }
     ul{
       li{
-        span{
+        a{
           font-size: 10px !important;
         }
       }

@@ -1,4 +1,5 @@
 import React from 'react'
+import ProfileContainer from './profile_container'
 
 class Discover extends React.Component{
     constructor(props){
@@ -8,6 +9,7 @@ class Discover extends React.Component{
     render(){
         return (
             <div>
+                <ProfileContainer/>
                 <h1>Discover</h1>
             </div>
         )

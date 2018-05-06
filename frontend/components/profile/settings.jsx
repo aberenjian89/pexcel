@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ProfileContaienr from './profile_container'
 
 class Settings extends React.Component{
     constructor(props){
@@ -21,41 +21,44 @@ class Settings extends React.Component{
             user_profile = this.props.CurrentUser.img_url;
         }
         return (
-            <div className="settings-container">
-                <div className="profile-header">
-                    <div className="profile-picture">
-                        <img src={user_profile} onLoad={this.handleImageLoaded.bind(this)}/>
+            <div>
+                <ProfileContaienr/>
+                <div className="settings-container">
+                    <div className="profile-header">
+                        <div className="profile-picture">
+                            <img src={user_profile} onLoad={this.handleImageLoaded.bind(this)}/>
+                        </div>
+                        <div className="profile-info">
+                            <ul>
+                                <li>Followers:<span>{this.props.CurrentUser.number_followers}</span></li>
+                                <li>Following:<span>{this.props.CurrentUser.number_followee}</span></li>
+                                <li>Posts:<span>0</span></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div className="profile-info">
-                        <ul>
-                            <li>Followers:<span>{this.props.CurrentUser.number_followers}</span></li>
-                            <li>Following:<span>{this.props.CurrentUser.number_followee}</span></li>
-                            <li>Posts:<span>0</span></li>
-                        </ul>
+                    <div className="user-form">
+                        <form>
+                            <div>
+                                <label>Username: </label>
+                                <input type="text" name="username" value={this.props.CurrentUser.username} disabled/>
+                            </div>
+                            <div>
+                                <label>First Name:</label>
+                                <input type="text" name="firstname"/>
+                            </div>
+                            <div>
+                                <label>Last Name:</label>
+                                <input type="text" name="lastname"/>
+                            </div>
+                            <div>
+                                <label>Password:</label>
+                                <input type="password" name="password"/>
+                            </div>
+                            <div>
+                                <input type="submit" value="Update"/>
+                            </div>
+                        </form>
                     </div>
-                </div>
-                <div className="user-form">
-                    <form>
-                        <div>
-                            <label>Username: </label>
-                            <input type="text" name="username" value={this.props.CurrentUser.username} disabled/>
-                        </div>
-                        <div>
-                            <label>First Name:</label>
-                            <input type="text" name="firstname"/>
-                        </div>
-                        <div>
-                            <label>Last Name:</label>
-                            <input type="text" name="lastname"/>
-                        </div>
-                        <div>
-                            <label>Password:</label>
-                            <input type="password" name="password"/>
-                        </div>
-                        <div>
-                            <input type="submit" value="Update"/>
-                        </div>
-                    </form>
                 </div>
             </div>
         )
