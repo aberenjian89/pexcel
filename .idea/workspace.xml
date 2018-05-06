@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/images_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/images_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/discover.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/profile/discover.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/gallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/profile/gallery.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/profile/profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/profile/settings.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/upload.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/profile/upload.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/splash/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/splash/navbar.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -43,20 +34,26 @@
       <file leaf-file-name="app.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/components/app.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="6" column="56" lean-forward="true" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profile.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="354" column="37" selection-start-line="354" selection-start-column="37" selection-end-line="354" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/components/splash/navbar.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+            <state relative-caret-position="195">
+              <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -165,7 +162,6 @@
         <option value="$PROJECT_DIR$/frontend/reducers/Image_view_error_reducer.js" />
         <option value="$PROJECT_DIR$/frontend/reducers/image_error_reducer.js" />
         <option value="$PROJECT_DIR$/app/controllers/api/images_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" />
         <option value="$PROJECT_DIR$/frontend/components/profile/upload.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/profile/gallery.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/profile/gallery_container.jsx" />
@@ -175,6 +171,7 @@
         <option value="$PROJECT_DIR$/frontend/components/app.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/profile/discover.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/splash/navbar.jsx" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" />
       </list>
     </option>
   </component>
@@ -199,8 +196,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="640" />
-    <option name="y" value="288" />
+    <option name="x" value="716" />
+    <option name="y" value="224" />
     <option name="width" value="1865" />
     <option name="height" value="1337" />
   </component>
@@ -471,7 +468,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="577730000" />
+    <option name="totallyTimeSpent" value="577997000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -483,7 +480,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="640" y="288" width="1865" height="1337" extended-state="0" />
+    <frame x="716" y="224" width="1865" height="1337" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17050938" />
@@ -829,13 +826,6 @@
     <entry file="file://$PROJECT_DIR$/frontend/components/root.jsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profile.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3148">
-          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/profile/upload.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -896,16 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/app.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -928,8 +908,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/splash/navbar.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        <state relative-caret-position="195">
+          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/app.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="56" lean-forward="true" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profile.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="354" column="37" selection-start-line="354" selection-start-column="37" selection-end-line="354" selection-end-column="37" />
         </state>
       </provider>
     </entry>
