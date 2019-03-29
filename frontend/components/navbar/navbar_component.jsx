@@ -13,9 +13,10 @@ import { withStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
+import SettingIcon from "@material-ui/icons/Settings";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import Button from "@material-ui/core/Button";
 
 const styles = theme => ({
   root: {
@@ -32,7 +33,8 @@ const styles = theme => ({
     display: "none",
     [theme.breakpoints.up("sm")]: {
       display: "block"
-    }
+    },
+    "font-family": "Anton, sans-serif"
   },
   search: {
     position: "relative",
@@ -77,7 +79,7 @@ const styles = theme => ({
     display: "none",
     [theme.breakpoints.up("md")]: {
       display: "flex"
-    }
+    },
   },
   sectionMobile: {
     display: "flex",
@@ -87,12 +89,17 @@ const styles = theme => ({
   }
 });
 
+const navbutton={
+  textTransform: "lowercase !important"
+};
+
 class NavbarComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       anchorEl: null,
-      mobileMoreAnchorEl: null
+      mobileMoreAnchorEl: null,
+      authenticate: false
     };
     this.handleProfileMenuOpen = this.handleProfileMenuOpen.bind(this);
     this.handleMenuClose = this.handleMenuClose.bind(this);
@@ -130,8 +137,24 @@ class NavbarComponent extends React.Component {
         open={isMenuOpen}
         onClose={this.handleMenuClose}
       >
-        <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>My account</MenuItem>
+        <MenuItem onClick={this.handleMenuClose}>
+          <IconButton color="inherit">
+            <AccountCircle />
+          </IconButton>
+          My Profile
+        </MenuItem>
+        <MenuItem onClick={this.handleMenuClose}>
+          <IconButton color="inherit">
+            <SettingIcon />
+          </IconButton>
+          Setting
+        </MenuItem>
+        <MenuItem onClick={this.handleMenuClose}>
+          <IconButton color="inherit">
+            <ExitToAppIcon />
+          </IconButton>
+          LogOut
+        </MenuItem>
       </Menu>
     );
 
@@ -143,55 +166,61 @@ class NavbarComponent extends React.Component {
         open={isMobileMenuOpen}
         onClose={this.handleMenuClose}
       >
-        <MenuItem onClick={this.handleMobileMenuClose}>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <MailIcon />
-            </Badge>
-          </IconButton>
-          <p>Messages</p>
+        <MenuItem onClick={this.handleMenuClose}>
+            <IconButton color="inherit">
+                <AccountCircle />
+            </IconButton>
+            My Profile
         </MenuItem>
-        <MenuItem onClick={this.handleMobileMenuClose}>
-          <IconButton color="inherit">
-            <Badge badgeContent={11} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <p>Notifications</p>
+        <MenuItem onClick={this.handleMenuClose}>
+        <IconButton color="inherit">
+        <SettingIcon />
+        </IconButton>
+        Setting
         </MenuItem>
-        <MenuItem onClick={this.handleProfileMenuOpen}>
-          <IconButton color="inherit">
-            <AccountCircle />
-          </IconButton>
-          <p>Profile</p>
+        <MenuItem onClick={this.handleMenuClose}>
+        <IconButton color="inherit">
+        <ExitToAppIcon />
+        </IconButton>
+        LogOut
         </MenuItem>
       </Menu>
     );
+
+    const renderMobileMenuUnAuthenticate = (
+        <Menu
+            anchorEl={mobileMoreAnchorEl}
+            anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            transformOrigin={{ vertical: "top", horizontal: "right" }}
+            open={isMobileMenuOpen}
+            onClose={this.handleMenuClose}>
+            <MenuItem onClick={this.handleMenuClose}>
+               Sign-In
+            </MenuItem>
+            <MenuItem onClick={this.handleMenuClose}>
+                Sign-Up
+            </MenuItem>
+        </Menu>
+    )
+
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="static" color="default">
           <Toolbar>
-            <IconButton
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="Open drawer"
-            >
-              <MenuIcon />
-            </IconButton>
             <Typography
               className={classes.title}
-              variant="h6"
+              variant="h4"
               color="inherit"
               noWrap
             >
-              Material-UI
+              PEXCEL
             </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
               <InputBase
-                placeholder="Search…"
+                placeholder="Search you Image…"
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput
@@ -199,39 +228,42 @@ class NavbarComponent extends React.Component {
               />
             </div>
             <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
-              <IconButton color="inherit">
-                <Badge badgeContent={4} color="secondary">
-                  <MailIcon />
-                </Badge>
-              </IconButton>
-              <IconButton color="inherit">
-                <Badge badgeContent={17} color="secondary">
-                  <NotificationsIcon />
-                </Badge>
-              </IconButton>
-              <IconButton
-                aria-owns={isMenuOpen ? "material-appbar" : undefined}
-                aria-haspopup="true"
-                onClick={this.handleProfileMenuOpen}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-            </div>
+            {this.state.authenticate  && (
+              <div className={classes.sectionDesktop}>
+                <IconButton
+                  aria-owns={isMenuOpen ? "material-appbar" : undefined}
+                  aria-haspopup="true"
+                  onClick={this.handleProfileMenuOpen}
+                  color="inherit"
+                >
+                  <AccountCircle />
+                </IconButton>
+              </div>
+            )}
+            {!this.state.authenticate && (
+                <div className={classes.sectionDesktop}>
+                    <Button color="inherit">Sign in</Button>
+                    <Button color="inherit">Sign up</Button>
+                </div>
+            )}
             <div className={classes.sectionMobile}>
-              <IconButton
-                aria-haspopup="true"
-                onClick={this.handleMobileMenuOpen}
-                color="inherit"
-              >
-                <MoreIcon />
-              </IconButton>
+                <IconButton
+                    aria-haspopup="true"
+                    onClick={this.handleMobileMenuOpen}
+                    color="inherit"
+                >
+                    <MoreIcon/>
+                </IconButton>
             </div>
           </Toolbar>
         </AppBar>
         {renderMenu}
-        {renderMobileMenu}
+        {this.state.authenticate && (
+          renderMobileMenu
+        )}
+        {!this.state.authenticate && (
+          renderMobileMenuUnAuthenticate
+        )}
       </div>
     );
   }
