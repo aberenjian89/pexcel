@@ -2,66 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PEXCEL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PEXCEL.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/Shiraz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/loader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/auth.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/landing.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/upload.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/actions/Image_view_action.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/actions/follow_action.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/actions/image_action.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/actions/session_action.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Imgview/Imageview.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/app.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/discover.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/gallery.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/gallery_container.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/profile.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/profile_container.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/settings.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/settings_container.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/upload.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/profile/upload_container.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/root.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/auth.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/auth_container.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/login_container.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/login_form.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/newuser_container.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/newuser_form.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/splash/Home_Gallery/gallery.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/splash/Home_Gallery/gallery_container.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/splash/footer.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/splash/heading.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/splash/landing.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/splash/landing_container.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/splash/navbar.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pexcel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pexcel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/Image_view_error_reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/entities_reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/errors_reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/follow_reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/image_author_reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/image_error_reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/image_reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/image_view_reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/root_reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/session_errors_reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/session_reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/store/store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/follow_api_util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/image_api_util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/jquery_util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/routes_util.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/session_api_util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -90,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pexcel.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pexcel.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/pexcel.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+            <state relative-caret-position="120">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="19" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -102,11 +44,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/store/store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="165">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,11 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/components/Gallery/gallery.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/splash/Home_Gallery/gallery_container.jsx" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/slideshow.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/masnary.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/grid.js" />
         <option value="$PROJECT_DIR$/frontend/components/splash/Home_Gallery/gallery.jsx" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/loader.js" />
         <option value="$PROJECT_DIR$/frontend/components/login_signup/auth_container.jsx" />
@@ -198,9 +138,14 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/frontend/pexcel.jsx" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/frontend/reducer/root_reducer/root.js" />
+        <option value="$PROJECT_DIR$/frontend/pexcel.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/navbar/navbar_component.jsx" />
+        <option value="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
+        <option value="$PROJECT_DIR$/frontend/reducer/root_reducer.js" />
+        <option value="$PROJECT_DIR$/frontend/store/store.js" />
       </list>
     </option>
   </component>
@@ -249,6 +194,18 @@
               <item name="pexcel" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="reducer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -263,14 +220,15 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/assets/javascripts" />
-      <recent name="$PROJECT_DIR$/frontend/components/splash" />
-      <recent name="$PROJECT_DIR$/frontend/components" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/assets/javascripts/js" />
       <recent name="$PROJECT_DIR$/app/assets/javascripts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/reducer" />
+      <recent name="$PROJECT_DIR$/app/assets/javascripts" />
+      <recent name="$PROJECT_DIR$/frontend/components/splash" />
+      <recent name="$PROJECT_DIR$/frontend/components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -424,12 +382,12 @@
       <workItem from="1522268267147" duration="3093000" />
       <workItem from="1522361292453" duration="5185000" />
       <workItem from="1523546965275" duration="5468000" />
-      <workItem from="1553821707346" duration="4037000" />
+      <workItem from="1553821707346" duration="5649000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="582034000" />
+    <option name="totallyTimeSpent" value="583646000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -441,7 +399,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="23" width="2560" height="1333" extended-state="6" />
+    <frame x="1" y="23" width="2560" height="1333" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32983193" />
@@ -449,8 +407,8 @@
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32983193" />
-      <window_info active="true" anchor="right" id="Terminal" order="4" visible="true" weight="0.3963463" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17196187" />
+      <window_info anchor="right" id="Terminal" order="4" visible="true" weight="0.3963463" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17196187" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32956383" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3264633" />
@@ -523,41 +481,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/splash/Home_Gallery/gallery.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="23" selection-start-line="22" selection-start-column="7" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="39" column="22" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/splash/heading.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/splash/landing.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/session/login_form.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-784">
@@ -814,30 +737,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.ru">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/pexcel.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/navbar_component.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/root.html.erb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/reducer/root_reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/store/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/pexcel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
