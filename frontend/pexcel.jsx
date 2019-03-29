@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store'
+import RootComponent from './components/root_component'
 
 document.addEventListener("DOMContentLoaded",()=>{
     let preloadstate =undefined;
@@ -18,5 +19,5 @@ document.addEventListener("DOMContentLoaded",()=>{
     // window.FetchImg = FetchImg;
     // ReactDOM.render(<Root store={store}/>
     //     ,document.getElementById('root'));
-    ReactDOM.render(<h1>Hello World</h1>,document.getElementById('root'))
+    ReactDOM.render(<RootComponent store={store}/>,document.getElementById('root'))
 });
