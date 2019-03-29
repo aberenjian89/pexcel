@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require("webpack");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
  plugins = []; // if using any plugins for both dev and production
 let devPlugins = []; // if using any plugins for development
@@ -8,11 +9,6 @@ let prodPlugins = [
     new webpack.DefinePlugin({
         'process.env': {
             'NODE_ENV': JSON.stringify('production')
-        }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: true
         }
     })
 ];
@@ -33,16 +29,44 @@ module.exports = {
         extensions: ['.js', '.jsx', '*']
     },
     module: {
-        loaders: [
+        rules: [
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use:{
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['babel-preset-env']
+                    }
+                }
+            },
             {
                 test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['env', 'react']
+                exclude: /node_module/,
+                use:{
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['babel-preset-react']
+                    }
                 }
             }
+
+        ]
+    },
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                uglifyOptions:{
+                    compress: false,
+                    ecma: 6,
+                    mangle: true
+                },
+                sourceMap: true
+            })
         ]
     },
     devtool: 'source-map',
+    mode: 'none'
 };
