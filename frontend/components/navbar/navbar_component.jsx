@@ -138,6 +138,9 @@ class NavbarComponent extends React.Component {
 
   handleLogout(){
     this.props.LogOutUser()
+    .then(()=> this.setState({
+      anchorEl: null
+    }))
   }
 
   OpenAuthModal(e,type) {
@@ -171,7 +174,7 @@ class NavbarComponent extends React.Component {
           </IconButton>
           Setting
         </MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>
+        <MenuItem onClick={(e) => this.handleLogout(e)}>
           <IconButton color="inherit" onClick={(e) => this.handleLogout(e)}>
             <ExitToAppIcon />
           </IconButton>
@@ -189,22 +192,22 @@ class NavbarComponent extends React.Component {
         onClose={this.handleMenuClose}
       >
         <MenuItem onClick={this.handleMenuClose}>
-            <IconButton color="inherit">
-                <AccountCircle />
-            </IconButton>
-            My Profile
+          <IconButton color="inherit">
+            <AccountCircle />
+          </IconButton>
+          My Profile
         </MenuItem>
         <MenuItem onClick={this.handleMenuClose}>
-        <IconButton color="inherit">
-        <SettingIcon />
-        </IconButton>
-        Setting
+          <IconButton color="inherit">
+            <SettingIcon />
+          </IconButton>
+          Setting
         </MenuItem>
         <MenuItem onClick={this.handleMenuClose}>
-        <IconButton color="inherit">
-        <ExitToAppIcon />
-        </IconButton>
-        LogOut
+          <IconButton color="inherit">
+            <ExitToAppIcon />
+          </IconButton>
+          LogOut
         </MenuItem>
       </Menu>
     );
@@ -252,6 +255,9 @@ class NavbarComponent extends React.Component {
             <div className={classes.grow} />
             {this.state.authenticate  && (
               <div className={classes.sectionDesktop}>
+                <Button  color="inherit">
+                  My Gallery
+                </Button>
                 <IconButton
                   aria-owns={isMenuOpen ? "material-appbar" : undefined}
                   aria-haspopup="true"

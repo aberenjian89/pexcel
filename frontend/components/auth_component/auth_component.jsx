@@ -14,6 +14,8 @@ import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Divider from '@material-ui/core/Divider';
+import FormControl from '@material-ui/core/FormControl'
+import { debug } from 'util';
 
 
 
@@ -23,7 +25,6 @@ import Divider from '@material-ui/core/Divider';
 function Transition(props) {
     return <Slide direction="up" {...props} />;
 }
-
 
 const styles = theme =>({
     root: {
@@ -48,7 +49,9 @@ const styles = theme =>({
         display: "flex",
         justifyContent: "space-between",
         flexDirection: "column",
-        alignContent: "center"
+				alignContent: "center",
+				marginTop: theme.spacing.unit,
+        marginBottom: theme.spacing.unit
     },
     textField_actions:{
         display: "flex",
@@ -61,12 +64,20 @@ const styles = theme =>({
     },
     textField_actions_register:{
         display: "flex",
-        justifyContent: "flex-end",
+        justifyContent: "center",
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
         marginTop: theme.spacing.unit,
         marginBottom: theme.spacing.unit
-    }
+		},
+		error_section:{
+			marginLeft: theme.spacing.unit,
+			marginRight: theme.spacing.unit,
+			marginTop: theme.spacing.unit,
+			marginBottom: theme.spacing.unit,
+			color: "#f44336",
+
+		}
 });
 
 class AuthComponent extends React.Component {
@@ -78,7 +89,8 @@ class AuthComponent extends React.Component {
             remember: false,
             username: "",
             email: "",
-            password: ""
+						password: "",
+						errors: null 
 
         };
         this.handleOpen = this.handleOpen.bind(this);
@@ -86,6 +98,8 @@ class AuthComponent extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
         this.handleAuthSwitch = this.handleAuthSwitch.bind(this)
+        this.LoginDisable = this.LoginDisable.bind(this)
+        this.RegisterDisable = this.RegisterDisable.bind(this)
     }
 
     componentWillReceiveProps(nextProps){
@@ -94,7 +108,12 @@ class AuthComponent extends React.Component {
                 open: nextProps.ModalStatus.status,
                 type: nextProps.ModalStatus.type,
             })
-        }
+				}
+				if(nextProps.AuthErrors){
+					this.setState({
+						errors: [...nextProps.AuthErrors]
+					})
+				}
     }
 
     handleOpen(){
@@ -103,27 +122,39 @@ class AuthComponent extends React.Component {
 
     handleClose(){
         this.setState({
-            open: false
-        });
+						open: false,
+						errors: null 
+				});
+				this.props.ClearAuthError()
         this.props.ModalHide()
     };
 
     handleChange(e){
         if (this.state.remember){
             this.setState({
-                remember: false
+								remember: false
             })
         }else{
             this.setState({
                 remember: true
             })
-        }
+				}
+				if (this.state.errors){
+					this.props.ClearAuthError()
+					this.setState({
+						errors: null
+					})
+				}
     }
 
     handleInput(e,name){
         this.setState({
-            [name]: e.currentTarget.value
-        })
+						[name]: e.currentTarget.value,
+						errors: null
+				})
+				if (this.state.errors){
+					this.props.ClearAuthError()
+				}
     }
 
     handleLogin(e){
@@ -133,9 +164,17 @@ class AuthComponent extends React.Component {
             password: this.state.password
         };
         this.props.LoginUser(data)
-            .then((user) => this.handleClose())
-    }
-
+						.then((user) => {
+							if (this.state.errors){
+								this.props.ClearAuthError()
+								this.setState({
+									errors: null 
+								})
+							}
+							this.handleClose()
+						})
+		}
+		
     handleRegister(e){
         e.preventDefault();
         let data = {
@@ -144,20 +183,49 @@ class AuthComponent extends React.Component {
             password: this.state.password,
         };
         this.props.RegisterUser(data)
-            .then((user) => this.handleClose())
+						.then((user) => {
+							if (this.state.errors){
+								this.props.ClearAuthError()
+								this.setState({
+									errors: null 
+								})
+							}
+							this.handleClose()
+						})
+					
     }
 
     handleAuthSwitch(e){
         e.preventDefault()
         if (this.state.type == 'Sign_In'){
             this.setState({
-                type: 'Sign_Up'
-            })
+							email: "",
+							username: "",
+							password: "",
+							type: 'Sign_Up',
+						})
         }else{
             this.setState({
-                type: 'Sign_In'
+							email: "",
+							username: "",
+							password: "",
+							type: 'Sign_In',
             })
-        }
+				}
+				if (this.state.errors){
+					this.props.ClearAuthError()
+					this.setState({
+						errors: null 
+					})
+				}
+    }
+
+    LoginDisable(){
+        return this.state.email == "" || this.state.password == ""
+    }
+
+    RegisterDisable(){
+        return this.state.email == "" || this.state.password == "" || this.state.username == "" 
     }
 
 
@@ -192,16 +260,23 @@ class AuthComponent extends React.Component {
                                 <CloseIcon/>
                             </IconButton>
                         </div>
+												<Divider light={true}/>
                         {this.state.type == 'Sign_In' && (
-                        <div>
-                            <form className={classes.textField_group}>
+                        <div className={classes.error_section}>
+													{this.state.errors  && (
+														<span>
+															Incorrect username or password.
+															<br></br>
+															Please try again!
+														</span>
+													)}
+                            <FormControl className={classes.textField_group}>
                                 <TextField
                                     required
                                     label="Email"
                                     className={classes.textField}
                                     type="email"
                                     name="email"
-                                    autoComplete="email"
                                     margin="normal"
                                     variant="outlined"
                                     onChange={(e)=> this.handleInput(e,"email")}
@@ -216,7 +291,7 @@ class AuthComponent extends React.Component {
                                     variant="outlined"
                                     onChange={(e)=> this.handleInput(e,"password")}
                                 />
-                            </form>
+                            </FormControl>
                             <div className={classes.textField_actions}>
                                 <FormControlLabel
                                     control={
@@ -226,13 +301,13 @@ class AuthComponent extends React.Component {
                                             color="default"
                                         />
                                     }
-                                   label="Remember my username"
+                                   label="Remember me"
                                 />
-                                <Button size="large" onClick={(e)=> this.handleLogin(e)}>
+                                <Button size="large" onClick={(e)=> this.handleLogin(e)} disabled={this.LoginDisable()}>
                                     Login
                                 </Button>
                             </div>
-                            <Divider/>
+                            <Divider light={true}/>
                             <div className={classes.textField_actions}>
                                 <Typography className={classes.typography_subject}>
                                     Don't have an account?
@@ -244,7 +319,15 @@ class AuthComponent extends React.Component {
                         </div>
                         )}
                         {this.state.type == 'Sign_Up' && (
-                            <div>
+                            <div className={classes.error_section}>
+															{this.state.errors && (
+																this.state.errors.map((err,key)=>
+																	<div key={key}>
+																		<span>{err}</span>
+																		<br></br>		
+																	</div>
+																)
+															)}
                                 <form className={classes.textField_group}>
                                     <TextField
                                         required
@@ -280,11 +363,11 @@ class AuthComponent extends React.Component {
                                     />
                                 </form>
                                 <div className={classes.textField_actions_register}>
-                                    <Button size="large" onClick={(e)=> this.handleRegister(e)}>
+                                    <Button size="large" onClick={(e)=> this.handleRegister(e)} disabled={this.RegisterDisable()}>
                                         Register
                                     </Button>
                                 </div>
-                                <Divider/>
+                                <Divider light={true}/>
                                 <div className={classes.textField_actions}>
                                     <Typography className={classes.typography_subject}>
                                          Have an account?

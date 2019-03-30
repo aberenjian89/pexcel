@@ -41,19 +41,19 @@ export const AuthClearError = () => ({
 export const APIUserLogin = (data) => dispatch => (
     LoginHomeUser(data)
         .then((user) => dispatch(LoginUser(user))
-            ,(err)=> dispatch(AuthError(err)))
+            ,(err)=> dispatch(AuthError(err.responseJSON)))
 );
 
 export const APIRegisterUser = (data) => dispatch => (
     RegisterNewUser(data)
         .then((user) => dispatch(RegisterUser(user))
-        ,(err) => dispatch(AuthError(err)))
+        ,(err) => dispatch(AuthError(err.responseJSON)))
 );
 
 export const APIUserLogout = () => dispatch => (
     LogOutHomeUser()
         .then(() => dispatch(LogOutUser())
-        ,(err)=> dispatch(AuthError(err)))
+        ,(err)=> dispatch(AuthError(err.responseJSON)))
 )
 
 
