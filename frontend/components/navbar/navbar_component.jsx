@@ -196,10 +196,10 @@ class NavbarComponent extends React.Component {
             transformOrigin={{ vertical: "top", horizontal: "right" }}
             open={isMobileMenuOpen}
             onClose={this.handleMenuClose}>
-            <MenuItem onClick={this.handleMenuClose}>
+            <MenuItem onClick={(e)=> this.OpenAuthModal(e,'Sign_In')}>
                Sign-In
             </MenuItem>
-            <MenuItem onClick={this.handleMenuClose}>
+            <MenuItem onClick={(e)=> this.OpenAuthModal(e,'Sign_Up')}>
                 Sign-Up
             </MenuItem>
         </Menu>
