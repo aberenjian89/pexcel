@@ -101,6 +101,7 @@ class NavbarComponent extends React.Component {
     this.handleMenuClose = this.handleMenuClose.bind(this);
     this.handleMobileMenuOpen = this.handleMobileMenuOpen.bind(this);
     this.handleMobileMenuClose = this.handleMobileMenuClose.bind(this);
+    this.OpenAuthModal = this.OpenAuthModal.bind(this)
   }
   handleProfileMenuOpen(event) {
     this.setState({ anchorEl: event.currentTarget });
@@ -118,6 +119,11 @@ class NavbarComponent extends React.Component {
   handleMobileMenuClose() {
     this.setState({ mobileMoreAnchorEl: null });
   }
+
+  OpenAuthModal(e,type) {
+    this.props.ModalShow(type)
+  }
+
 
   render() {
     const { anchorEl, mobileMoreAnchorEl } = this.state;
@@ -238,8 +244,8 @@ class NavbarComponent extends React.Component {
             )}
             {!this.state.authenticate && (
                 <div className={classes.sectionDesktop}>
-                    <Button color="inherit">Sign in</Button>
-                    <Button color="inherit">Sign up</Button>
+                    <Button color="inherit" onClick={(e)=> this.OpenAuthModal(e,"Sign_In")}>Sign in</Button>
+                    <Button color="inherit" onClick={(e)=> this.OpenAuthModal(e,"Sign_Up")}>Sign up</Button>
                 </div>
             )}
             <div className={classes.sectionMobile}>

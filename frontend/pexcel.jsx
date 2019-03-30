@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded",()=>{
         };
     }
     const store = configureStore(preloadstate);
-    // window.store=store;
+    window.store=store;
     // window.dispatch = store.dispatch;
-    // window.getState = store.getState;
+    window.getState = store.getState;
     // window.FetchImg = FetchImg;
     // ReactDOM.render(<Root store={store}/>
     //     ,document.getElementById('root'));

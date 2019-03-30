@@ -2,7 +2,8 @@ import merge from 'lodash/merge'
 
 
 const _initialestate = {
-    current_user: null
+    current_user: null,
+    errors: null
 }
 
 
@@ -17,6 +18,10 @@ const SessionReducer = (state = _initialestate,action)=>{
             return merge({},state,{current_user: action.data});
         case "LOGOUT_USER":
             return _initialestate;
+        case "AUTH_ERROR":
+            return merge({},state,{errors: action.data});
+        case "AUTH_CLEAR_ERROR":
+            return merge({},state,{errors: {}})
         default:
             return state
     }

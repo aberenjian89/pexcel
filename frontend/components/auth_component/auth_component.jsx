@@ -42,13 +42,23 @@ class AuthComponent extends React.Component {
         this.handleClose = this.handleClose.bind(this)
     }
 
+    componentWillReceiveProps(nextProps){
+        if(nextProps.ModalStatus.status !== this.state.open){
+            this.setState({
+                open: nextProps.ModalStatus.status
+            })
+        }
+    }
 
     handleOpen(){
         this.setState({ open: true });
     };
 
     handleClose(){
-        this.setState({ open: false });
+        this.setState({
+            open: false
+        });
+        this.props.ModalHide()
     };
 
     render() {
@@ -56,8 +66,6 @@ class AuthComponent extends React.Component {
 
         return (
             <div>
-                <Typography gutterBottom>Click to get the full Modal experience!</Typography>
-                <Button onClick={this.handleOpen}>Open Modal</Button>
                 <Modal
                     aria-labelledby="simple-modal-title"
                     aria-describedby="simple-modal-description"
@@ -71,7 +79,7 @@ class AuthComponent extends React.Component {
                         <Typography variant="subtitle1" id="simple-modal-description">
                             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
                         </Typography>
-                        <SimpleModalWrapped />
+                        <AuthComponentWrapped />
                     </div>
                 </Modal>
             </div>

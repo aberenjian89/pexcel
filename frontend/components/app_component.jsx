@@ -1,5 +1,6 @@
 import React from 'react'
-import Navbar from './navbar/navbar_component'
+import NavbarContainer from './navbar/navbar_container'
+import AuthContainer from './auth_component/auth_container'
 
 class AppComponent extends React.Component{
     constructor(props){
@@ -10,7 +11,8 @@ class AppComponent extends React.Component{
     render(){
         return (
         <div>
-            <Navbar/>
+            <AuthContainer/>
+            <NavbarContainer/>
         </div>
         )
     }
