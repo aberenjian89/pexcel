@@ -16,6 +16,8 @@ const SessionReducer = (state = _initialestate,action)=>{
             return merge({},{current_user: action.data});
         case "UPDATE_USER":
             return merge({},state,{current_user: action.data});
+        case "REGISTER_USER":
+            return merge({},{current_user: action.data})
         case "LOGOUT_USER":
             return _initialestate;
         case "AUTH_ERROR":

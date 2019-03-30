@@ -95,14 +95,30 @@ class NavbarComponent extends React.Component {
     this.state = {
       anchorEl: null,
       mobileMoreAnchorEl: null,
-      authenticate: false
+      authenticate: null
     };
     this.handleProfileMenuOpen = this.handleProfileMenuOpen.bind(this);
     this.handleMenuClose = this.handleMenuClose.bind(this);
     this.handleMobileMenuOpen = this.handleMobileMenuOpen.bind(this);
     this.handleMobileMenuClose = this.handleMobileMenuClose.bind(this);
-    this.OpenAuthModal = this.OpenAuthModal.bind(this)
+    this.OpenAuthModal = this.OpenAuthModal.bind(this);
+    this.handleLogout = this.handleLogout.bind(this)
   }
+
+  componentDidMount(props){
+    this.setState({
+        authenticate: this.props.authenticate
+    })
+  }
+
+  componentWillReceiveProps(nextProps){
+    if (nextProps.authenticate !== this.state.authenticate) {
+      this.setState({
+          authenticate: nextProps.authenticate
+      })
+    }
+  }
+
   handleProfileMenuOpen(event) {
     this.setState({ anchorEl: event.currentTarget });
   }
@@ -118,6 +134,10 @@ class NavbarComponent extends React.Component {
 
   handleMobileMenuClose() {
     this.setState({ mobileMoreAnchorEl: null });
+  }
+
+  handleLogout(){
+    this.props.LogOutUser()
   }
 
   OpenAuthModal(e,type) {
@@ -152,7 +172,7 @@ class NavbarComponent extends React.Component {
           Setting
         </MenuItem>
         <MenuItem onClick={this.handleMenuClose}>
-          <IconButton color="inherit">
+          <IconButton color="inherit" onClick={(e) => this.handleLogout(e)}>
             <ExitToAppIcon />
           </IconButton>
           LogOut
