@@ -138,6 +138,10 @@ class NavbarComponent extends React.Component {
     this.setState({ mobileMoreAnchorEl: null });
   }
 
+  OpenUploadModal(){
+    this.props.UploadModalShow()
+  }
+
   handleLogout(){
     this.props.LogOutUser()
     .then(()=> this.setState({
@@ -184,7 +188,7 @@ class NavbarComponent extends React.Component {
           </IconButton>
           My Profile
         </MenuItem>
-        <MenuItem onClick={()=> this.handleRoute('upload')}>
+        <MenuItem onClick={()=> this.OpenUploadModal()}>
           <IconButton color="inherit">
             <AddToPhotos />
           </IconButton>
@@ -219,7 +223,7 @@ class NavbarComponent extends React.Component {
           </IconButton>
           My Profile
         </MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>
+        <MenuItem onClick={()=> this.OpenUploadModal()}>
             <IconButton color="inherit">
                 <AddToPhotos />
             </IconButton>

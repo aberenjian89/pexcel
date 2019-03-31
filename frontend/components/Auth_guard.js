@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect,Route,withRouter} from 'react-router-dom';
-import {ModalShow} from "../actions/modal_status_action";
 
 
 const mapStateToProps = (state)=> {

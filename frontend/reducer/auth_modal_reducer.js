@@ -5,7 +5,7 @@ const _initialState = {
     type: null
 }
 
-const ModalStatusReducer = (state=_initialState,action)=>{
+const AuthModalReducer = (state=_initialState,action)=>{
     Object.freeze(state)
     switch (action.type){
         case "MODAL_SHOW":
@@ -17,4 +17,4 @@ const ModalStatusReducer = (state=_initialState,action)=>{
     }
 }
 
-export default ModalStatusReducer
+export default AuthModalReducer
