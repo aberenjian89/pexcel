@@ -2,6 +2,8 @@ import {connect} from 'react-redux'
 import {ModalShow} from "../../actions/modal_status_action";
 import NavbarComponent from './navbar_component'
 import {APIUserLogout} from '../../actions/session_actions'
+import {withRouter} from 'react-router-dom'
+
 const mapStateToProps = (state)=>{
     let authenticate = null;
     if (state.Session.current_user){
@@ -21,7 +23,7 @@ const mapDispatchToProps = dispatch =>({
     LogOutUser: () => dispatch(APIUserLogout())
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(NavbarComponent)
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(NavbarComponent))
 
 
 
