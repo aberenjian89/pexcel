@@ -330,7 +330,7 @@ class NavbarComponent extends React.Component {
 }
 
 NavbarComponent.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(NavbarComponent);
