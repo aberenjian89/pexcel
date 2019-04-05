@@ -128,30 +128,32 @@ class UploadComponent extends React.Component {
     this.completedSteps = this.completedSteps.bind(this);
     this.isLastStep = this.isLastStep.bind(this);
     this.allStepsCompleted = this.allStepsCompleted.bind(this);
-    this.handleFiles = this.handleFiles.bind(this);
   }
 
-  componentDidMount(props) {
-    // let drop_area = document.getElementById("drop_area");
-    // debugger;
-    // drop_area.addEventListener(
-    //   "drop",
-    //   e => {
-    //     let dt = e.dataTransfer;
-    //     let files = dt.files;
-    //     debugger;
-    //     this.handleFiles(files);
-    //   },
-    //   false
-    // );
+
+  componentDidUpdate(props){
+      let drop_area = document.getElementById("drop_area")
+      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+          drop_area.addEventListener(eventName,(e)=>{
+              e.preventDefault()
+              e.stopPropagation()
+          }, false)
+      });
+      // drop_area.addEventListener('drop',(e)=>{
+      //
+      //   debugger
+      // },false)
+
   }
 
-  handleFiles(files) {
-    [...files].forEach(file => {
-      let formdata = new FormData();
-      formdata.append(file);
-    });
+  componentDidMount(props){
+
   }
+
+
+
+
+
 
   totalSteps() {
     getSteps().length;
