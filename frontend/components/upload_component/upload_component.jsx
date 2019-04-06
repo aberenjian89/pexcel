@@ -101,6 +101,7 @@ class UploadComponent extends React.Component {
     this.allStepsCompleted = this.allStepsCompleted.bind(this);
     this.getStepContent = this.getStepContent.bind(this);
     this.handleFiles = this.handleFiles.bind(this);
+    this.handleFileReader = this.handleFileReader.bind(this)
   }
 
   totalSteps() {
@@ -109,7 +110,24 @@ class UploadComponent extends React.Component {
 
   handleFiles(e) {
     e.preventDefault();
-    debugger;
+    if (e.currentTarget.files){
+      let files = Object.values(e.currentTarget.files)
+      this.setState({
+          images: [...files]
+      })
+    }
+    this.handleNext()
+  }
+
+  handleFileReader(file){
+
+    let data_url = null;
+    let reader = new FileReader(file);
+    reader.onload = function(){
+      data_url = reader.result;
+      debugger
+      return data_url
+    }
   }
 
   componentWillReceiveProps(nextprops) {
@@ -146,7 +164,13 @@ class UploadComponent extends React.Component {
           </div>
         );
       case 1:
-        return "Step 2: Add photo(s) information";
+        return (
+            <div>
+                {this.state.images.forEach((img,key)=>(
+                  <img key={key} src={this.handleFileReader(img)} />
+                ))}
+            </div>
+        );
       case 2:
         return "Step 3: Review your photo(s)";
       default:
