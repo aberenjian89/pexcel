@@ -80,43 +80,14 @@ function getSteps() {
   return ["Select photos", "Edit Information", "Review"];
 }
 
-function getStepContent(step, props) {
-  const { classes } = props;
-  switch (step) {
-    case 0:
-      return (
-        <div className={classes.upload_area} id="drop_area">
-          <form>
-            <div className={classes.upload_content}>
-              <div>
-                <GetApp fontSize="large" fontSizeAdjust="100px" />
-              </div>
-              <div>
-                <input type="file" multiple />
-              </div>
-              <div>
-                <label>Select a file or drag a it here</label>
-              </div>
-            </div>
-          </form>
-        </div>
-      );
-    case 1:
-      return "Step 2: Add photo(s) information";
-    case 2:
-      return "Step 3: Review your photo(s)";
-    default:
-      return "Unknown step";
-  }
-}
-
 class UploadComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       open: false,
       activeStep: 0,
-      completed: {}
+      completed: {},
+      images: []
     };
     this.handleClose = this.handleClose.bind(this);
     this.handleClickOpen = this.handleClickOpen.bind(this);
@@ -128,35 +99,17 @@ class UploadComponent extends React.Component {
     this.completedSteps = this.completedSteps.bind(this);
     this.isLastStep = this.isLastStep.bind(this);
     this.allStepsCompleted = this.allStepsCompleted.bind(this);
+    this.getStepContent = this.getStepContent.bind(this);
+    this.handleFiles = this.handleFiles.bind(this);
   }
-
-
-  componentDidUpdate(props){
-      let drop_area = document.getElementById("drop_area")
-      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-          drop_area.addEventListener(eventName,(e)=>{
-              e.preventDefault()
-              e.stopPropagation()
-          }, false)
-      });
-      // drop_area.addEventListener('drop',(e)=>{
-      //
-      //   debugger
-      // },false)
-
-  }
-
-  componentDidMount(props){
-
-  }
-
-
-
-
-
 
   totalSteps() {
     getSteps().length;
+  }
+
+  handleFiles(e) {
+    e.preventDefault();
+    debugger;
   }
 
   componentWillReceiveProps(nextprops) {
@@ -164,6 +117,40 @@ class UploadComponent extends React.Component {
       this.setState({
         open: nextprops.ModalStatus
       });
+    }
+  }
+
+  getStepContent(step, props) {
+    const { classes } = props;
+    switch (step) {
+      case 0:
+        return (
+          <div className={classes.upload_area}>
+            <form>
+              <div className={classes.upload_content}>
+                <div>
+                  <GetApp fontSize="large" fontSizeAdjust="100px" />
+                </div>
+                <div>
+                  <input
+                    type="file"
+                    multiple
+                    onChange={e => this.handleFiles(e)}
+                  />
+                </div>
+                <div>
+                  <label>Select a file or drag a it here</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        );
+      case 1:
+        return "Step 2: Add photo(s) information";
+      case 2:
+        return "Step 3: Review your photo(s)";
+      default:
+        return "Unknown step";
     }
   }
 
@@ -272,7 +259,7 @@ class UploadComponent extends React.Component {
               ) : (
                 <div>
                   <div className={classes.instructions}>
-                    {getStepContent(activeStep, this.props)}
+                    {this.getStepContent(activeStep, this.props)}
                   </div>
                   <div>
                     <Button
