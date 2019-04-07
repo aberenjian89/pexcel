@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes, { func } from "prop-types";
+import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -12,7 +12,7 @@ import StepButton from "@material-ui/core/StepButton";
 import Typography from "@material-ui/core/Typography";
 import StepLabel from "@material-ui/core/StepLabel";
 import GetApp from "@material-ui/icons/GetApp";
-import Input from "@material-ui/core/Input";
+import ImageForm from './image_form'
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
@@ -33,12 +33,15 @@ const styles = theme => ({
     marginBottom: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     marginLeft: theme.spacing.unit,
-    display: "flex",
-    justifyContent: "center"
   },
   form_content: {
     display: "flex",
     flexDirection: "column",
+    justifyContent: "center"
+  },
+  upload_area_wrapper:{
+    width: "100%",
+    display: "flex",
     justifyContent: "center"
   },
   upload_area: {
@@ -53,6 +56,14 @@ const styles = theme => ({
   },
   dialog: {
     minHeight: "300px !important"
+  },
+  upload_content_wrapper:{
+    display: "flex",
+    justifyContent: "space-between",
+    marginTop: theme.spacing.unit,
+    marginBottom: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    marginLeft: theme.spacing.unit,
   },
   upload_content: {
     "& input": {
@@ -72,6 +83,14 @@ const styles = theme => ({
     "& div": {
       display: "flex",
       justifyContent: "center"
+    }
+  },
+  images_container:{
+    height: "400px",
+    overflow: "scroll",
+    padding: "8px",
+    "& img":{
+      padding: theme.spacing.unit
     }
   }
 });
@@ -137,41 +156,48 @@ class UploadComponent extends React.Component {
     switch (step) {
       case 0:
         return (
-          <div className={classes.upload_area}>
-            <form>
-              <div className={classes.upload_content}>
-                <div>
-                  <GetApp fontSize="large" fontSizeAdjust="100px" />
-                </div>
-                <div>
-                  <input
-                    type="file"
-                    multiple
-                    onChange={e => this.handleFiles(e)}
-                  />
-                </div>
-                <div>
-                  <label>Select a file or drag a it here</label>
-                </div>
+            <div className={classes.upload_area_wrapper}>
+              <div className={classes.upload_area}>
+                <form>
+                  <div className={classes.upload_content}>
+                    <div>
+                      <GetApp fontSize="large" fontSizeAdjust="100px" />
+                    </div>
+                    <div>
+                      <input
+                        type="file"
+                        multiple
+                        onChange={e => this.handleFiles(e)}
+                      />
+                    </div>
+                    <div>
+                      <label>Select a file or drag a it here</label>
+                    </div>
+                  </div>
+                </form>
               </div>
-            </form>
-          </div>
+            </div>
         );
       case 1:
         return (
-          <div>
-            {this.state.images.map((img, key) => {
-              return (
-                <div key={key}>
-                  <img
-                    src={this.imageHandleReader(img)}
-                    width="200"
-                    height="200"
-                  />
-                </div>
-              );
-            })}
-          </div>
+            <div className={classes.upload_content_wrapper}>
+              <div className={classes.images_container}>
+                {this.state.images.map((img, key) => {
+                  return (
+                    <div key={key}>
+                      <img
+                        src={this.imageHandleReader(img)}
+                        width="200"
+                        height="200"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+              <div>
+                <ImageForm/>
+              </div>
+            </div>
         );
       case 2:
         return "Step 3: Review your photo(s)";
