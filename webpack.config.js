@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require("webpack");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin')
 
  plugins = []; // if using any plugins for both dev and production
 let devPlugins = []; // if using any plugins for development
@@ -26,20 +26,10 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx', '*']
+        extensions: ['.js', '.jsx']
     },
     module: {
         rules: [
-            {
-                test: /\.m?js$/,
-                exclude: /(node_modules|bower_components)/,
-                use:{
-                    loader: "babel-loader",
-                    options: {
-                        presets: ['babel-preset-env']
-                    }
-                }
-            },
             {
                 test: /\.jsx?$/,
                 exclude: /node_module/,
@@ -55,16 +45,12 @@ module.exports = {
     },
     optimization: {
         minimizer: [
-            new UglifyJsPlugin({
-                cache: true,
-                parallel: true,
-                uglifyOptions:{
-                    compress: false,
-                    ecma: 6,
-                    mangle: true
-                },
-                sourceMap: true
-            })
+           new TerserPlugin({
+               cache: true,
+               parallel: 8,
+               sourceMap: true
+
+           })
         ]
     },
     devtool: 'source-map',

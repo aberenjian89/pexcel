@@ -12,7 +12,13 @@ import StepButton from "@material-ui/core/StepButton";
 import Typography from "@material-ui/core/Typography";
 import StepLabel from "@material-ui/core/StepLabel";
 import GetApp from "@material-ui/icons/GetApp";
-import ImageForm from './image_form'
+import TextField from '@material-ui/core/TextField'
+import MenuItem from '@material-ui/core/MenuItem'
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
@@ -59,11 +65,11 @@ const styles = theme => ({
   },
   upload_content_wrapper:{
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     marginTop: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    marginLeft: theme.spacing.unit,
+    // marginRight: theme.spacing.unit,
+    // marginLeft: theme.spacing.unit,
   },
   upload_content: {
     "& input": {
@@ -92,12 +98,41 @@ const styles = theme => ({
     "& img":{
       padding: theme.spacing.unit
     }
+  },
+  image_form_wrapper:{
+    width: "60%",
+    height: "400px",
+    overflow: "scroll"
+  },
+  general_container:{
+   display: 'flex',
+   flexGrow: "column wrap",
+   width: "100%"
+  },
+  camera_container:{
+    display: "flex",
+    justifyContent : "space-between"
   }
 });
 
 function getSteps() {
   return ["Select photos", "Edit Information", "Review"];
 }
+
+const Licenses = [
+    {
+      value: 'public_domain',
+      label: 'Public Domain'
+    },
+    {
+      value: 'creative_common',
+      label: 'Creative Common',
+    },
+    {
+      value: 'gnu_public_license',
+      label: 'GNU Public License'
+    }
+]
 
 class UploadComponent extends React.Component {
   constructor(props) {
@@ -106,7 +141,8 @@ class UploadComponent extends React.Component {
       open: false,
       activeStep: 0,
       completed: {},
-      images: []
+      images: [],
+      expanded: 'general'
     };
     this.handleClose = this.handleClose.bind(this);
     this.handleClickOpen = this.handleClickOpen.bind(this);
@@ -121,6 +157,7 @@ class UploadComponent extends React.Component {
     this.getStepContent = this.getStepContent.bind(this);
     this.handleFiles = this.handleFiles.bind(this);
     this.imageHandleReader = this.imageHandleReader.bind(this);
+    this.activePanel = this.activePanel.bind(this)
   }
 
   totalSteps() {
@@ -130,6 +167,12 @@ class UploadComponent extends React.Component {
   imageHandleReader(img) {
     let url = URL.createObjectURL(img);
     return url;
+  }
+
+  activePanel(e,panel){
+    this.setState({
+        expanded: panel
+    })
   }
 
   handleFiles(e) {
@@ -194,8 +237,122 @@ class UploadComponent extends React.Component {
                   );
                 })}
               </div>
-              <div>
-                <ImageForm/>
+              <div className={classes.image_form_wrapper}>
+                  <div className={classes.root}>
+                    <ExpansionPanel expanded={this.state.expanded === 'general'}
+                    onChange={(e) => this.activePanel(e,'general')}>
+                      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
+                        <Typography variant="subtitle1">
+                            General
+                        </Typography>
+                      </ExpansionPanelSummary>
+                      <ExpansionPanelDetails>
+                        <div className={classes.general_container}>
+                            <TextField
+                                label="Name"
+                                type="text"
+                                name="name"
+                                margin="dense"
+                                varient="outlined">
+
+                            </TextField>
+                            <TextField
+                                label="Owner"
+                                type="text"
+                                name="owner"
+                                margin="dense"
+                                varient="outlined">
+
+                            </TextField>
+                            <TextField
+                                label="License"
+                                select
+                                type="text"
+                                name="License"
+                                margin="dense"
+                                varient="outlined"
+                                value="Public Domain"
+                                helperText="Type of Licenses">
+                                {Licenses.map((license, key)=>(
+                                    <MenuItem key={key} value={license.value}>
+                                        {license.label}
+                                    </MenuItem>
+                                ))}
+
+                            </TextField>
+                        </div>
+                      </ExpansionPanelDetails>
+                    </ExpansionPanel>
+                    <ExpansionPanel expanded={this.state.expanded === 'camera'}
+                    onChange={(e) => this.activePanel(e,'camera')}>
+                      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
+                        <Typography variant="subtitle1">
+                            Camera
+                        </Typography>
+                      </ExpansionPanelSummary>
+                      <ExpansionPanelDetails>
+                        <div className={classes.camera_container}>
+                            <TextField
+                                label="Make"
+                                type="text"
+                                name="make"
+                                margin="dense"
+                                varient="outlined">
+
+                            </TextField>
+                            <TextField
+                                label="Model"
+                                type="text"
+                                name="model"
+                                margin="dense"
+                                varient="outlined">
+
+                            </TextField>
+                            <TextField
+                                label="Focal Length"
+                                type="text"
+                                name="focal_length"
+                                margin="dense"
+                                varient="outlined">
+
+                            </TextField>
+                            <TextField
+                                label="Dimension"
+                                type="text"
+                                name="dimension"
+                                margin="dense"
+                                varient="outlined">
+                            </TextField>
+                        </div>
+                      </ExpansionPanelDetails>
+                    </ExpansionPanel>
+                    <ExpansionPanel expanded={this.state.expanded === 'description'}
+                    onChange={(e) => this.activePanel(e,'description')}>
+                      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
+                        <Typography variant="subtitle1">
+                            Description
+                        </Typography>
+                      </ExpansionPanelSummary>
+                      <ExpansionPanelDetails>
+                        <div>
+
+                        </div>
+                      </ExpansionPanelDetails>
+                    </ExpansionPanel>
+                    <ExpansionPanel expanded={this.state.expanded === 'Tags'}
+                    onChange={(e) => this.activePanel(e,'tags')}>
+                      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
+                        <Typography variant="subtitle1">
+                            Tags
+                        </Typography>
+                      </ExpansionPanelSummary>
+                      <ExpansionPanelDetails>
+                        <div>
+
+                        </div>
+                      </ExpansionPanelDetails>
+                    </ExpansionPanel>
+                  </div>
               </div>
             </div>
         );
