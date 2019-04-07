@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { func } from "prop-types";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -101,33 +101,27 @@ class UploadComponent extends React.Component {
     this.allStepsCompleted = this.allStepsCompleted.bind(this);
     this.getStepContent = this.getStepContent.bind(this);
     this.handleFiles = this.handleFiles.bind(this);
-    this.handleFileReader = this.handleFileReader.bind(this)
+    this.imageHandleReader = this.imageHandleReader.bind(this);
   }
 
   totalSteps() {
     getSteps().length;
   }
 
-  handleFiles(e) {
-    e.preventDefault();
-    if (e.currentTarget.files){
-      let files = Object.values(e.currentTarget.files)
-      this.setState({
-          images: [...files]
-      })
-    }
-    this.handleNext()
+  imageHandleReader(img) {
+    let url = URL.createObjectURL(img);
+    return url;
   }
 
-  handleFileReader(file){
-
-    let data_url = null;
-    let reader = new FileReader(file);
-    reader.onload = function(){
-      data_url = reader.result;
-      debugger
-      return data_url
+  handleFiles(e) {
+    e.preventDefault();
+    if (e.currentTarget.files) {
+      let files = Object.values(e.currentTarget.files);
+      this.setState({
+        images: [...files]
+      });
     }
+    this.handleNext();
   }
 
   componentWillReceiveProps(nextprops) {
@@ -165,11 +159,19 @@ class UploadComponent extends React.Component {
         );
       case 1:
         return (
-            <div>
-                {this.state.images.forEach((img,key)=>(
-                  <img key={key} src={this.handleFileReader(img)} />
-                ))}
-            </div>
+          <div>
+            {this.state.images.map((img, key) => {
+              return (
+                <div key={key}>
+                  <img
+                    src={this.imageHandleReader(img)}
+                    width="200"
+                    height="200"
+                  />
+                </div>
+              );
+            })}
+          </div>
         );
       case 2:
         return "Step 3: Review your photo(s)";
