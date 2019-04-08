@@ -105,6 +105,11 @@ const styles = theme => ({
     height: "400px",
     overflow: "scroll"
   },
+  image:{
+    "& :hover":{
+        border: "2px solid black",
+    }
+  },
   general_container: {
     display: "flex",
     flexFlow: "column wrap",
@@ -128,7 +133,11 @@ const styles = theme => ({
     display: "flex",
     flexFlow: "column wrap",
     width: "100%"
+  },
+  image_selection:{
+    boxShadow: "0 0 11px rgba(33,33,33,.2)"
   }
+
 });
 
 function getSteps() {
@@ -160,7 +169,7 @@ class UploadComponent extends React.Component {
       images: [],
       expanded: "general",
       image_selected: {},
-      index_selected: null
+      index_selected: null,
     };
     this.handleClose = this.handleClose.bind(this);
     this.handleClickOpen = this.handleClickOpen.bind(this);
@@ -191,21 +200,22 @@ class UploadComponent extends React.Component {
 
   handleImageFormChange(e, name, subname) {
     let newstate = JSON.parse(JSON.stringify(this.state));
+    debugger
     switch (name) {
       case "general":
-        newstate.image_selected.general[subname] = e.currentTarget.value;
+        newstate.image_selected.general[subname] = e.target.value;
         this.setState({
           image_selected: newstate.image_selected
         });
         break;
       case "camera":
-        newstate.image_selected.camera[subname] = e.currentTarget.value;
+        newstate.image_selected.camera[subname] = e.target.value;
         this.setState({
           image_selected: newstate.image_selected
         });
         break;
       case "description":
-        newstate.image_selected.description = e.currentTarget.value;
+        newstate.image_selected.description = e.target.value;
         this.setState({
           image_selected: newstate.image_selected
         });
@@ -221,6 +231,14 @@ class UploadComponent extends React.Component {
   }
 
   handleImageSelection(e, key, img) {
+    const {classes} = this.props
+    let old_image = $('.'+classes.image_selection)[0];
+    debugger
+    if (old_image != null){
+      $(old_image).removeClass(classes.image_selection)
+    }
+    let current_image = $(e.currentTarget)
+    current_image.addClass(classes.image_selection)
     if (this.state.index_selected != null) {
       let arr = [];
       arr = this.state.images.slice();
@@ -318,12 +336,20 @@ class UploadComponent extends React.Component {
               {this.state.images.map((img, key) => {
                 return (
                   <div key={key}>
+                    <div>
                     <img
                       src={this.imageHandleReader(img.file)}
                       width="150"
                       height="150"
+                      className={classes.image}
                       onClick={e => this.handleImageSelection(e, key, img)}
                     />
+                    </div>
+                    <div>
+                      <Button variant="contained" color="secondary">
+                         Delete
+                      </Button>
+                    </div>
                   </div>
                 );
               })}
@@ -372,7 +398,7 @@ class UploadComponent extends React.Component {
                         value={this.state.image_selected.general.license}
                         helperText="Type of Licenses"
                         onChange={e =>
-                          this.handleImageFormChange(e, "general", "license")
+                          this.handleImageFormChange(e, "general", 'license')
                         }
                       >
                         {Licenses.map((license, key) => (

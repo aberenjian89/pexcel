@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/upload_component/image_form.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -39,20 +35,8 @@
       <file leaf-file-name="upload_component.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="108" column="25" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auth_component.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/components/auth_component/auth_component.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="617">
-              <caret line="272" column="26" selection-start-line="272" selection-start-column="26" selection-end-line="272" selection-end-column="26" />
+            <state relative-caret-position="787">
+              <caret line="346" column="26" selection-start-line="346" selection-start-column="26" selection-end-line="346" selection-end-column="26" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -430,12 +414,12 @@
       <workItem from="1523546965275" duration="5468000" />
       <workItem from="1553821707346" duration="5649000" />
       <workItem from="1553898929626" duration="25346000" />
-      <workItem from="1554500919158" duration="13528000" />
+      <workItem from="1554500919158" duration="18357000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="646452000" />
+    <option name="totallyTimeSpent" value="651281000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -838,8 +822,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/auth_component/auth_component.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="272" column="26" selection-start-line="272" selection-start-column="26" selection-end-line="272" selection-end-column="26" />
+        <state relative-caret-position="632">
+          <caret line="273" column="42" selection-start-line="273" selection-start-column="42" selection-end-line="274" selection-end-column="44" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -848,8 +832,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="108" column="25" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
+        <state relative-caret-position="787">
+          <caret line="346" column="26" selection-start-line="346" selection-start-column="26" selection-end-line="346" selection-end-column="26" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
