@@ -223,16 +223,24 @@ class UploadComponent extends React.Component {
   handleImageSelection(e, key, img) {
     if (this.state.index_selected != null) {
       let arr = [];
-      arr = [...this.state.images];
+      arr = this.state.images.slice();
+      let file = new File(
+        [arr[this.state.index_selected].file],
+        this.state.image_selected.general.name
+      );
       arr[this.state.index_selected] = this.state.image_selected;
+      arr[this.state.index_selected].file = file;
       this.setState({
-        images: [...arr]
+        images: [...arr],
+        image_selected: img,
+        index_selected: key
+      });
+    } else {
+      this.setState({
+        image_selected: img,
+        index_selected: key
       });
     }
-    this.setState({
-      image_selected: img,
-      index_selected: key
-    });
   }
 
   handleFiles(e) {
