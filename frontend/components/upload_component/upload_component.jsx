@@ -12,13 +12,14 @@ import StepButton from "@material-ui/core/StepButton";
 import Typography from "@material-ui/core/Typography";
 import StepLabel from "@material-ui/core/StepLabel";
 import GetApp from "@material-ui/icons/GetApp";
-import TextField from '@material-ui/core/TextField'
-import MenuItem from '@material-ui/core/MenuItem'
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
+import TextField from "@material-ui/core/TextField";
+import MenuItem from "@material-ui/core/MenuItem";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Chip from "@material-ui/core/Chip";
+import { debug } from "util";
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
@@ -38,14 +39,14 @@ const styles = theme => ({
     marginTop: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing.unit
   },
   form_content: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center"
   },
-  upload_area_wrapper:{
+  upload_area_wrapper: {
     width: "100%",
     display: "flex",
     justifyContent: "center"
@@ -63,11 +64,11 @@ const styles = theme => ({
   dialog: {
     minHeight: "300px !important"
   },
-  upload_content_wrapper:{
+  upload_content_wrapper: {
     display: "flex",
     justifyContent: "space-around",
     marginTop: theme.spacing.unit,
-    marginBottom: theme.spacing.unit,
+    marginBottom: theme.spacing.unit
     // marginRight: theme.spacing.unit,
     // marginLeft: theme.spacing.unit,
   },
@@ -91,27 +92,42 @@ const styles = theme => ({
       justifyContent: "center"
     }
   },
-  images_container:{
+  images_container: {
     height: "400px",
     overflow: "scroll",
     padding: "8px",
-    "& img":{
+    "& img": {
       padding: theme.spacing.unit
     }
   },
-  image_form_wrapper:{
+  image_form_wrapper: {
     width: "60%",
     height: "400px",
     overflow: "scroll"
   },
-  general_container:{
-   display: 'flex',
-   flexGrow: "column wrap",
-   width: "100%"
-  },
-  camera_container:{
+  general_container: {
     display: "flex",
-    justifyContent : "space-between"
+    flexFlow: "column wrap",
+    width: "100%"
+  },
+  camera_container: {
+    display: "flex",
+    flexFlow: "column wrap",
+    width: "100%"
+  },
+  description_container: {
+    display: "flex",
+    flexFlow: "column wrap",
+    width: "100%",
+    "& textfield": {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit
+    }
+  },
+  tags_container: {
+    display: "flex",
+    flexFlow: "column wrap",
+    width: "100%"
   }
 });
 
@@ -120,19 +136,19 @@ function getSteps() {
 }
 
 const Licenses = [
-    {
-      value: 'public_domain',
-      label: 'Public Domain'
-    },
-    {
-      value: 'creative_common',
-      label: 'Creative Common',
-    },
-    {
-      value: 'gnu_public_license',
-      label: 'GNU Public License'
-    }
-]
+  {
+    value: "public_domain",
+    label: "Public Domain"
+  },
+  {
+    value: "creative_common",
+    label: "Creative Common"
+  },
+  {
+    value: "gnu_public_license",
+    label: "GNU Public License"
+  }
+];
 
 class UploadComponent extends React.Component {
   constructor(props) {
@@ -142,7 +158,9 @@ class UploadComponent extends React.Component {
       activeStep: 0,
       completed: {},
       images: [],
-      expanded: 'general'
+      expanded: "general",
+      image_selected: {},
+      index_selected: null
     };
     this.handleClose = this.handleClose.bind(this);
     this.handleClickOpen = this.handleClickOpen.bind(this);
@@ -157,7 +175,9 @@ class UploadComponent extends React.Component {
     this.getStepContent = this.getStepContent.bind(this);
     this.handleFiles = this.handleFiles.bind(this);
     this.imageHandleReader = this.imageHandleReader.bind(this);
-    this.activePanel = this.activePanel.bind(this)
+    this.activePanel = this.activePanel.bind(this);
+    this.handleImageSelection = this.handleImageSelection.bind(this);
+    this.handleImageFormChange = this.handleImageFormChange.bind(this);
   }
 
   totalSteps() {
@@ -169,18 +189,80 @@ class UploadComponent extends React.Component {
     return url;
   }
 
-  activePanel(e,panel){
+  handleImageFormChange(e, name, subname) {
+    let newstate = JSON.parse(JSON.stringify(this.state));
+    switch (name) {
+      case "general":
+        newstate.image_selected.general[subname] = e.currentTarget.value;
+        this.setState({
+          image_selected: newstate.image_selected
+        });
+        break;
+      case "camera":
+        newstate.image_selected.camera[subname] = e.currentTarget.value;
+        this.setState({
+          image_selected: newstate.image_selected
+        });
+        break;
+      case "description":
+        newstate.image_selected.description = e.currentTarget.value;
+        this.setState({
+          image_selected: newstate.image_selected
+        });
+      default:
+        break;
+    }
+  }
+
+  activePanel(e, panel) {
     this.setState({
-        expanded: panel
-    })
+      expanded: panel
+    });
+  }
+
+  handleImageSelection(e, key, img) {
+    if (this.state.index_selected != null) {
+      let arr = [];
+      arr = [...this.state.images];
+      arr[this.state.index_selected] = this.state.image_selected;
+      this.setState({
+        images: [...arr]
+      });
+    }
+    this.setState({
+      image_selected: img,
+      index_selected: key
+    });
   }
 
   handleFiles(e) {
     e.preventDefault();
     if (e.currentTarget.files) {
       let files = Object.values(e.currentTarget.files);
+      let arr = [];
+      for (let i = 0; i < files.length; i++) {
+        let img = {
+          file: files[i],
+          general: {
+            name: files[i].name,
+            owner: this.props.CurrentUser.username,
+            license: Licenses[0].value
+          },
+          camera: {
+            make: "",
+            model: "",
+            focal_length: "",
+            dimension: ""
+          },
+          description: "",
+          tags: []
+        };
+        arr.push(img);
+      }
       this.setState({
-        images: [...files]
+        images: [...arr],
+        image_selected: arr[0],
+        index_selected: 0
       });
     }
     this.handleNext();
@@ -199,162 +281,215 @@ class UploadComponent extends React.Component {
     switch (step) {
       case 0:
         return (
-            <div className={classes.upload_area_wrapper}>
-              <div className={classes.upload_area}>
-                <form>
-                  <div className={classes.upload_content}>
-                    <div>
-                      <GetApp fontSize="large" fontSizeAdjust="100px" />
-                    </div>
-                    <div>
-                      <input
-                        type="file"
-                        multiple
-                        onChange={e => this.handleFiles(e)}
-                      />
-                    </div>
-                    <div>
-                      <label>Select a file or drag a it here</label>
-                    </div>
+          <div className={classes.upload_area_wrapper}>
+            <div className={classes.upload_area}>
+              <form>
+                <div className={classes.upload_content}>
+                  <div>
+                    <GetApp fontSize="large" fontSizeAdjust="100px" />
                   </div>
-                </form>
-              </div>
+                  <div>
+                    <input
+                      type="file"
+                      multiple
+                      onChange={e => this.handleFiles(e)}
+                    />
+                  </div>
+                  <div>
+                    <label>Select a file or drag a it here</label>
+                  </div>
+                </div>
+              </form>
             </div>
+          </div>
         );
       case 1:
         return (
-            <div className={classes.upload_content_wrapper}>
-              <div className={classes.images_container}>
-                {this.state.images.map((img, key) => {
-                  return (
-                    <div key={key}>
-                      <img
-                        src={this.imageHandleReader(img)}
-                        width="200"
-                        height="200"
+          <div className={classes.upload_content_wrapper}>
+            <div className={classes.images_container}>
+              {this.state.images.map((img, key) => {
+                return (
+                  <div key={key}>
+                    <img
+                      src={this.imageHandleReader(img.file)}
+                      width="150"
+                      height="150"
+                      onClick={e => this.handleImageSelection(e, key, img)}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+            <div className={classes.image_form_wrapper}>
+              <div className={classes.root}>
+                <ExpansionPanel
+                  expanded={this.state.expanded === "general"}
+                  onChange={e => this.activePanel(e, "general")}
+                >
+                  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography variant="subtitle1">General</Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                    <div className={classes.general_container}>
+                      <TextField
+                        label="Name"
+                        type="text"
+                        name="name"
+                        value={this.state.image_selected.general.name}
+                        margin="dense"
+                        varient="outlined"
+                        onChange={e =>
+                          this.handleImageFormChange(e, "general", "name")
+                        }
+                      />
+                      <TextField
+                        label="Owner"
+                        type="text"
+                        name="owner"
+                        value={this.state.image_selected.general.owner}
+                        margin="dense"
+                        disabled
+                        varient="outlined"
+                        onChange={e =>
+                          this.handleImageFormChange(e, "general", "owner")
+                        }
+                      />
+                      <TextField
+                        label="License"
+                        select
+                        type="text"
+                        name="License"
+                        margin="dense"
+                        varient="outlined"
+                        value={this.state.image_selected.general.license}
+                        helperText="Type of Licenses"
+                        onChange={e =>
+                          this.handleImageFormChange(e, "general", "license")
+                        }
+                      >
+                        {Licenses.map((license, key) => (
+                          <MenuItem key={key} value={license.value}>
+                            {license.label}
+                          </MenuItem>
+                        ))}
+                      </TextField>
+                    </div>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+                <ExpansionPanel
+                  expanded={this.state.expanded === "camera"}
+                  onChange={e => this.activePanel(e, "camera")}
+                >
+                  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography variant="subtitle1">Camera</Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                    <div className={classes.camera_container}>
+                      <TextField
+                        label="Make"
+                        type="text"
+                        name="make"
+                        value={this.state.image_selected.camera.make}
+                        margin="dense"
+                        varient="outlined"
+                        onChange={e =>
+                          this.handleImageFormChange(e, "camera", "make")
+                        }
+                      />
+                      <TextField
+                        label="Model"
+                        type="text"
+                        name="model"
+                        value={this.state.image_selected.camera.model}
+                        margin="dense"
+                        varient="outlined"
+                        onChange={e =>
+                          this.handleImageFormChange(e, "camera", "model")
+                        }
+                      />
+                      <TextField
+                        label="Focal Length"
+                        type="text"
+                        name="focal_length"
+                        value={this.state.image_selected.camera.focal_length}
+                        margin="dense"
+                        varient="outlined"
+                        onChange={e =>
+                          this.handleImageFormChange(
+                            e,
+                            "camera",
+                            "focal_length"
+                          )
+                        }
+                      />
+                      <TextField
+                        label="Dimension"
+                        type="text"
+                        name="dimension"
+                        value={this.state.image_selected.camera.dimension}
+                        margin="dense"
+                        varient="outlined"
+                        onChange={e =>
+                          this.handleImageFormChange(e, "camera", "dimension")
+                        }
                       />
                     </div>
-                  );
-                })}
-              </div>
-              <div className={classes.image_form_wrapper}>
-                  <div className={classes.root}>
-                    <ExpansionPanel expanded={this.state.expanded === 'general'}
-                    onChange={(e) => this.activePanel(e,'general')}>
-                      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-                        <Typography variant="subtitle1">
-                            General
-                        </Typography>
-                      </ExpansionPanelSummary>
-                      <ExpansionPanelDetails>
-                        <div className={classes.general_container}>
-                            <TextField
-                                label="Name"
-                                type="text"
-                                name="name"
-                                margin="dense"
-                                varient="outlined">
-
-                            </TextField>
-                            <TextField
-                                label="Owner"
-                                type="text"
-                                name="owner"
-                                margin="dense"
-                                varient="outlined">
-
-                            </TextField>
-                            <TextField
-                                label="License"
-                                select
-                                type="text"
-                                name="License"
-                                margin="dense"
-                                varient="outlined"
-                                value="Public Domain"
-                                helperText="Type of Licenses">
-                                {Licenses.map((license, key)=>(
-                                    <MenuItem key={key} value={license.value}>
-                                        {license.label}
-                                    </MenuItem>
-                                ))}
-
-                            </TextField>
-                        </div>
-                      </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                    <ExpansionPanel expanded={this.state.expanded === 'camera'}
-                    onChange={(e) => this.activePanel(e,'camera')}>
-                      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-                        <Typography variant="subtitle1">
-                            Camera
-                        </Typography>
-                      </ExpansionPanelSummary>
-                      <ExpansionPanelDetails>
-                        <div className={classes.camera_container}>
-                            <TextField
-                                label="Make"
-                                type="text"
-                                name="make"
-                                margin="dense"
-                                varient="outlined">
-
-                            </TextField>
-                            <TextField
-                                label="Model"
-                                type="text"
-                                name="model"
-                                margin="dense"
-                                varient="outlined">
-
-                            </TextField>
-                            <TextField
-                                label="Focal Length"
-                                type="text"
-                                name="focal_length"
-                                margin="dense"
-                                varient="outlined">
-
-                            </TextField>
-                            <TextField
-                                label="Dimension"
-                                type="text"
-                                name="dimension"
-                                margin="dense"
-                                varient="outlined">
-                            </TextField>
-                        </div>
-                      </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                    <ExpansionPanel expanded={this.state.expanded === 'description'}
-                    onChange={(e) => this.activePanel(e,'description')}>
-                      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-                        <Typography variant="subtitle1">
-                            Description
-                        </Typography>
-                      </ExpansionPanelSummary>
-                      <ExpansionPanelDetails>
-                        <div>
-
-                        </div>
-                      </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                    <ExpansionPanel expanded={this.state.expanded === 'Tags'}
-                    onChange={(e) => this.activePanel(e,'tags')}>
-                      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-                        <Typography variant="subtitle1">
-                            Tags
-                        </Typography>
-                      </ExpansionPanelSummary>
-                      <ExpansionPanelDetails>
-                        <div>
-
-                        </div>
-                      </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                  </div>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+                <ExpansionPanel
+                  expanded={this.state.expanded === "description"}
+                  onChange={e => this.activePanel(e, "description")}
+                >
+                  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography variant="subtitle1">Description</Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                    <div className={classes.description_container}>
+                      <TextField
+                        label="Description"
+                        multiline
+                        rows="2"
+                        rowsMax="4"
+                        value={this.state.image_selected.description}
+                        className={classes.description_container.textField}
+                        margin="normal"
+                        helperText=""
+                        variant="outlined"
+                        onChange={e =>
+                          this.handleImageFormChange(
+                            e,
+                            "description",
+                            "description"
+                          )
+                        }
+                      />
+                    </div>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+                <ExpansionPanel
+                  expanded={this.state.expanded === "tags"}
+                  onChange={e => this.activePanel(e, "tags")}
+                >
+                  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography variant="subtitle1">Tags</Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                    <div className={classes.tags_container}>
+                      <TextField
+                        label="Tags"
+                        type="text"
+                        name="dimension"
+                        helperText="Add a Tag"
+                        margin="dense"
+                        varient="outlined"
+                      />
+                    </div>
+                    <div />
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
               </div>
             </div>
+          </div>
         );
       case 2:
         return "Step 3: Review your photo(s)";
