@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -35,11 +34,21 @@
       <file leaf-file-name="upload_component.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="154" column="54" selection-start-line="154" selection-start-column="54" selection-end-line="154" selection-end-column="54" />
+            <state relative-caret-position="413">
+              <caret line="229" column="22" selection-start-line="229" selection-start-column="22" selection-end-line="229" selection-end-column="22" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+                <element signature="n#!!block;n#getStepContent#0;n#UploadComponent#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload_container.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_container.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -48,8 +57,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nav-e</find>
-      <find>300</find>
       <find>de</find>
       <find>pr</find>
       <find>title</find>
@@ -78,6 +85,8 @@
       <find>log</find>
       <find>modal_status_reducer</find>
       <find>getStepContent</find>
+      <find>All steps completed</find>
+      <find>handleclose</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,7 +170,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="42" />
+    <option name="x" value="85" />
+    <option name="y" value="23" />
     <option name="width" value="1661" />
     <option name="height" value="1314" />
   </component>
@@ -414,12 +424,12 @@
       <workItem from="1523546965275" duration="5468000" />
       <workItem from="1553821707346" duration="5649000" />
       <workItem from="1553898929626" duration="25346000" />
-      <workItem from="1554500919158" duration="20806000" />
+      <workItem from="1554500919158" duration="23965000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="653730000" />
+    <option name="totallyTimeSpent" value="656889000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -431,7 +441,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="42" width="1661" height="1314" extended-state="0" />
+    <frame x="85" y="23" width="1661" height="1314" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20259419" />
@@ -522,7 +532,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="25" />
+      <option name="time" value="28" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -742,16 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/auth_component/auth_container.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -830,12 +830,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_container.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="154" column="54" selection-start-line="154" selection-start-column="54" selection-end-line="154" selection-end-column="54" />
+        <state relative-caret-position="413">
+          <caret line="229" column="22" selection-start-line="229" selection-start-column="22" selection-end-line="229" selection-end-column="22" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <element signature="n#!!block;n#getStepContent#0;n#UploadComponent#0" />
           </folding>
         </state>
       </provider>

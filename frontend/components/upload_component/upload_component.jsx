@@ -18,7 +18,9 @@ import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Chip from "@material-ui/core/Chip";
+
 import { debug } from "util";
 
 function Transition(props) {
@@ -146,8 +148,20 @@ const styles = theme => ({
   action_buttons:{
     display: 'flex',
     justifyContent: 'flex-end'
+  },
+  progress: {
+      margin: theme.spacing.unit * 2,
+  },
+  upload_wrapper:{
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center"
+  },
+  upload:{
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center"
   }
-
 
 });
 
@@ -181,6 +195,7 @@ class UploadComponent extends React.Component {
       expanded: "general",
       image_selected: {},
       index_selected: null,
+      in_progress: false
     };
     this.handleClose = this.handleClose.bind(this);
     this.handleClickOpen = this.handleClickOpen.bind(this);
@@ -199,6 +214,7 @@ class UploadComponent extends React.Component {
     this.handleImageSelection = this.handleImageSelection.bind(this);
     this.handleImageFormChange = this.handleImageFormChange.bind(this);
     this.handleDeleteImage = this.handleDeleteImage.bind(this)
+    this.handleUpload = this.handleUpload.bind(this);
   }
 
   totalSteps() {
@@ -208,6 +224,10 @@ class UploadComponent extends React.Component {
   imageHandleReader(img) {
     let url = URL.createObjectURL(img);
     return url;
+  }
+
+  handleUpload(){
+    this.handleClose()
   }
 
   handleImageFormChange(e, name, subname) {
@@ -556,7 +576,13 @@ class UploadComponent extends React.Component {
           </div>
         );
       case 2:
-        return "Step 3: Review your photo(s)";
+        return (
+            <div className={classes.upload_wrapper}>
+              <div className={classes.upload}>
+                <CircularProgress className={classes.progress} />
+              </div>
+            </div>
+        );
       default:
         return "Unknown step";
     }
@@ -565,7 +591,9 @@ class UploadComponent extends React.Component {
   handleNext() {
     let activeStep;
 
-    if (this.isLastStep() && !this.allStepsCompleted()) {
+    if (this.state.activeStep === 2){
+      this.handleUpload()
+    } else if (this.isLastStep() && !this.allStepsCompleted()) {
       // It's the last step, but not all steps have been completed,
       // find the first step that has been completed
       const steps = getSteps();
@@ -602,10 +630,7 @@ class UploadComponent extends React.Component {
   }
 
   handleReset() {
-    this.setState({
-      activeStep: 0,
-      completed: {}
-    });
+
   }
 
   completedSteps() {
@@ -625,9 +650,14 @@ class UploadComponent extends React.Component {
   }
 
   handleClose() {
-    this.setState({ open: false });
-    this.handleReset();
-    this.props.ModalHide();
+      this.setState({
+          open: false,
+          activeStep: 0,
+          completed: {}
+      },()=>{
+          this.props.ModalHide();
+          this.handleClose()
+      });
   }
 
   render() {
@@ -684,7 +714,7 @@ class UploadComponent extends React.Component {
                                 onClick={this.handleNext}
 
                             >
-                                {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                                {activeStep === steps.length - 1 ? "Upload" : "Next"}
                             </Button>
                         </div>
                     )}
