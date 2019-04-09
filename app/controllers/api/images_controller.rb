@@ -8,14 +8,20 @@ class Api::ImagesController < ApplicationController
   end
 
   def create
-    @image = Image.new(image_params)
-    @image.author_id = current_user.id
-    if @image.save
-      render  :show
-    else
 
-      render json: @image.errors.full_messages, status: 422
+    params[:images].each do |image|
+      @image = Image.new(image_params)
+      if !@image.save 
+          render json: @image.errors.full_messages, status: 500
+      end 
     end
+    # @image = Image.new(image_params)
+    # @image.owner_id = current_user.id
+    # if @image.save
+    #   render  :show
+    # else
+    #   render json: @image.errors.full_messages, status: 422
+    # end
   end
 
   def update
@@ -57,7 +63,7 @@ class Api::ImagesController < ApplicationController
 
   private
   def image_params
-    params.require(:image).permit(:img_title,:img_location,:author_id, :img_desc,:date_taken,:category, :img)
+    params.require(:images).permit(:name, :image_file)
   end
   def image_params_update
     params.require(:img).permit(:img_title,:img_location,:author_id, :img_desc,:date_taken,:category)
