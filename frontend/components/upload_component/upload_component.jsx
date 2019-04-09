@@ -69,8 +69,6 @@ const styles = theme => ({
     justifyContent: "space-around",
     marginTop: theme.spacing.unit,
     marginBottom: theme.spacing.unit
-    // marginRight: theme.spacing.unit,
-    // marginLeft: theme.spacing.unit,
   },
   upload_content: {
     "& input": {
@@ -136,12 +134,25 @@ const styles = theme => ({
   },
   image_selection:{
     boxShadow: "0 0 11px rgba(33,33,33,.2)"
+  },
+  image_content:{
+    display: "flex"
+  },
+  image_delete_container:{
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  },
+  action_buttons:{
+    display: 'flex',
+    justifyContent: 'flex-end'
   }
+
 
 });
 
 function getSteps() {
-  return ["Select photos", "Edit Information", "Review"];
+  return ["Select photos", "Edit Information", "Upload"];
 }
 
 const Licenses = [
@@ -187,6 +198,7 @@ class UploadComponent extends React.Component {
     this.activePanel = this.activePanel.bind(this);
     this.handleImageSelection = this.handleImageSelection.bind(this);
     this.handleImageFormChange = this.handleImageFormChange.bind(this);
+    this.handleDeleteImage = this.handleDeleteImage.bind(this)
   }
 
   totalSteps() {
@@ -302,6 +314,24 @@ class UploadComponent extends React.Component {
     }
   }
 
+  handleDeleteImage(e,index){
+    let arr= this.state.images
+    arr = arr.slice(0,index).concat(arr.slice(index+1))
+    this.setState({
+        images: [...arr]
+    });
+    debugger
+    if (arr.length == 0){
+      this.handleBack()
+    }else{
+        if (this.state.index_selected == index){
+            this.setState({
+                index_selected: 0
+            })
+        }
+    }
+  }
+
   getStepContent(step, props) {
     const { classes } = props;
     switch (step) {
@@ -335,7 +365,7 @@ class UploadComponent extends React.Component {
             <div className={classes.images_container}>
               {this.state.images.map((img, key) => {
                 return (
-                  <div key={key}>
+                  <div key={key} className={classes.image_content}>
                     <div>
                     <img
                       src={this.imageHandleReader(img.file)}
@@ -345,8 +375,8 @@ class UploadComponent extends React.Component {
                       onClick={e => this.handleImageSelection(e, key, img)}
                     />
                     </div>
-                    <div>
-                      <Button variant="contained" color="secondary">
+                    <div className={classes.image_delete_container}>
+                      <Button variant="contained" color="secondary" onClick={(e)=> this.handleDeleteImage(e,key)}>
                          Delete
                       </Button>
                     </div>
@@ -639,22 +669,25 @@ class UploadComponent extends React.Component {
                   <div className={classes.instructions}>
                     {this.getStepContent(activeStep, this.props)}
                   </div>
-                  <div>
-                    <Button
-                      disabled={activeStep === 0}
-                      onClick={this.handleBack}
-                      className={classes.backButton}
-                    >
-                      Back
-                    </Button>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      onClick={this.handleNext}
-                    >
-                      {activeStep === steps.length - 1 ? "Finish" : "Next"}
-                    </Button>
-                  </div>
+                    {activeStep !==0 && (
+                        <div className={classes.action_buttons}>
+                            <Button
+                                disabled={activeStep === 0}
+                                onClick={this.handleBack}
+                                className={classes.backButton}
+                            >
+                                Back
+                            </Button>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={this.handleNext}
+
+                            >
+                                {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                            </Button>
+                        </div>
+                    )}
                 </div>
               )}
             </div>
