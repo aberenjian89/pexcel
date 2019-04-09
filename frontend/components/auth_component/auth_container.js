@@ -1,10 +1,10 @@
 import {connect} from 'react-redux'
-import {ModalHide} from "../../actions/modal_status_action";
+import {ModalHide} from "../../actions/auth_modal";
 import AuthComponent from './auth_component'
 import {APIUserLogin,APIRegisterUser,AuthClearError} from "../../actions/session_actions";
 
 const mapStateToProps = (state)=>({
-    ModalStatus: state.ModalStatus,
+    ModalStatus: state.AuthModal,
     AuthErrors: state.Session.errors
 });
 

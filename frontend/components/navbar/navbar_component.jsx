@@ -15,6 +15,7 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import SettingIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Button from "@material-ui/core/Button";
+import AddToPhotos from "@material-ui/icons/AddToPhotos"
 
 const styles = theme => ({
   root: {
@@ -102,7 +103,8 @@ class NavbarComponent extends React.Component {
     this.handleMobileMenuOpen = this.handleMobileMenuOpen.bind(this);
     this.handleMobileMenuClose = this.handleMobileMenuClose.bind(this);
     this.OpenAuthModal = this.OpenAuthModal.bind(this);
-    this.handleLogout = this.handleLogout.bind(this)
+    this.handleLogout = this.handleLogout.bind(this);
+    this.handleRoute = this.handleRoute.bind(this);
   }
 
   componentDidMount(props){
@@ -136,11 +138,29 @@ class NavbarComponent extends React.Component {
     this.setState({ mobileMoreAnchorEl: null });
   }
 
+  OpenUploadModal(){
+    this.props.UploadModalShow()
+  }
+
   handleLogout(){
     this.props.LogOutUser()
     .then(()=> this.setState({
       anchorEl: null
     }))
+  }
+
+  handleRoute(route){
+    switch (route){
+        case 'upload':
+          this.props.history.push('/upload');
+          break;
+        case 'profile':
+          this.props.history.push('/profile');
+          break;
+        default:
+          break;
+
+    }
   }
 
   OpenAuthModal(e,type) {
@@ -167,6 +187,12 @@ class NavbarComponent extends React.Component {
             <AccountCircle />
           </IconButton>
           My Profile
+        </MenuItem>
+        <MenuItem onClick={()=> this.OpenUploadModal()}>
+          <IconButton color="inherit">
+            <AddToPhotos />
+          </IconButton>
+            Upload
         </MenuItem>
         <MenuItem onClick={this.handleMenuClose}>
           <IconButton color="inherit">
@@ -196,6 +222,12 @@ class NavbarComponent extends React.Component {
             <AccountCircle />
           </IconButton>
           My Profile
+        </MenuItem>
+        <MenuItem onClick={()=> this.OpenUploadModal()}>
+            <IconButton color="inherit">
+                <AddToPhotos />
+            </IconButton>
+            Upload
         </MenuItem>
         <MenuItem onClick={this.handleMenuClose}>
           <IconButton color="inherit">
@@ -298,7 +330,7 @@ class NavbarComponent extends React.Component {
 }
 
 NavbarComponent.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(NavbarComponent);
