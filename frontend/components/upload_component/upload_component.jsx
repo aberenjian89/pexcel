@@ -3,12 +3,10 @@ import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import Slide from "@material-ui/core/Slide";
 import { withStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
-import StepButton from "@material-ui/core/StepButton";
 import Typography from "@material-ui/core/Typography";
 import StepLabel from "@material-ui/core/StepLabel";
 import GetApp from "@material-ui/icons/GetApp";
@@ -18,10 +16,7 @@ import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Chip from "@material-ui/core/Chip";
-
-import { debug } from "util";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
@@ -105,9 +100,9 @@ const styles = theme => ({
     height: "400px",
     overflow: "scroll"
   },
-  image:{
-    "& :hover":{
-        border: "2px solid black",
+  image: {
+    "& :hover": {
+      border: "2px solid black"
     }
   },
   general_container: {
@@ -134,35 +129,33 @@ const styles = theme => ({
     flexFlow: "column wrap",
     width: "100%"
   },
-  image_selection:{
+  image_selection: {
     boxShadow: "0 0 11px rgba(33,33,33,.2)"
   },
-  image_content:{
+  image_content: {
     display: "flex"
   },
-  image_delete_container:{
+  image_delete_container: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "center"
   },
-  action_buttons:{
-    display: 'flex',
-    justifyContent: 'flex-end'
+  action_buttons: {
+    display: "flex",
+    justifyContent: "flex-end"
   },
   progress: {
-      margin: theme.spacing.unit * 2,
+    margin: theme.spacing.unit * 2
   },
-  upload_wrapper:{
+  upload_wrapper: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center"
   },
-  upload:{
+  upload: {
     display: "flex",
-    flexDirection: "column",
     justifyContent: "center"
   }
-
 });
 
 function getSteps() {
@@ -213,7 +206,7 @@ class UploadComponent extends React.Component {
     this.activePanel = this.activePanel.bind(this);
     this.handleImageSelection = this.handleImageSelection.bind(this);
     this.handleImageFormChange = this.handleImageFormChange.bind(this);
-    this.handleDeleteImage = this.handleDeleteImage.bind(this)
+    this.handleDeleteImage = this.handleDeleteImage.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
   }
 
@@ -226,13 +219,15 @@ class UploadComponent extends React.Component {
     return url;
   }
 
-  handleUpload(){
-    this.handleClose()
+  handleUpload() {
+    this.setState({
+      in_progress: true
+    });
+    this.handleClose();
   }
 
   handleImageFormChange(e, name, subname) {
     let newstate = JSON.parse(JSON.stringify(this.state));
-    debugger
     switch (name) {
       case "general":
         newstate.image_selected.general[subname] = e.target.value;
@@ -263,14 +258,13 @@ class UploadComponent extends React.Component {
   }
 
   handleImageSelection(e, key, img) {
-    const {classes} = this.props
-    let old_image = $('.'+classes.image_selection)[0];
-    debugger
-    if (old_image != null){
-      $(old_image).removeClass(classes.image_selection)
+    const { classes } = this.props;
+    let old_image = $("." + classes.image_selection)[0];
+    if (old_image != null) {
+      $(old_image).removeClass(classes.image_selection);
     }
-    let current_image = $(e.currentTarget)
-    current_image.addClass(classes.image_selection)
+    let current_image = $(e.currentTarget);
+    current_image.addClass(classes.image_selection);
     if (this.state.index_selected != null) {
       let arr = [];
       arr = this.state.images.slice();
@@ -334,21 +328,20 @@ class UploadComponent extends React.Component {
     }
   }
 
-  handleDeleteImage(e,index){
-    let arr= this.state.images
-    arr = arr.slice(0,index).concat(arr.slice(index+1))
+  handleDeleteImage(e, index) {
+    let arr = this.state.images;
+    arr = arr.slice(0, index).concat(arr.slice(index + 1));
     this.setState({
-        images: [...arr]
+      images: [...arr]
     });
-    debugger
-    if (arr.length == 0){
-      this.handleBack()
-    }else{
-        if (this.state.index_selected == index){
-            this.setState({
-                index_selected: 0
-            })
-        }
+    if (arr.length == 0) {
+      this.handleBack();
+    } else {
+      if (this.state.index_selected == index) {
+        this.setState({
+          index_selected: 0
+        });
+      }
     }
   }
 
@@ -387,17 +380,21 @@ class UploadComponent extends React.Component {
                 return (
                   <div key={key} className={classes.image_content}>
                     <div>
-                    <img
-                      src={this.imageHandleReader(img.file)}
-                      width="150"
-                      height="150"
-                      className={classes.image}
-                      onClick={e => this.handleImageSelection(e, key, img)}
-                    />
+                      <img
+                        src={this.imageHandleReader(img.file)}
+                        width="150"
+                        height="150"
+                        className={classes.image}
+                        onClick={e => this.handleImageSelection(e, key, img)}
+                      />
                     </div>
                     <div className={classes.image_delete_container}>
-                      <Button variant="contained" color="secondary" onClick={(e)=> this.handleDeleteImage(e,key)}>
-                         Delete
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        onClick={e => this.handleDeleteImage(e, key)}
+                      >
+                        Delete
                       </Button>
                     </div>
                   </div>
@@ -448,7 +445,7 @@ class UploadComponent extends React.Component {
                         value={this.state.image_selected.general.license}
                         helperText="Type of Licenses"
                         onChange={e =>
-                          this.handleImageFormChange(e, "general", 'license')
+                          this.handleImageFormChange(e, "general", "license")
                         }
                       >
                         {Licenses.map((license, key) => (
@@ -577,11 +574,18 @@ class UploadComponent extends React.Component {
         );
       case 2:
         return (
-            <div className={classes.upload_wrapper}>
+          <div className={classes.upload_wrapper}>
+            {this.state.in_progress && (
               <div className={classes.upload}>
                 <CircularProgress className={classes.progress} />
               </div>
+            )}
+            <div className={classes.upload}>
+              <Button onClick={e => this.handleUpload(e)} color="primary">
+                Upload
+              </Button>
             </div>
+          </div>
         );
       default:
         return "Unknown step";
@@ -591,8 +595,8 @@ class UploadComponent extends React.Component {
   handleNext() {
     let activeStep;
 
-    if (this.state.activeStep === 2){
-      this.handleUpload()
+    if (this.state.activeStep === 2) {
+      this.handleUpload();
     } else if (this.isLastStep() && !this.allStepsCompleted()) {
       // It's the last step, but not all steps have been completed,
       // find the first step that has been completed
@@ -630,7 +634,10 @@ class UploadComponent extends React.Component {
   }
 
   handleReset() {
-
+    this.setState({
+      open: false,
+      activeStep: 0
+    });
   }
 
   completedSteps() {
@@ -650,14 +657,12 @@ class UploadComponent extends React.Component {
   }
 
   handleClose() {
-      this.setState({
-          open: false,
-          activeStep: 0,
-          completed: {}
-      },()=>{
-          this.props.ModalHide();
-          this.handleClose()
-      });
+    this.setState({
+      open: false,
+      in_progress: false
+    });
+    this.handleReset();
+    this.props.ModalHide();
   }
 
   render() {
@@ -699,25 +704,27 @@ class UploadComponent extends React.Component {
                   <div className={classes.instructions}>
                     {this.getStepContent(activeStep, this.props)}
                   </div>
-                    {activeStep !==0 && (
-                        <div className={classes.action_buttons}>
-                            <Button
-                                disabled={activeStep === 0}
-                                onClick={this.handleBack}
-                                className={classes.backButton}
-                            >
-                                Back
-                            </Button>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={this.handleNext}
-
-                            >
-                                {activeStep === steps.length - 1 ? "Upload" : "Next"}
-                            </Button>
-                        </div>
-                    )}
+                  {activeStep !== 0 &&
+                    (activeStep !== 2 && (
+                      <div className={classes.action_buttons}>
+                        <Button
+                          disabled={activeStep === 0}
+                          onClick={this.handleBack}
+                          className={classes.backButton}
+                        >
+                          Back
+                        </Button>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          onClick={this.handleNext}
+                        >
+                          {activeStep === steps.length - 1
+                            ? "Complete"
+                            : "Next"}
+                        </Button>
+                      </div>
+                    ))}
                 </div>
               )}
             </div>
