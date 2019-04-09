@@ -297,15 +297,15 @@ class UploadComponent extends React.Component {
           file: files[i],
           general: {
             name: files[i].name,
-            owner: this.props.CurrentUser.username,
-            license: Licenses[0].value
+            owner: this.props.CurrentUser.username
+            // license: Licenses[0].value
           },
-          camera: {
-            make: "",
-            model: "",
-            focal_length: "",
-            dimension: ""
-          },
+          // camera: {
+          //   make: "",
+          //   model: "",
+          //   focal_length: "",
+          //   dimension: ""
+          // },
           description: "",
           tags: []
         };
@@ -435,7 +435,7 @@ class UploadComponent extends React.Component {
                           this.handleImageFormChange(e, "general", "owner")
                         }
                       />
-                      <TextField
+                      {/* <TextField
                         label="License"
                         select
                         type="text"
@@ -453,11 +453,11 @@ class UploadComponent extends React.Component {
                             {license.label}
                           </MenuItem>
                         ))}
-                      </TextField>
+                      </TextField> */}
                     </div>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
-                <ExpansionPanel
+                {/* <ExpansionPanel
                   expanded={this.state.expanded === "camera"}
                   onChange={e => this.activePanel(e, "camera")}
                 >
@@ -516,7 +516,7 @@ class UploadComponent extends React.Component {
                       />
                     </div>
                   </ExpansionPanelDetails>
-                </ExpansionPanel>
+                </ExpansionPanel> */}
                 <ExpansionPanel
                   expanded={this.state.expanded === "description"}
                   onChange={e => this.activePanel(e, "description")}
