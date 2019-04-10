@@ -226,17 +226,12 @@ class UploadComponent extends React.Component {
     let data = [];
     for (let i = 0; i < this.state.images.length; i++) {
       let formData = new FormData();
-      formData.append('name', this.state.images[i].general.name);
-      formData.append('file',this.state.images[i].file, this.state.images[i].file.name)
-      for(let p of formData){
-        console.log(p)
-      }
-      data.push(formData);
+      formData.append('image[name]', this.state.images[i].general.name);
+      formData.append('image[image_file]',this.state.images[i].file, this.state.images[i].file.name)
+      this.props.Upload(formData)
+
     }
-    debugger
-    this.props.Upload(data).then(res => {
-      this.handleClose();
-    });
+
   }
 
   handleImageFormChange(e, name, subname) {
@@ -685,7 +680,7 @@ class UploadComponent extends React.Component {
 
     return (
       <Dialog
-        open={this.state.open}
+        open={this.state.open || false}
         TransitionComponent={Transition}
         keepMounted
         onClose={this.handleClose}
@@ -749,7 +744,7 @@ class UploadComponent extends React.Component {
 }
 
 UploadComponent.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object
 };
 
 export default withStyles(styles)(UploadComponent);

@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PEXCEL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PEXCEL.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/api/images_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/images_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/images/show.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/images/show.json.jbuilder" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/app_component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/app_component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/auth_component/auth_component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/auth_component/auth_component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/navbar_component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/navbar_component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/upload_component/UploadAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/upload_component/UploadAPI.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/upload_component/upload_container.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/upload_component/upload_container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -36,14 +39,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="upload_component.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx">
+      <file leaf-file-name="navbar_component.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/components/navbar/navbar_component.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="317" column="8" selection-start-line="317" selection-start-column="8" selection-end-line="317" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="364">
+              <caret line="104" column="22" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth_component.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/components/auth_component/auth_component.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="238" column="50" selection-start-line="238" selection-start-column="50" selection-end-line="238" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -51,26 +60,30 @@
       <file leaf-file-name="images_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/images_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="975">
+              <caret line="65" column="45" lean-forward="true" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UploadAPI.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/UploadAPI.js">
+      <file leaf-file-name="storage.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/storage.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="45">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_gallery.jbuilder" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/api/images/user_gallery.jbuilder">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pr</find>
       <find>title</find>
       <find>form</find>
       <find>Spinner</find>
@@ -98,8 +111,9 @@
       <find>modal_status_reducer</find>
       <find>getStepContent</find>
       <find>All steps completed</find>
-      <find>handleclose</find>
       <find>session</find>
+      <find>handleclose</find>
+      <find>Modal</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -108,9 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/components/profile/gallery.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/profile/gallery_container.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/profile/settings_container.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/profile/settings.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/profile/profile.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/app.jsx" />
@@ -133,7 +144,6 @@
         <option value="$PROJECT_DIR$/frontend/components/actions/session_actions.js" />
         <option value="$PROJECT_DIR$/app/views/api/sessions/show.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/api/users/show.json.jbuilder" />
-        <option value="$PROJECT_DIR$/frontend/components/auth_component/auth_component.jsx" />
         <option value="$PROJECT_DIR$/app/controllers/api/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/frontend/reducer/session_reducer.js" />
@@ -141,7 +151,6 @@
         <option value="$PROJECT_DIR$/frontend/components/auth_component/AuthAPI.js" />
         <option value="$PROJECT_DIR$/frontend/actions/session_actions.js" />
         <option value="$PROJECT_DIR$/app/controllers/api/sessions_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/frontend/components/auth_component/auth_container.js" />
         <option value="$PROJECT_DIR$/frontend/reducer/auth_modal_reducer.js" />
         <option value="$PROJECT_DIR$/frontend/components/Auth_guard.js" />
@@ -150,15 +159,20 @@
         <option value="$PROJECT_DIR$/frontend/reducer/upload_modal_reducer.js" />
         <option value="$PROJECT_DIR$/frontend/components/navbar/navbar_container.js" />
         <option value="$PROJECT_DIR$/frontend/components/upload_component/upload_container.js" />
-        <option value="$PROJECT_DIR$/frontend/components/navbar/navbar_component.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/app_component.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/upload_component/image_form_container.jsx" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/frontend/components/upload_component/image_form.jsx" />
-        <option value="$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/api/images_controller.rb" />
         <option value="$PROJECT_DIR$/frontend/components/upload_component/UploadAPI.js" />
+        <option value="$PROJECT_DIR$/app/views/api/images/show.json.jbuilder" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/frontend/components/user_gallery/user_gallery_component.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/app_component.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/navbar/navbar_component.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/auth_component/auth_component.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx" />
+        <option value="$PROJECT_DIR$/app/controllers/api/images_controller.rb" />
+        <option value="$PROJECT_DIR$/config/storage.yml" />
       </list>
     </option>
   </component>
@@ -183,18 +197,16 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="521" />
+    <option name="x" value="171" />
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="726" />
+    <option name="width" value="1661" />
+    <option name="height" value="1314" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,13 +235,41 @@
             <path>
               <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
               <item name="pexcel" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
               <item name="pexcel" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="environments" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
@@ -263,16 +303,12 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="upload_component" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="reducer" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -454,7 +490,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="663468000" />
+    <option name="totallyTimeSpent" value="668647000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -466,46 +502,58 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="521" y="23" width="1280" height="726" extended-state="0" />
+    <frame x="171" y="23" width="1661" height="1314" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1736672" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32983193" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32886904" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32956383" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32983193" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32983193" />
+      <window_info anchor="right" id="Terminal" order="4" weight="0.38851142" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20259419" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32956383" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32579565" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24878837" />
-      <window_info anchor="right" id="Terminal" order="4" weight="0.4951535" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1736672" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.24878837" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32983193" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32983193" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32956383" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32886904" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3264633" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Terminal" order="4" weight="0.4951535" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17124394" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24878837" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32983193" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32983193" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3264633" />
       <window_info anchor="right" id="Database" order="3" weight="0.32956383" />
       <window_info anchor="right" id="Terminal" order="4" visible="true" weight="0.4095315" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32983193" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32886904" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -549,11 +597,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/components/profile/profile.jsx" />
-    <entry file="file://$PROJECT_DIR$/frontend/components/profile/discover.jsx" />
-    <entry file="file://$PROJECT_DIR$/frontend/components/splash/navbar.jsx" />
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profile.scss" />
-    <entry file="file://$PROJECT_DIR$/frontend/components/app.jsx" />
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/auth.scss" />
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/uploade_modal.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -611,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/image.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -658,20 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -752,30 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/navbar_container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/app_component.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/navbar_component.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2559">
-          <caret line="266" column="23" lean-forward="true" selection-start-line="266" selection-start-column="23" selection-end-line="266" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -791,17 +789,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/image_form.jsx" />
-    <entry file="file://$PROJECT_DIR$/frontend/components/auth_component/auth_component.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="273" column="42" selection-start-line="273" selection-start-column="42" selection-end-line="274" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_container.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -828,32 +819,107 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="28" selection-start-line="1" selection-end-line="2" />
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/UploadAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/api/images/show.json.jbuilder">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/image.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/landing_component/landing_component.jsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/user_gallery/user_gallery_component.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/app_component.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/navbar_container.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/navbar_component.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="104" column="22" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/auth_component/auth_component.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="238" column="50" selection-start-line="238" selection-start-column="50" selection-end-line="238" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="317" column="8" selection-start-line="317" selection-start-column="8" selection-end-line="317" selection-end-column="8" />
+        <state relative-caret-position="142">
+          <caret line="689" column="21" lean-forward="true" selection-start-line="689" selection-start-column="21" selection-end-line="689" selection-end-column="21" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/api/images/user_gallery.jbuilder">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/images_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="975">
+          <caret line="65" column="45" lean-forward="true" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/UploadAPI.js">
+    <entry file="file://$PROJECT_DIR$/config/storage.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
