@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { UploadModalHide } from "../../actions/upload_modal";
 import UploadComponent from "./upload_component";
+import { UploadImages } from "./UploadAPI";
 
 const mapStateToProps = state => ({
   ModalStatus: state.UploadModal.open,
@@ -8,7 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  ModalHide: () => dispatch(UploadModalHide())
+  ModalHide: () => dispatch(UploadModalHide()),
+  Upload: images => UploadImages(images)
 });
 
 export default connect(

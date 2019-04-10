@@ -223,7 +223,20 @@ class UploadComponent extends React.Component {
     this.setState({
       in_progress: true
     });
-    this.handleClose();
+    let data = [];
+    for (let i = 0; i < this.state.images.length; i++) {
+      let formData = new FormData();
+      formData.append('name', this.state.images[i].general.name);
+      formData.append('file',this.state.images[i].file, this.state.images[i].file.name)
+      for(let p of formData){
+        console.log(p)
+      }
+      data.push(formData);
+    }
+    debugger
+    this.props.Upload(data).then(res => {
+      this.handleClose();
+    });
   }
 
   handleImageFormChange(e, name, subname) {

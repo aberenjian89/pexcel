@@ -8,7 +8,8 @@ class Api::ImagesController < ApplicationController
   end
 
   def create
-
+    debugger
+    @images = image_params
     params[:images].each do |image|
       @image = Image.new(image_params)
       if !@image.save 
@@ -63,7 +64,7 @@ class Api::ImagesController < ApplicationController
 
   private
   def image_params
-    params.require(:images).permit(:name, :image_file)
+    params.require(:data).permit(images: [])
   end
   def image_params_update
     params.require(:img).permit(:img_title,:img_location,:author_id, :img_desc,:date_taken,:category)
