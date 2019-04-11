@@ -229,9 +229,8 @@ class UploadComponent extends React.Component {
       formData.append('image[name]', this.state.images[i].general.name);
       formData.append('image[image_file]',this.state.images[i].file, this.state.images[i].file.name)
       this.props.Upload(formData)
-
     }
-
+    this.handleClose()
   }
 
   handleImageFormChange(e, name, subname) {

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     # end
     resource :users, only: [:create,:update,:show]
     resource :images, only: [:create,:update,:show]
+    get '/images/user_gallery', to: 'images#user_gallery'
     
     resource :session, only:[:create,:destroy]
   end
