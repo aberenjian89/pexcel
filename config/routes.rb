@@ -11,10 +11,11 @@ Rails.application.routes.draw do
     #   resources :comments, excepts:[:destroy]
     #   resources :likes, only:[:create,:destroy]
     # end
-    resource :users, only: [:create,:update,:show]
-    resource :images, only: [:create,:update,:show]
-    get '/images/user_gallery', to: 'images#user_gallery'
-    
+    get '/images/home_user_gallery', to: 'images#home_user_gallery'
+    resources :users, only: [:create,:update,:show]
+    resources :images, only: [:create,:update,:show,:destroy]
+
+
     resource :session, only:[:create,:destroy]
   end
 

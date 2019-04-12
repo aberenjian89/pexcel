@@ -33,6 +33,8 @@ gem 'aws-sdk-v1'
 #gem 'aws-sdk','~> 2.3'
 gem 'figaro'
 
+gem 'fastimage'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

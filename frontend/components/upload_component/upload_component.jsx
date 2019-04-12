@@ -230,8 +230,12 @@ class UploadComponent extends React.Component {
       formData.append('image[image_file]',this.state.images[i].file, this.state.images[i].file.name)
       this.props.Upload(formData)
     }
-    this.handleClose()
+    this.props.FetchHomeImages()
+        .then(()=>{
+            this.handleClose()
+        })
   }
+
 
   handleImageFormChange(e, name, subname) {
     let newstate = JSON.parse(JSON.stringify(this.state));
@@ -669,7 +673,15 @@ class UploadComponent extends React.Component {
       in_progress: false
     });
     this.handleReset();
+    if (this.props.history[this.props.history.length -1] === '/my_gallery'){
+
+    }else{
+        this.props.history.push('/my_gallery')
+    }
+
     this.props.ModalHide();
+
+
   }
 
   render() {

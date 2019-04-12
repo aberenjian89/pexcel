@@ -6,7 +6,7 @@ import NavbarContainer from './navbar/navbar_container'
 import AuthContainer from './auth_component/auth_container'
 import LandingComponent from './landing_component/landing_component'
 import UploadContainer from './upload_component/upload_container'
-import UserGalleryComponent from './user_gallery/user_gallery_component'
+import HomeUserGalleryContainer from './home_user_gallery/home_user_gallery_container'
 
 class AppComponent extends React.Component{
     constructor(props){
@@ -22,7 +22,7 @@ class AppComponent extends React.Component{
             <NavbarContainer/>
             <Switch>
                 <Route exact path='/' component={LandingComponent}/>
-                <ProtectedAuth exact path="/my_gallery" component={UserGalleryComponent}/>
+                <ProtectedAuth exact path="/my_gallery" component={HomeUserGalleryContainer}/>
             </Switch>
         </div>
         )

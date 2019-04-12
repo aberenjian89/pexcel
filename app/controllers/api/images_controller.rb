@@ -10,13 +10,13 @@ class Api::ImagesController < ApplicationController
   def create
     @image = current_user.images.create(image_params)
     if @image.save
-      render json: "Image Uploaded Successful",status: 200
+      render json: "Images Uploaded Successful",status: 200
     else
       render json: @image.errors.full_message, status: 500
     end
   end
 
-  def user_gallery
+  def home_user_gallery
     @images = current_user.images
     render :user_gallery
   end
@@ -49,12 +49,12 @@ class Api::ImagesController < ApplicationController
   end
 
   def show
-    @image = Image.find(params[:id])
-    if @image
-      render :show
-    else
-      render json: @image.errors.full_messages, status: 422
-    end
+    # @image = Image.find(params[:id])
+    # if @image
+    #   render :show
+    # else
+    #   render json: @image.errors.full_messages, status: 422
+    # end
   end
 
 
