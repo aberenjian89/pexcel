@@ -105,12 +105,17 @@ class NavbarComponent extends React.Component {
     this.OpenAuthModal = this.OpenAuthModal.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.handleRoute = this.handleRoute.bind(this);
+    this.redirectToGallery = this.redirectToGallery.bind(this)
   }
 
   componentDidMount(props){
     this.setState({
         authenticate: this.props.authenticate
     })
+  }
+
+  redirectToGallery(e){
+    this.props.history.push('/my_gallery')
   }
 
   componentWillReceiveProps(nextProps){
@@ -287,7 +292,7 @@ class NavbarComponent extends React.Component {
             <div className={classes.grow} />
             {this.state.authenticate  && (
               <div className={classes.sectionDesktop}>
-                <Button  color="inherit">
+                <Button  color="inherit" onClick={(e)=> this.redirectToGallery(e)}>
                   My Gallery
                 </Button>
                 <IconButton

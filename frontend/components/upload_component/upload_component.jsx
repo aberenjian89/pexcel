@@ -223,8 +223,19 @@ class UploadComponent extends React.Component {
     this.setState({
       in_progress: true
     });
-    this.handleClose();
+    let data = [];
+    for (let i = 0; i < this.state.images.length; i++) {
+      let formData = new FormData();
+      formData.append('image[name]', this.state.images[i].general.name);
+      formData.append('image[image_file]',this.state.images[i].file, this.state.images[i].file.name)
+      this.props.Upload(formData)
+    }
+    this.props.FetchHomeImages()
+        .then(()=>{
+            this.handleClose()
+        })
   }
+
 
   handleImageFormChange(e, name, subname) {
     let newstate = JSON.parse(JSON.stringify(this.state));
@@ -297,15 +308,15 @@ class UploadComponent extends React.Component {
           file: files[i],
           general: {
             name: files[i].name,
-            owner: this.props.CurrentUser.username,
-            license: Licenses[0].value
+            owner: this.props.CurrentUser.username
+            // license: Licenses[0].value
           },
-          camera: {
-            make: "",
-            model: "",
-            focal_length: "",
-            dimension: ""
-          },
+          // camera: {
+          //   make: "",
+          //   model: "",
+          //   focal_length: "",
+          //   dimension: ""
+          // },
           description: "",
           tags: []
         };
@@ -435,7 +446,7 @@ class UploadComponent extends React.Component {
                           this.handleImageFormChange(e, "general", "owner")
                         }
                       />
-                      <TextField
+                      {/* <TextField
                         label="License"
                         select
                         type="text"
@@ -453,11 +464,11 @@ class UploadComponent extends React.Component {
                             {license.label}
                           </MenuItem>
                         ))}
-                      </TextField>
+                      </TextField> */}
                     </div>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
-                <ExpansionPanel
+                {/* <ExpansionPanel
                   expanded={this.state.expanded === "camera"}
                   onChange={e => this.activePanel(e, "camera")}
                 >
@@ -516,7 +527,7 @@ class UploadComponent extends React.Component {
                       />
                     </div>
                   </ExpansionPanelDetails>
-                </ExpansionPanel>
+                </ExpansionPanel> */}
                 <ExpansionPanel
                   expanded={this.state.expanded === "description"}
                   onChange={e => this.activePanel(e, "description")}
@@ -662,7 +673,15 @@ class UploadComponent extends React.Component {
       in_progress: false
     });
     this.handleReset();
+    if (this.props.history[this.props.history.length -1] === '/my_gallery'){
+
+    }else{
+        this.props.history.push('/my_gallery')
+    }
+
     this.props.ModalHide();
+
+
   }
 
   render() {
@@ -672,7 +691,7 @@ class UploadComponent extends React.Component {
 
     return (
       <Dialog
-        open={this.state.open}
+        open={this.state.open || false}
         TransitionComponent={Transition}
         keepMounted
         onClose={this.handleClose}
@@ -736,7 +755,7 @@ class UploadComponent extends React.Component {
 }
 
 UploadComponent.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object
 };
 
 export default withStyles(styles)(UploadComponent);

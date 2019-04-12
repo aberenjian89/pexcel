@@ -236,7 +236,7 @@ class AuthComponent extends React.Component {
         return (
             <div>
                 <Dialog
-                    open={this.state.open}
+                    open={this.state.open || false}
                     TransitionComponent={Transition}
                     keepMounted
                     onClose={this.handleClose}
