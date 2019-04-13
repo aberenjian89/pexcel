@@ -3,8 +3,9 @@ class Api::ImagesController < ApplicationController
     @images = Image.all
   end
 
-  def recent_images
+  def landing_recent_images
     @images = Image.all
+    render :landing_recent_images
   end
 
   def create
