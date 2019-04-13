@@ -15,7 +15,8 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import SettingIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Button from "@material-ui/core/Button";
-import AddToPhotos from "@material-ui/icons/AddToPhotos"
+import AddToPhotos from "@material-ui/icons/AddToPhotos";
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -78,17 +79,18 @@ const styles = theme => ({
     display: "none",
     [theme.breakpoints.up("md")]: {
       display: "flex"
-    },
+    }
   },
   sectionMobile: {
     display: "flex",
     [theme.breakpoints.up("md")]: {
       display: "none"
     }
+  },
+  link: {
+    color: "black"
   }
 });
-
-
 
 class NavbarComponent extends React.Component {
   constructor(props) {
@@ -105,24 +107,24 @@ class NavbarComponent extends React.Component {
     this.OpenAuthModal = this.OpenAuthModal.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.handleRoute = this.handleRoute.bind(this);
-    this.redirectToGallery = this.redirectToGallery.bind(this)
+    this.redirectToGallery = this.redirectToGallery.bind(this);
   }
 
-  componentDidMount(props){
+  componentDidMount(props) {
     this.setState({
-        authenticate: this.props.authenticate
-    })
+      authenticate: this.props.authenticate
+    });
   }
 
-  redirectToGallery(e){
-    this.props.history.push('/my_gallery')
+  redirectToGallery(e) {
+    this.props.history.push("/my_gallery");
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     if (nextProps.authenticate !== this.state.authenticate) {
       this.setState({
-          authenticate: nextProps.authenticate
-      })
+        authenticate: nextProps.authenticate
+      });
     }
   }
 
@@ -143,35 +145,34 @@ class NavbarComponent extends React.Component {
     this.setState({ mobileMoreAnchorEl: null });
   }
 
-  OpenUploadModal(){
-    this.props.UploadModalShow()
+  OpenUploadModal() {
+    this.props.UploadModalShow();
   }
 
-  handleLogout(){
-    this.props.LogOutUser()
-    .then(()=> this.setState({
-      anchorEl: null
-    }))
+  handleLogout() {
+    this.props.LogOutUser().then(() =>
+      this.setState({
+        anchorEl: null
+      })
+    );
   }
 
-  handleRoute(route){
-    switch (route){
-        case 'upload':
-          this.props.history.push('/upload');
-          break;
-        case 'profile':
-          this.props.history.push('/profile');
-          break;
-        default:
-          break;
-
+  handleRoute(route) {
+    switch (route) {
+      case "upload":
+        this.props.history.push("/upload");
+        break;
+      case "profile":
+        this.props.history.push("/profile");
+        break;
+      default:
+        break;
     }
   }
 
-  OpenAuthModal(e,type) {
-    this.props.ModalShow(type)
+  OpenAuthModal(e, type) {
+    this.props.ModalShow(type);
   }
-
 
   render() {
     const { anchorEl, mobileMoreAnchorEl } = this.state;
@@ -193,11 +194,11 @@ class NavbarComponent extends React.Component {
           </IconButton>
           My Profile
         </MenuItem>
-        <MenuItem onClick={()=> this.OpenUploadModal()}>
+        <MenuItem onClick={() => this.OpenUploadModal()}>
           <IconButton color="inherit">
             <AddToPhotos />
           </IconButton>
-            Upload
+          Upload
         </MenuItem>
         <MenuItem onClick={this.handleMenuClose}>
           <IconButton color="inherit">
@@ -205,8 +206,8 @@ class NavbarComponent extends React.Component {
           </IconButton>
           Setting
         </MenuItem>
-        <MenuItem onClick={(e) => this.handleLogout(e)}>
-          <IconButton color="inherit" onClick={(e) => this.handleLogout(e)}>
+        <MenuItem onClick={e => this.handleLogout(e)}>
+          <IconButton color="inherit" onClick={e => this.handleLogout(e)}>
             <ExitToAppIcon />
           </IconButton>
           LogOut
@@ -228,11 +229,11 @@ class NavbarComponent extends React.Component {
           </IconButton>
           My Profile
         </MenuItem>
-        <MenuItem onClick={()=> this.OpenUploadModal()}>
-            <IconButton color="inherit">
-                <AddToPhotos />
-            </IconButton>
-            Upload
+        <MenuItem onClick={() => this.OpenUploadModal()}>
+          <IconButton color="inherit">
+            <AddToPhotos />
+          </IconButton>
+          Upload
         </MenuItem>
         <MenuItem onClick={this.handleMenuClose}>
           <IconButton color="inherit">
@@ -250,20 +251,21 @@ class NavbarComponent extends React.Component {
     );
 
     const renderMobileMenuUnAuthenticate = (
-        <Menu
-            anchorEl={mobileMoreAnchorEl}
-            anchorOrigin={{ vertical: "top", horizontal: "right" }}
-            transformOrigin={{ vertical: "top", horizontal: "right" }}
-            open={isMobileMenuOpen}
-            onClose={this.handleMenuClose}>
-            <MenuItem onClick={(e)=> this.OpenAuthModal(e,'Sign_In')}>
-               Sign-In
-            </MenuItem>
-            <MenuItem onClick={(e)=> this.OpenAuthModal(e,'Sign_Up')}>
-                Sign-Up
-            </MenuItem>
-        </Menu>
-    )
+      <Menu
+        anchorEl={mobileMoreAnchorEl}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        transformOrigin={{ vertical: "top", horizontal: "right" }}
+        open={isMobileMenuOpen}
+        onClose={this.handleMenuClose}
+      >
+        <MenuItem onClick={e => this.OpenAuthModal(e, "Sign_In")}>
+          Sign-In
+        </MenuItem>
+        <MenuItem onClick={e => this.OpenAuthModal(e, "Sign_Up")}>
+          Sign-Up
+        </MenuItem>
+      </Menu>
+    );
 
     return (
       <div className={classes.root}>
@@ -275,9 +277,11 @@ class NavbarComponent extends React.Component {
               color="inherit"
               noWrap
             >
-              PEXCEL
+              <Link to="/" className={classes.link}>
+                PEXCEL
+              </Link>
             </Typography>
-            <div className={classes.search}>
+            {/* <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
@@ -288,11 +292,14 @@ class NavbarComponent extends React.Component {
                   input: classes.inputInput
                 }}
               />
-            </div>
+            </div> */}
             <div className={classes.grow} />
-            {this.state.authenticate  && (
+            {this.state.authenticate && (
               <div className={classes.sectionDesktop}>
-                <Button  color="inherit" onClick={(e)=> this.redirectToGallery(e)}>
+                <Button
+                  color="inherit"
+                  onClick={e => this.redirectToGallery(e)}
+                >
                   My Gallery
                 </Button>
                 <IconButton
@@ -306,36 +313,42 @@ class NavbarComponent extends React.Component {
               </div>
             )}
             {!this.state.authenticate && (
-                <div className={classes.sectionDesktop}>
-                    <Button color="inherit" onClick={(e)=> this.OpenAuthModal(e,"Sign_In")}>Sign in</Button>
-                    <Button color="inherit" onClick={(e)=> this.OpenAuthModal(e,"Sign_Up")}>Sign up</Button>
-                </div>
+              <div className={classes.sectionDesktop}>
+                <Button
+                  color="inherit"
+                  onClick={e => this.OpenAuthModal(e, "Sign_In")}
+                >
+                  Sign in
+                </Button>
+                <Button
+                  color="inherit"
+                  onClick={e => this.OpenAuthModal(e, "Sign_Up")}
+                >
+                  Sign up
+                </Button>
+              </div>
             )}
             <div className={classes.sectionMobile}>
-                <IconButton
-                    aria-haspopup="true"
-                    onClick={this.handleMobileMenuOpen}
-                    color="inherit"
-                >
-                    <MoreIcon/>
-                </IconButton>
+              <IconButton
+                aria-haspopup="true"
+                onClick={this.handleMobileMenuOpen}
+                color="inherit"
+              >
+                <MoreIcon />
+              </IconButton>
             </div>
           </Toolbar>
         </AppBar>
         {renderMenu}
-        {this.state.authenticate && (
-          renderMobileMenu
-        )}
-        {!this.state.authenticate && (
-          renderMobileMenuUnAuthenticate
-        )}
+        {this.state.authenticate && renderMobileMenu}
+        {!this.state.authenticate && renderMobileMenuUnAuthenticate}
       </div>
     );
   }
 }
 
 NavbarComponent.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(NavbarComponent);

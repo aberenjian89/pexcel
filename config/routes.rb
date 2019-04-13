@@ -16,10 +16,10 @@ Rails.application.routes.draw do
     #   resources :comments, excepts:[:destroy]
     #   resources :likes, only:[:create,:destroy]
     # end
+    get '/images/landing_recent_images', to: 'images#landing_recent_images'
     get '/images/home_user_gallery', to: 'images#home_user_gallery'
     resources :users, only: [:create,:update,:show]
     resources :images, only: [:create,:update,:show,:destroy]
-
 
     resource :session, only:[:create,:destroy]
   end
