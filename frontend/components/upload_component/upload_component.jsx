@@ -230,10 +230,8 @@ class UploadComponent extends React.Component {
       formData.append('image[image_file]',this.state.images[i].file, this.state.images[i].file.name)
       this.props.Upload(formData)
     }
-    this.props.FetchHomeImages()
-        .then(()=>{
-            this.handleClose()
-        })
+    this.handleClose()
+
   }
 
 
