@@ -34,7 +34,8 @@ gem 'aws-sdk-v1'
 gem 'figaro'
 
 gem 'fastimage'
-
+gem 'sidekiq'
+gem 'mini_magick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

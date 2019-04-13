@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {RemoveUserImage} from './GalleryAPI'
 import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -65,21 +64,16 @@ class HomeUserGalleryComponent extends React.Component{
 
 
     componentWillReceiveProps(nextProps){
-        if (this.state.images.length !== Object.values(nextProps.HomeGallery.home_gallery).length){
+        debugger
+        if (this.state.images.length !== nextProps.HomeGallery.length){
             this.setState({
-                images: Object.values(nextProps.HomeGallery.home_gallery)
+                images: [...nextProps.HomeGallery]
             })
         }
     }
 
     handleRemove(e,key,img){
-        RemoveUserImage(img.id)
-            .then((res)=>{
-                let arr = this.state.images.slice(0,key).concat(this.state.images.slice(key+1))
-                this.setState({
-                    images: [...arr]
-                })
-            })
+        this.props.RemoveHomeImage(img.id)
     }
 
 
