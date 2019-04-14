@@ -30,6 +30,7 @@ class LandingComponent extends React.Component {
   }
 
   componentDidMount() {
+    debugger;
     this.props.FetchImages();
   }
 

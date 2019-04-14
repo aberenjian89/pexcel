@@ -17,7 +17,7 @@
 
 /node_modules
 /yarn-error.log
-
+dump.rdb 
 .byebug_history
 
 # Ignore application configuration

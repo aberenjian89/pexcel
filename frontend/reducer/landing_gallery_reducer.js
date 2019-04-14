@@ -10,7 +10,7 @@ const LandingGalleryReducer = (state = _initialState, action) => {
   let newState;
   switch (action.type) {
     case FETCH_LANDING_IMAGE:
-      newState = merge({}, state, { landing_images: action.data });
+      newState = Object.assign({}, state, { landing_images: action.data });
       return newState;
     default:
       return state;
