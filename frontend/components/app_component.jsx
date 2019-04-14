@@ -13,8 +13,8 @@ import { relative } from "path";
 
 const styles = theme => ({
   wrapper: {
-    position: relative,
-    minHeight: "100%"
+    // position: "relative",
+    minHeight: "calc(100vh - 6vh)"
   }
 });
 
@@ -26,18 +26,20 @@ class AppComponent extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.wrapper}>
-        <AuthContainer />
-        <UploadContainer />
-        <NavbarContainer />
-        <Switch>
-          <Route exact path="/" component={LandingContainer} />
-          <ProtectedAuth
-            exact
-            path="/my_gallery"
-            component={HomeUserGalleryContainer}
-          />
-        </Switch>
+        <div >
+          <div className={classes.wrapper}>
+            <AuthContainer />
+            <UploadContainer />
+            <NavbarContainer />
+            <Switch>
+              <Route exact path="/" component={LandingContainer} />
+              <ProtectedAuth
+                exact
+                path="/my_gallery"
+                component={HomeUserGalleryContainer}
+              />
+            </Switch>
+          </div>
         <FooterComponent />
       </div>
     );

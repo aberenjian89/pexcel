@@ -2,7 +2,6 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { withStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -11,7 +10,8 @@ const styles = theme => ({
   appbar: {
     top: "auto",
     // bottom: "auto",
-    marginTop: theme.spacing.unit
+    marginTop: theme.spacing.unit,
+    minHeight: "80px"
   },
   toolbar: {
     display: "flex",
@@ -37,18 +37,18 @@ class FooterComponent extends React.Component {
         <AppBar position="absolute" className={classes.appbar} color="default">
           <Toolbar className={classes.toolbar}>
             <div>
-              <Link
-                to="https://www.linkedin.com/in/alireza-berenjian/"
+              <a
+                href="https://www.linkedin.com/in/alireza-berenjian/"
                 className={classes.icons}
               >
                 <ion-icon name="logo-linkedin" size="large" />
-              </Link>
-              <Link
-                to="https://github.com/aberenjian89/pexcel"
+              </a>
+              <a
+                href="https://github.com/aberenjian89/pexcel"
                 className={classes.icons}
               >
                 <ion-icon name="logo-github" size="large" />
-              </Link>
+              </a>
             </div>
           </Toolbar>
         </AppBar>

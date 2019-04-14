@@ -19,7 +19,8 @@ const style = theme => ({
     backgroundColor: theme.palette.background.paper,
     marginTop: "3%",
     marginRight: theme.spacing.unit,
-    marginLeft: theme.spacing.unit
+    marginLeft: theme.spacing.unit,
+    // minHeight: "calc(100vh - 17vh)"
   },
   gridList: {
     width: "100%"
