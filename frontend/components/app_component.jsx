@@ -7,6 +7,16 @@ import AuthContainer from "./auth_component/auth_container";
 import LandingContainer from "./landing_component/landing_container";
 import UploadContainer from "./upload_component/upload_container";
 import HomeUserGalleryContainer from "./home_user_gallery/home_user_gallery_container";
+import FooterComponent from "./footer_component/footer_component";
+import { withStyles } from "@material-ui/core/styles";
+import { relative } from "path";
+
+const styles = theme => ({
+  wrapper: {
+    // position: "relative",
+    minHeight: "calc(100vh - 6vh)"
+  }
+});
 
 class AppComponent extends React.Component {
   constructor(props) {
@@ -14,22 +24,26 @@ class AppComponent extends React.Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
-      <div>
-        <AuthContainer />
-        <UploadContainer />
-        <NavbarContainer />
-        <Switch>
-          <Route exact path="/" component={LandingContainer} />
-          <ProtectedAuth
-            exact
-            path="/my_gallery"
-            component={HomeUserGalleryContainer}
-          />
-        </Switch>
+        <div >
+          <div className={classes.wrapper}>
+            <AuthContainer />
+            <UploadContainer />
+            <NavbarContainer />
+            <Switch>
+              <Route exact path="/" component={LandingContainer} />
+              <ProtectedAuth
+                exact
+                path="/my_gallery"
+                component={HomeUserGalleryContainer}
+              />
+            </Switch>
+          </div>
+        <FooterComponent />
       </div>
     );
   }
 }
 
-export default AppComponent;
+export default withStyles(styles)(AppComponent);

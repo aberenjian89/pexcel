@@ -30,12 +30,10 @@ class LandingComponent extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     this.props.FetchImages();
   }
 
   componentWillReceiveProps(nextprops) {
-    debugger;
     if (nextprops.LandingImages.length != this.state.images.length) {
       this.setState({
         images: [...nextprops.LandingImages]

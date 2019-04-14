@@ -15,4 +15,15 @@
  */
 
 @import "css_reset";
+html,
+body {
+  //height: 100%;
+  //position: relative;
+}
 
+#root{
+  //min-height: 100vh; /* will cover the 100% of viewport */
+  //overflow: hidden;
+  //display: block;
+  //position: relative;
+}

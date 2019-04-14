@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="" />
+    <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/app_component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/app_component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/footer_component/footer_component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/footer_component/footer_component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/home_user_gallery/home_user_gallery_component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/home_user_gallery/home_user_gallery_component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/landing_component/landing_component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/landing_component/landing_component.jsx" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -29,55 +37,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home_user_gallery_component.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/components/home_user_gallery/home_user_gallery_component.jsx">
+      <file leaf-file-name="footer_component.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/components/footer_component/footer_component.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home_gallery.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/actions/home_gallery.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upload_component.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="253" column="61" selection-start-line="253" selection-start-column="61" selection-end-line="253" selection-end-column="61" />
+            <state relative-caret-position="690">
+              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upload_modal.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/actions/upload_modal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upload_container.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_container.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,9 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/reducer/modal_status_reducer.js" />
-        <option value="$PROJECT_DIR$/frontend/components/actions/modal_status_action.js" />
-        <option value="$PROJECT_DIR$/frontend/store/store.js" />
         <option value="$PROJECT_DIR$/frontend/components/actions/session_actions.js" />
         <option value="$PROJECT_DIR$/app/views/api/sessions/show.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/api/users/show.json.jbuilder" />
@@ -166,7 +129,6 @@
         <option value="$PROJECT_DIR$/frontend/components/home_user_gallery/GalleryAPI.js" />
         <option value="$PROJECT_DIR$/frontend/components/home_user_gallery/home_user_gallery.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/upload_component/upload_container.js" />
-        <option value="$PROJECT_DIR$/frontend/components/app_component.jsx" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/application.rb" />
@@ -176,6 +138,10 @@
         <option value="$PROJECT_DIR$/app/controllers/api/images_controller.rb" />
         <option value="$PROJECT_DIR$/frontend/components/home_user_gallery/home_user_gallery_container.js" />
         <option value="$PROJECT_DIR$/frontend/components/home_user_gallery/home_user_gallery_component.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/landing_component/landing_component.jsx" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
+        <option value="$PROJECT_DIR$/frontend/components/app_component.jsx" />
+        <option value="$PROJECT_DIR$/frontend/components/footer_component/footer_component.jsx" />
       </list>
     </option>
   </component>
@@ -200,7 +166,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="248" />
+    <option name="x" value="749" />
     <option name="y" value="23" />
     <option name="width" value="1661" />
     <option name="height" value="1314" />
@@ -211,6 +177,7 @@
     </navigator>
     <panes>
       <pane id="RailsProjectView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,6 +189,19 @@
               <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
               <item name="pexcel" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
@@ -266,13 +246,6 @@
             <path>
               <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
               <item name="pexcel" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -304,7 +277,21 @@
               <item name="pexcel" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="footer_component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="home_user_gallery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="landing_component" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
@@ -330,7 +317,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -514,7 +500,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="688429000" />
+    <option name="totallyTimeSpent" value="690396000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -526,20 +512,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="23" width="1280" height="726" extended-state="6" />
+    <frame x="749" y="23" width="1661" height="1314" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17726992" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32983193" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32886904" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32956383" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32983193" />
-      <window_info anchor="right" id="Terminal" order="4" weight="0.4951535" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17851374" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32956383" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3250825" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24878837" />
+      <window_info anchor="right" id="Terminal" order="4" weight="0.4951535" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -565,20 +550,20 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17851374" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24878837" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32983193" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32983193" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3250825" />
       <window_info anchor="right" id="Database" order="3" weight="0.32956383" />
       <window_info anchor="right" id="Terminal" order="4" weight="0.4951535" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32886904" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32983193" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -622,16 +607,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20190329025147_change_user_model.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -856,16 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/app_component.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_container.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -890,9 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/rails">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -914,26 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="253" column="61" selection-start-line="253" selection-start-column="61" selection-end-line="253" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/reducer/home_user_gallery_reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/api/images/show.json.jbuilder">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/images_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
@@ -941,20 +883,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/actions/home_gallery.js">
+    <entry file="file://$PROJECT_DIR$/frontend/reducer/home_user_gallery_reducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="315">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/home_user_gallery/home_user_gallery_container.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="345">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
@@ -965,12 +904,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/actions/home_gallery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/upload_component/upload_component.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="236" column="4" selection-start-line="236" selection-start-column="4" selection-end-line="236" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/home_user_gallery/home_user_gallery_component.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+        <state relative-caret-position="180">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/landing_component/landing_component.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="27" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/app_component.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/footer_component/footer_component.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
