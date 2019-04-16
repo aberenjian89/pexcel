@@ -21,7 +21,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   FetchImages: () => dispatch(LandingFetchImages()),
   ImageViewModal: () => dispatch(ModalOpen()),
-  LandingImageIndex: index => dispatch(LandingImageIndex(index))
+  LandingIndex: index => dispatch(LandingImageIndex(index))
 });
 
 export default connect(

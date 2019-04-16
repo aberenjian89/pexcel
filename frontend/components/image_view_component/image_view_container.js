@@ -10,7 +10,7 @@ const mapStateToProps = state => {
     list = [...Object.values(state.LandingGallery.landing_images)];
   } else if (state.ImageSelection.gallery_index != null) {
     index = state.ImageSelection.gallery_index;
-    list = [...Object.values(state.LandingGallery.home_gallery)];
+    list = [...Object.values(state.HomeUserGallery.home_gallery)];
   } else {
     index = null;
     list = null;

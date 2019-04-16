@@ -27,6 +27,7 @@ class LandingComponent extends React.Component {
     this.state = {
       images: []
     };
+    this.handleImageView = this.handleImageView.bind(this);
   }
 
   componentDidMount() {
@@ -41,13 +42,22 @@ class LandingComponent extends React.Component {
     }
   }
 
+  handleImageView(e, index) {
+    this.props.LandingIndex(index);
+    this.props.ImageViewModal();
+  }
+
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
         <GridList cellHeight={180} cols={3} className={classes.gridList}>
           {this.state.images.map((img, key) => (
-            <GridListTile key={key} rows={2}>
+            <GridListTile
+              key={key}
+              rows={2}
+              onClick={e => this.handleImageView(e, key)}
+            >
               <img src={img.file} alt={img.name} />
             </GridListTile>
           ))}

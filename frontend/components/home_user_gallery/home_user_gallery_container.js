@@ -4,6 +4,10 @@ import {
   RemoveHomeUserImage
 } from "../../actions/home_gallery";
 import HomeUserGalleryComponent from "./home_user_gallery_component";
+import {
+  ModalOpen,
+  GalleryImageIndex
+} from "../../actions/image_view_selection";
 
 const mapStateToProps = state => {
   let user_gallery = null;
@@ -19,7 +23,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   FetchHomeImages: () => dispatch(FetchHomeUserImages()),
-  RemoveHomeImage: imageId => dispatch(RemoveHomeUserImage(imageId))
+  RemoveHomeImage: imageId => dispatch(RemoveHomeUserImage(imageId)),
+  ImageViewModal: () => dispatch(ModalOpen()),
+  GalleryImageIndex: index => dispatch(GalleryImageIndex(index))
 });
 
 export default connect(

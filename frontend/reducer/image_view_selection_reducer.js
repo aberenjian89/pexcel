@@ -18,7 +18,7 @@ const ImageViewSelectionReducer = (state = _initState, action) => {
   switch (action.type) {
     case LANDING_IMAGE_INDEX:
       newState = Object.assign({}, state, {
-        landing_index: action.date,
+        landing_index: action.data,
         gallery_index: null
       });
       return newState;
@@ -32,7 +32,11 @@ const ImageViewSelectionReducer = (state = _initState, action) => {
       newState = merge({}, state, { image_view_modal: true });
       return newState;
     case IMAGE_VIEW_MODAL_CLOSE:
-      newState = merge({}, state, { image_view_modal: false });
+      newState = merge({}, state, {
+        landing_index: null,
+        gallery_index: null,
+        image_view_modal: false
+      });
       return newState;
     default:
       return state;
