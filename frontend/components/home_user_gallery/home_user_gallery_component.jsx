@@ -19,7 +19,7 @@ const style = theme => ({
     backgroundColor: theme.palette.background.paper,
     marginTop: "3%",
     marginRight: theme.spacing.unit,
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing.unit
     // minHeight: "calc(100vh - 17vh)"
   },
   gridList: {
@@ -55,6 +55,7 @@ class HomeUserGalleryComponent extends React.Component {
       images: []
     };
     this.handleRemove = this.handleRemove.bind(this);
+    this.handleImageView = this.handleImageView.bind(this);
   }
 
   componentDidMount(props) {
@@ -73,6 +74,11 @@ class HomeUserGalleryComponent extends React.Component {
     this.props.RemoveHomeImage(img.id);
   }
 
+  handleImageView(e, index) {
+    this.props.GalleryImageIndex(index);
+    this.props.ImageViewModal();
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -81,7 +87,11 @@ class HomeUserGalleryComponent extends React.Component {
           <GridList className={classes.gridList} cols={3} cellHeight={150}>
             {this.state.images.map((img, key) => (
               <GridListTile key={key} rows={2}>
-                <img src={img.file} alt={img.name} />
+                <img
+                  src={img.file}
+                  alt={img.name}
+                  onClick={e => this.handleImageView(e, key)}
+                />
                 <GridListTileBar
                   actionIcon={
                     <IconButton

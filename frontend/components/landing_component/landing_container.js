@@ -1,6 +1,10 @@
 import { connect } from "react-redux";
 import LandingComponent from "./landing_component";
 import { LandingFetchImages } from "../../actions/landing_actions";
+import {
+  ModalOpen,
+  LandingImageIndex
+} from "../../actions/image_view_selection";
 
 const mapStateToProps = state => {
   let landing_image;
@@ -15,7 +19,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  FetchImages: () => dispatch(LandingFetchImages())
+  FetchImages: () => dispatch(LandingFetchImages()),
+  ImageViewModal: () => dispatch(ModalOpen()),
+  LandingIndex: index => dispatch(LandingImageIndex(index))
 });
 
 export default connect(
