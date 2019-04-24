@@ -87,7 +87,11 @@ class HomeUserGalleryComponent extends React.Component {
           <GridList className={classes.gridList} cols={3} cellHeight={150}>
             {this.state.images.map((img, key) => (
               <GridListTile key={key} rows={2}>
-                <img src={img.file} alt={img.name} />
+                <img
+                  src={img.file}
+                  alt={img.name}
+                  onClick={e => this.handleImageView(e, key)}
+                />
                 <GridListTileBar
                   actionIcon={
                     <IconButton

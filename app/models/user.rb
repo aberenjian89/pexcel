@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 8, allow_nil: true}
 
   validates :username, :session_token, :email, uniqueness: true
-
+  has_one_attached :avatar
   has_many :images,
      primary_key: :id,
      foreign_key: :owner_id,
