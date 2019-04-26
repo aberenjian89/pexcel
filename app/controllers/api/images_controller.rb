@@ -14,8 +14,6 @@ class Api::ImagesController < ApplicationController
     @image.original_width= size[0]
     @image.original_height = size[1]
     if @image.save
-      debugger
-     
       @image.save
       render json: "Images Uploaded Successful",status: 200
     else

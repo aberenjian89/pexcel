@@ -10,7 +10,7 @@
     json.file url_for(image.image_file)
     json.set! :size do 
       json.width image.original_width 
-      json.height image.orignal_height
+      json.height image.original_height
     end
   end
 end
