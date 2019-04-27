@@ -30,7 +30,7 @@ const styles = theme =>({
 })
 
 
-class ProfileComponent extends React.Component{
+class HomeUserProfileComponent extends React.Component{
     constructor(props){
         super(props)
         this.state = {}
@@ -61,4 +61,4 @@ class ProfileComponent extends React.Component{
 }
 
 
-export default withStyles(styles)(ProfileComponent)
+export default withStyles(styles)(HomeUserProfileComponent)
