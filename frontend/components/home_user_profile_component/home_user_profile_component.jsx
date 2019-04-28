@@ -13,43 +13,48 @@ const styles = theme => ({
     marginBottom: "25px",
     marginTop: "25px"
   },
-  card_wrapper:{
+  card_wrapper: {
     display: "flex",
     justifyContent: "center"
   },
   card: {
-     width: "30%",
-     minHeight: 200,
-     marginLeft: theme.spacing.unit,
-     marginRight: theme.spacing.unit,
-     marginBottom: theme.spacing.unit,
-     marginTop: theme.spacing.unit,
-     "@media only screen and (min-width: 600)":{
-       width: "70%"
-     }
+    minHeight: 200,
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    marginBottom: theme.spacing.unit,
+    marginTop: theme.spacing.unit,
+    [theme.breakpoints.down("sm")]: {
+      width: "70%"
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "70%"
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "50%"
+    }
   },
-  profile_header:{
+  profile_header: {
     display: "flex",
     justifyContent: "space-around",
     flexFlow: "wrap"
   },
-  follower_content:{
+  follower_content: {
     display: "flex",
     justifyContent: "space-between",
     marginBottom: theme.spacing.unit,
     marginTop: theme.spacing.unit
   },
-  thought_description:{
-      maxWidth: 350,
-      maxHeight: 100,
-      overflow: "scroll"
+  thought_description: {
+    maxWidth: 350,
+    maxHeight: 100,
+    overflow: "scroll"
   },
-  avatar_container:{
+  avatar_container: {
     marginTop: theme.spacing.unit
   },
   avatar: {
     minWidth: 120,
-    minHeight: 120,
+    minHeight: 120
   }
 });
 
@@ -68,26 +73,25 @@ class HomeUserProfileComponent extends React.Component {
             <CardContent>
               <div className={classes.profile_header}>
                 <div className={classes.avatar_container}>
-                {this.props.CurrentUser.avatar ? (
-                  <Avatar className={classes.avatar} />
-                ) : (
-                  <Avatar className={classes.avatar} />
-                )}
+                  {this.props.CurrentUser.avatar ? (
+                    <Avatar className={classes.avatar} />
+                  ) : (
+                    <Avatar className={classes.avatar} />
+                  )}
                 </div>
                 <div>
                   <div className={classes.follower_content}>
-                    <Typography variant="subtitle1">
-                        Followers: 0
-                    </Typography>
-                    <Typography variant="subtitle1">
-                        Following: 0
-                    </Typography>
+                    <Typography variant="subtitle1">Followers: 0</Typography>
+                    <Typography variant="subtitle1">Following: 0</Typography>
                   </div>
                   <div className={classes.thought_description}>
                     <Typography>
-                      Lorem ipsum aliquet platea luctus bibendum vivamus aliquam lectus orci aliquam, consequat sodales condimentum aenean convallis
-                      porttitor at fames faucibus, neque vestibulum id luctus blandit potenti duis aenean congue
-                      sociosqu urna molestie consequat interdum torquent inceptos pretium per potenti tellus proin elit felis.
+                      Lorem ipsum aliquet platea luctus bibendum vivamus aliquam
+                      lectus orci aliquam, consequat sodales condimentum aenean
+                      convallis porttitor at fames faucibus, neque vestibulum id
+                      luctus blandit potenti duis aenean congue sociosqu urna
+                      molestie consequat interdum torquent inceptos pretium per
+                      potenti tellus proin elit felis.
                     </Typography>
                   </div>
                 </div>
