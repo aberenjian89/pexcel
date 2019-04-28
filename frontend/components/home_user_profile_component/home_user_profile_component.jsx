@@ -6,32 +6,51 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
-import Grid from "@material-ui/core/Grid";
 
 const styles = theme => ({
   root: {
     marginBottom: "25px",
     marginTop: "25px"
   },
-  card_wrapper: {
+  card_wrapper_header: {
     display: "flex",
     justifyContent: "center"
   },
   card: {
-    minHeight: 200,
+    minHeight: 220,
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
     marginTop: theme.spacing.unit,
-    [theme.breakpoints.down("sm")]: {
-      width: "70%"
+    [theme.breakpoints.up("xs")]: {
+      width: "100%"
+    },
+    [theme.breakpoints.up("sm")]: {
+        width: "80%"
     },
     [theme.breakpoints.up("md")]: {
-      width: "70%"
+        width: "60%"
     },
     [theme.breakpoints.up("lg")]: {
-      width: "50%"
-    }
+        width: "40%"
+    },
+    [theme.breakpoints.up("xl")]: {
+        width: "30%"
+    },
+  },
+  content_wrapper:{
+      display: "flex",
+  },
+  card_body:{
+    // width: "20%",
+    // minHeight: "300px"
+  },
+  button:{
+    margin: theme.spacing.unit,
+    fontSize: 14,
+    fontStyle: "normal",
+    fontWeight: "normal",
+    textTransform: "capitalize"
   },
   profile_header: {
     display: "flex",
@@ -50,11 +69,19 @@ const styles = theme => ({
     overflow: "scroll"
   },
   avatar_container: {
-    marginTop: theme.spacing.unit
+    marginTop: 15,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center"
   },
   avatar: {
     minWidth: 120,
     minHeight: 120
+  },
+  avatar_content:{
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center"
   }
 });
 
@@ -68,15 +95,25 @@ class HomeUserProfileComponent extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <div className={classes.card_wrapper}>
+        <div className={classes.card_wrapper_header}>
           <Card className={classes.card}>
             <CardContent>
               <div className={classes.profile_header}>
                 <div className={classes.avatar_container}>
                   {this.props.CurrentUser.avatar ? (
-                    <Avatar className={classes.avatar} />
+                    <div className={classes.avatar_content}>
+                      <Avatar className={classes.avatar} />
+                      <Button variant="outlined" component="span" className={classes.button}>
+                          Remove
+                      </Button>
+                    </div>
                   ) : (
-                    <Avatar className={classes.avatar} />
+                      <div className={classes.avatar_content}>
+                        <Avatar className={classes.avatar} />
+                        <Button variant="outlined" component="span" className={classes.button}>
+                            Upload
+                        </Button>
+                      </div>
                   )}
                 </div>
                 <div>
@@ -98,6 +135,20 @@ class HomeUserProfileComponent extends React.Component {
               </div>
             </CardContent>
           </Card>
+        </div>
+        <div>
+          <div className={classes.content_wrapper}>
+            <Card className={classes.card_body}>
+                <CardContent>
+
+                </CardContent>
+            </Card>
+          </div>
+          <div className={classes.content_wrapper}>
+            <Card className={classes.card_body}>
+                <CardContent></CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     );

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ddb7a1db-56a4-4c91-8c98-d113d42a9bb8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/home_user_profile_component/home_user_profile_component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/home_user_profile_component/home_user_profile_component.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -36,8 +35,11 @@
       <file leaf-file-name="home_user_profile_component.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/components/home_user_profile_component/home_user_profile_component.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+            <state relative-caret-position="302">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="45" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,8 +161,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="786" />
-    <option name="y" value="41" />
+    <option name="x" value="1207" />
+    <option name="y" value="23" />
     <option name="width" value="1661" />
     <option name="height" value="1314" />
   </component>
@@ -241,12 +243,6 @@
               <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
               <item name="pexcel" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pexcel" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pexcel" type="b2602c69:ProjectViewProjectNode" />
@@ -452,12 +448,12 @@
       <workItem from="1554942148310" duration="5520000" />
       <workItem from="1555024773053" duration="11577000" />
       <workItem from="1556324545850" duration="6219000" />
-      <workItem from="1556401014495" duration="4338000" />
+      <workItem from="1556401014495" duration="7473000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="703349000" />
+    <option name="totallyTimeSpent" value="706484000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -469,7 +465,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="786" y="41" width="1661" height="1314" extended-state="0" />
+    <frame x="1207" y="23" width="1661" height="1314" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18221124" />
@@ -844,16 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/home_user_profile_component/home_user_profile_container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/api/sessions/show.json.jbuilder">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -885,10 +871,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/home_user_profile_component/home_user_profile_container.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/home_user_profile_component/home_user_profile_component.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+        <state relative-caret-position="302">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="45" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
