@@ -26,26 +26,19 @@ const styles = theme => ({
       width: "100%"
     },
     [theme.breakpoints.up("sm")]: {
-        width: "80%"
+      width: "80%"
     },
     [theme.breakpoints.up("md")]: {
-        width: "60%"
+      width: "60%"
     },
     [theme.breakpoints.up("lg")]: {
-        width: "40%"
+      width: "40%"
     },
     [theme.breakpoints.up("xl")]: {
-        width: "30%"
-    },
+      width: "30%"
+    }
   },
-  content_wrapper:{
-      display: "flex",
-  },
-  card_body:{
-    // width: "20%",
-    // minHeight: "300px"
-  },
-  button:{
+  button: {
     margin: theme.spacing.unit,
     fontSize: 14,
     fontStyle: "normal",
@@ -78,10 +71,44 @@ const styles = theme => ({
     minWidth: 120,
     minHeight: 120
   },
-  avatar_content:{
+  avatar_content: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center"
+  },
+  detail_wrapper: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    width: "100%"
+  },
+  content_wrapper: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    width: "80%"
+  },
+  detail_card: {
+    minHeight: 220,
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    marginBottom: theme.spacing.unit,
+    marginTop: theme.spacing.unit,
+    [theme.breakpoints.up("xs")]: {
+      width: "100%"
+    },
+    [theme.breakpoints.up("sm")]: {
+      width: "45%"
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "40%"
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "25%"
+    },
+    [theme.breakpoints.up("xl")]: {
+      width: "20%"
+    }
   }
 });
 
@@ -103,17 +130,25 @@ class HomeUserProfileComponent extends React.Component {
                   {this.props.CurrentUser.avatar ? (
                     <div className={classes.avatar_content}>
                       <Avatar className={classes.avatar} />
-                      <Button variant="outlined" component="span" className={classes.button}>
-                          Remove
+                      <Button
+                        variant="outlined"
+                        component="span"
+                        className={classes.button}
+                      >
+                        Remove
                       </Button>
                     </div>
                   ) : (
-                      <div className={classes.avatar_content}>
-                        <Avatar className={classes.avatar} />
-                        <Button variant="outlined" component="span" className={classes.button}>
-                            Upload
-                        </Button>
-                      </div>
+                    <div className={classes.avatar_content}>
+                      <Avatar className={classes.avatar} />
+                      <Button
+                        variant="outlined"
+                        component="span"
+                        className={classes.button}
+                      >
+                        Upload
+                      </Button>
+                    </div>
                   )}
                 </div>
                 <div>
@@ -136,17 +171,13 @@ class HomeUserProfileComponent extends React.Component {
             </CardContent>
           </Card>
         </div>
-        <div>
+        <div className={classes.detail_wrapper}>
           <div className={classes.content_wrapper}>
-            <Card className={classes.card_body}>
-                <CardContent>
-
-                </CardContent>
+            <Card className={classes.detail_card}>
+              <CardContent />
             </Card>
-          </div>
-          <div className={classes.content_wrapper}>
-            <Card className={classes.card_body}>
-                <CardContent></CardContent>
+            <Card className={classes.detail_card}>
+              <CardContent />
             </Card>
           </div>
         </div>
