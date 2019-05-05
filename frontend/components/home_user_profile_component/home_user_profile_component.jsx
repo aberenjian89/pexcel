@@ -6,6 +6,9 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
+import Info from "@material-ui/icons/Info";
+import TextField from "@material-ui/core/TextField";
+import WatchLater from "@material-ui/icons/WatchLater";
 
 const styles = theme => ({
   root: {
@@ -32,7 +35,7 @@ const styles = theme => ({
       width: "60%"
     },
     [theme.breakpoints.up("lg")]: {
-      width: "40%"
+      width: "51%"
     },
     [theme.breakpoints.up("xl")]: {
       width: "30%"
@@ -86,10 +89,10 @@ const styles = theme => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
-    width: "80%"
+    width: "100%"
   },
   detail_card: {
-    minHeight: 220,
+    // minHeight: 220,
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
@@ -98,16 +101,97 @@ const styles = theme => ({
       width: "100%"
     },
     [theme.breakpoints.up("sm")]: {
-      width: "45%"
+      width: "40%"
     },
     [theme.breakpoints.up("md")]: {
-      width: "40%"
+      width: "30%"
     },
     [theme.breakpoints.up("lg")]: {
       width: "25%"
     },
     [theme.breakpoints.up("xl")]: {
-      width: "20%"
+      width: "15%"
+    }
+  },
+  detail_card_activity: {
+    height: 150,
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    marginBottom: theme.spacing.unit,
+    marginTop: theme.spacing.unit,
+    [theme.breakpoints.up("xs")]: {
+      width: "100%"
+    },
+    [theme.breakpoints.up("sm")]: {
+      width: "40%"
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "30%"
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "25%"
+    },
+    [theme.breakpoints.up("xl")]: {
+      width: "15%"
+    }
+  },
+  infomration_card_container: {
+    display: "flex",
+    flexDirection: "column"
+  },
+  header: {
+    display: "flex",
+    justifyContent: "space-evenly",
+    width: "45%",
+    "& p": {
+      fontSize: 18,
+      lineHeight: 1.3,
+      marginLeft: "0.5rem"
+    },
+    [theme.breakpoints.up("xs")]: {
+      width: "40%"
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "45%"
+    },
+    [theme.breakpoints.up("xl")]: {
+      width: "30%"
+    }
+  },
+  input_form: {
+    "& form": {
+      marginRight: 8,
+      marginLeft: 8,
+      "& input": {
+        fontSize: "14px !important"
+      }
+    }
+  },
+  submit_container: {
+    display: "flex",
+    justifyContent: "flex-end",
+    "& span:first-child": {
+      padding: "0 12px"
+    },
+    "& span": {
+      textTransform: "capitalize",
+      fontSize: 14,
+      fontStyle: "normal",
+      fontWeight: "normal"
+    }
+  },
+  infomration_card: {
+    display: "flex",
+    flexDirection: "column"
+  },
+  detail_activity: {
+    display: "flex",
+    margin: "1rem",
+    "& p": {
+      marginRight: theme.spacing.unit
+    },
+    "& p:nth-child(2)": {
+      lineHeight: "1.9"
     }
   }
 });
@@ -174,10 +258,73 @@ class HomeUserProfileComponent extends React.Component {
         <div className={classes.detail_wrapper}>
           <div className={classes.content_wrapper}>
             <Card className={classes.detail_card}>
-              <CardContent />
+              <CardContent>
+                <div className={classes.infomration_card_container}>
+                  <div className={classes.header}>
+                    <Info />
+                    <Typography variant="body1">Information</Typography>
+                  </div>
+                  <div className={classes.input_form}>
+                    <form>
+                      <TextField
+                        type="text"
+                        name="first_name"
+                        placeholder="First Name"
+                        margin="normal"
+                        variant="outlined"
+                        fullWidth={true}
+                      />
+                      <TextField
+                        type="text"
+                        name="last_name"
+                        placeholder="Last Name"
+                        margin="normal"
+                        variant="outlined"
+                        fullWidth={true}
+                      />
+                      <TextField
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        margin="normal"
+                        variant="outlined"
+                        fullWidth={true}
+                      />
+                      <TextField
+                        type="text"
+                        name="location"
+                        placeholder="Location"
+                        margin="normal"
+                        variant="outlined"
+                        fullWidth={true}
+                      />
+                      <div className={classes.submit_container}>
+                        <Button variant="outlined">Update</Button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </CardContent>
             </Card>
-            <Card className={classes.detail_card}>
-              <CardContent />
+            <Card className={classes.detail_card_activity}>
+              <CardContent>
+                <div className={classes.infomration_card}>
+                  <div className={classes.header}>
+                    <WatchLater />
+                    <Typography variant="body1">Activites</Typography>
+                  </div>
+                  <div className={classes.information}>
+                    <div className={classes.detail_activity}>
+                      <Typography variant="body2">Member since:</Typography>
+                      <Typography>04/2019</Typography>
+                    </div>
+                    <div className={classes.detail_activity}>
+                      <Typography variant="body2">Last activity:</Typography>
+                      <Typography>04/04/2019</Typography>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
             </Card>
           </div>
         </div>
