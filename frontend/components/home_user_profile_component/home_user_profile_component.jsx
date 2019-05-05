@@ -92,7 +92,6 @@ const styles = theme => ({
     width: "100%"
   },
   detail_card: {
-    // minHeight: 220,
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
@@ -155,7 +154,7 @@ const styles = theme => ({
       width: "45%"
     },
     [theme.breakpoints.up("xl")]: {
-      width: "30%"
+      width: "35%"
     }
   },
   input_form: {
