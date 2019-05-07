@@ -14,8 +14,18 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def upload_home_user_avatar
+    @user = User.find_by(id: params[:id])
+    @user.avatar = params[:avatar]
+    if @user.save
+      render :show 
+    else
+      render json: @user.errors.full_messages, status: 422 
+    end
+  end
+
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by(id: params[:id])
     if @user.update(user_params)
       render :show
     else
@@ -25,7 +35,7 @@ class Api::UsersController < ApplicationController
 
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(id: params[:id])
     if @user
       render :show
     else
@@ -35,6 +45,7 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:data).permit(:username,:password,:email)
+    debugger
+    params.require(:data).permit(:username,:first_name,:last_name,:password,:email)
   end
 end

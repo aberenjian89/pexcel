@@ -79,6 +79,9 @@ const styles = theme => ({
     flexDirection: "column",
     justifyContent: "center"
   },
+  avatar_typegraphy: {
+    color: "#fff"
+  },
   detail_wrapper: {
     display: "flex",
     justifyContent: "center",
@@ -199,7 +202,54 @@ const styles = theme => ({
 class HomeUserProfileComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      id: null,
+      first_name: "",
+      last_name: "",
+      email: "",
+      avatar: null
+    };
+    this.GetInitial = this.GetInitial.bind(this);
+    this.handleInut = this.handleInut.bind(this);
+  }
+
+  componentDidMount(props) {
+    this.props.APIHomeUser(this.props.CurrentUser.id);
+  }
+
+  componentWillReceiveProps(nextprops) {
+    if (true) {
+      this.setState({
+        id: nextprops.HomeUser.id,
+        first_name: nextprops.HomeUser.first_name,
+        last_name: nextprops.HomeUser.last_name,
+        email: nextprops.HomeUser.email,
+        location: nextprops.HomeUser.location,
+        avatar: nextprops.HomeUser.avatar
+      });
+    }
+  }
+
+  GetInitial() {
+    if (this.state.first_name.length > 0 && this.state.last_name.length > 0) {
+      return (
+        this.state.first_name[0].toUpperCase() +
+        "|" +
+        this.state.last_name[0].toUpperCase()
+      );
+    } else {
+      return (
+        this.props.CurrentUser.username[0].toUpperCase() +
+        "|" +
+        this.props.CurrentUser.username[1].toUpperCase()
+      );
+    }
+  }
+
+  handleInut(e, name) {
+    this.setState({
+      [name]: e.currentTarget.value
+    });
   }
 
   render() {
@@ -211,7 +261,7 @@ class HomeUserProfileComponent extends React.Component {
             <CardContent>
               <div className={classes.profile_header}>
                 <div className={classes.avatar_container}>
-                  {this.props.CurrentUser.avatar ? (
+                  {this.state.avatar ? (
                     <div className={classes.avatar_content}>
                       <Avatar className={classes.avatar} />
                       <Button
@@ -224,7 +274,16 @@ class HomeUserProfileComponent extends React.Component {
                     </div>
                   ) : (
                     <div className={classes.avatar_content}>
-                      <Avatar className={classes.avatar} />
+                      <Avatar className={classes.avatar}>
+                        <Typography
+                          variant="h4"
+                          className={classes.avatar_typegraphy}
+                        >
+                          {this.GetInitial()}
+                        </Typography>
+                      </Avatar>
+                      <input type="file" />
+
                       <Button
                         variant="outlined"
                         component="span"
@@ -272,7 +331,10 @@ class HomeUserProfileComponent extends React.Component {
                         placeholder="First Name"
                         margin="normal"
                         variant="outlined"
+                        value={this.state.first_name}
+                        required
                         fullWidth={true}
+                        onChange={e => this.handleInut(e, "first_name")}
                       />
                       <TextField
                         type="text"
@@ -280,24 +342,32 @@ class HomeUserProfileComponent extends React.Component {
                         placeholder="Last Name"
                         margin="normal"
                         variant="outlined"
+                        required
+                        value={this.state.last_name}
                         fullWidth={true}
+                        onChange={e => this.handleInut(e, "last_name")}
                       />
                       <TextField
                         type="email"
                         name="email"
                         placeholder="Email"
+                        value={this.state.email}
                         margin="normal"
+                        required
                         variant="outlined"
                         fullWidth={true}
+                        onChange={e => this.handleInut(e, "email")}
                       />
-                      <TextField
+                      {/* <TextField
                         type="text"
                         name="location"
                         placeholder="Location"
+                        value={this.state.location}
                         margin="normal"
                         variant="outlined"
                         fullWidth={true}
-                      />
+                        onChange={e => this.handleInut(e, "location")}
+                      /> */}
                       <div className={classes.submit_container}>
                         <Button variant="outlined">Update</Button>
                       </div>

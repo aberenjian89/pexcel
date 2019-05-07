@@ -9,3 +9,12 @@ export const FetchUpdateUser = id =>
     method: "GET",
     url: `/api/users/${id}`
   });
+
+export const UploadHomeUserAvatar = data =>
+  $.ajax({
+    method: "POST",
+    url: "api/users/upload_home_user_avatar",
+    contentType: false,
+    processData: false,
+    data: data
+  });
