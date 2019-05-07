@@ -15,15 +15,22 @@ class Api::UsersController < ApplicationController
   end
 
   def upload_home_user_avatar
-    # current_user.avatar.purge
-    avatar = user_params
-    current_user.avatar.attach(avatar)
-    debugger
-    if current_user.save!
+    current_user.avatar.attach(params["data"]["avatar"])
+    if current_user.save
       @user = current_user
       render :show 
     else
       render json: @user.errors.full_messages, status: 422 
+    end
+  end
+
+  def remove_home_user_avatar 
+    current_user.avatar.purge
+    if current_user.save 
+      @user = current_user
+      render :show 
+    else 
+      render json: @user.errors.full_message, status: 422
     end
   end
 
@@ -48,6 +55,7 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
+    debugger
     params.require(:data).permit(:username,:first_name,:last_name,:password,:email,:avatar)
   end
 end

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     get '/images/landing_recent_images', to: 'images#landing_recent_images'
     get '/images/home_user_gallery', to: 'images#home_user_gallery'
     post '/users/upload_home_user_avatar', to: 'users#upload_home_user_avatar'
+    delete '/users/remove_home_user_avatar', to: 'users#remove_home_user_avatar'
     resources :users, only: [:create,:update,:show]
     resources :images, only: [:create,:update,:show,:destroy]
 

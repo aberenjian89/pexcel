@@ -2,7 +2,9 @@ import { connect } from "react-redux";
 import HomeProfileUserComponent from "./home_user_profile_component";
 import {
   APIHomeUser,
-  APIUploadHomeUserAvatar
+  APIUploadHomeUserAvatar,
+  APIRemoveHomeUserAvatar,
+  APIUpdateHomeUser
 } from "../../actions/home_user_profile_actions";
 
 const mapStateToProps = state => ({
@@ -12,7 +14,10 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   APIHomeUser: HomeUserId => dispatch(APIHomeUser(HomeUserId)),
-  UplaodUserAvatar: data => dispatch(APIUploadHomeUserAvatar(data))
+  UpdateHomeUser: (HomeUserId, data) =>
+    dispatch(APIUpdateHomeUser(HomeUserId, data)),
+  UplaodUserAvatar: data => dispatch(APIUploadHomeUserAvatar(data)),
+  RemoveAvatar: () => dispatch(APIRemoveHomeUserAvatar())
 });
 
 export default connect(

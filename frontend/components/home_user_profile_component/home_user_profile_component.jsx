@@ -197,9 +197,9 @@ const styles = theme => ({
       lineHeight: "1.9"
     }
   },
-  upload_container:{
+  upload_container: {
     position: "relative",
-    "& input":{
+    "& input": {
       position: "absolute",
       width: 76,
       opacity: 0,
@@ -210,7 +210,6 @@ const styles = theme => ({
     },
     display: "flex",
     justifyContent: "center"
-
   }
 });
 
@@ -228,26 +227,32 @@ class HomeUserProfileComponent extends React.Component {
     this.handleInut = this.handleInut.bind(this);
     this.fileHandler = this.fileHandler.bind(this);
     this.GetImageUrl = this.GetImageUrl.bind(this);
+    this.RemoveAvatar = this.RemoveAvatar.bind(this);
+    this.updateHandler = this.updateHandler.bind(this);
   }
 
-  fileHandler(e){
-    e.preventDefault()
-    if (e.currentTarget.files){
-      this.setState({
-        avatar: e.currentTarget.files[0]
-      },()=>{
-        let formData = new FormData();
-        formData.append("data[avatar]",this.state.avatar)
-        this.props.UplaodUserAvatar(formData)
-      })
-      
+  fileHandler(e) {
+    e.preventDefault();
+    if (e.currentTarget.files) {
+      this.setState(
+        {
+          avatar: e.currentTarget.files[0]
+        },
+        () => {
+          let formData = new FormData();
+          formData.append("data[avatar]", this.state.avatar);
+          this.props.UplaodUserAvatar(formData);
+        }
+      );
     }
   }
 
-
-
-  GetImageUrl(){
-    return URL.createObjectURL(this.state.avatar);
+  GetImageUrl() {
+    if (this.props.HomeUser.avatar_url) {
+      return this.state.avatar;
+    } else {
+      return URL.createObjectURL(this.state.avatar);
+    }
   }
 
   componentDidMount(props) {
@@ -255,16 +260,14 @@ class HomeUserProfileComponent extends React.Component {
   }
 
   componentWillReceiveProps(nextprops) {
-    if (true) {
-      this.setState({
-        id: nextprops.HomeUser.id,
-        first_name: nextprops.HomeUser.first_name,
-        last_name: nextprops.HomeUser.last_name,
-        email: nextprops.HomeUser.email,
-        location: nextprops.HomeUser.location,
-        avatar: nextprops.HomeUser.avatar
-      });
-    }
+    this.setState({
+      id: nextprops.HomeUser.id,
+      first_name: nextprops.HomeUser.first_name,
+      last_name: nextprops.HomeUser.last_name,
+      email: nextprops.HomeUser.email,
+      location: nextprops.HomeUser.location,
+      avatar: nextprops.HomeUser.avatar_url
+    });
   }
 
   GetInitial() {
@@ -289,7 +292,19 @@ class HomeUserProfileComponent extends React.Component {
     });
   }
 
+  updateHandler(e) {
+    e.preventDefault();
+    let formdata = new FormData();
+    formdata.append("data[first_name]", this.state.first_name);
+    formdata.append("data[last_name]", this.state.last_name);
+    formdata.append("data[email]", this.state.email);
+    this.props.UpdateHomeUser(this.state.id, formdata);
+  }
 
+  RemoveAvatar(e) {
+    e.preventDefault();
+    this.props.RemoveAvatar();
+  }
 
   render() {
     const { classes } = this.props;
@@ -302,11 +317,15 @@ class HomeUserProfileComponent extends React.Component {
                 <div className={classes.avatar_container}>
                   {this.state.avatar ? (
                     <div className={classes.avatar_content}>
-                      <Avatar className={classes.avatar} src={this.GetImageUrl()} />
+                      <Avatar
+                        className={classes.avatar}
+                        src={this.GetImageUrl()}
+                      />
                       <Button
                         variant="outlined"
                         component="span"
                         className={classes.button}
+                        onClick={e => this.RemoveAvatar(e)}
                       >
                         Remove
                       </Button>
@@ -322,7 +341,10 @@ class HomeUserProfileComponent extends React.Component {
                         </Typography>
                       </Avatar>
                       <div className={classes.upload_container}>
-                        <input type="file" onChange={(e) => this.fileHandler(e)}/>
+                        <input
+                          type="file"
+                          onChange={e => this.fileHandler(e)}
+                        />
                         <Button
                           variant="outlined"
                           component="span"
@@ -331,7 +353,6 @@ class HomeUserProfileComponent extends React.Component {
                           Upload
                         </Button>
                       </div>
-                     
                     </div>
                   )}
                 </div>
@@ -410,7 +431,12 @@ class HomeUserProfileComponent extends React.Component {
                         onChange={e => this.handleInut(e, "location")}
                       /> */}
                       <div className={classes.submit_container}>
-                        <Button variant="outlined">Update</Button>
+                        <Button
+                          onClick={e => this.updateHandler(e)}
+                          variant="outlined"
+                        >
+                          Update
+                        </Button>
                       </div>
                     </form>
                   </div>
