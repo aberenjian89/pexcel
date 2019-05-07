@@ -9,6 +9,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Info from "@material-ui/icons/Info";
 import TextField from "@material-ui/core/TextField";
 import WatchLater from "@material-ui/icons/WatchLater";
+import { relative } from "path";
 
 const styles = theme => ({
   root: {
@@ -195,6 +196,21 @@ const styles = theme => ({
     "& p:nth-child(2)": {
       lineHeight: "1.9"
     }
+  },
+  upload_container:{
+    position: "relative",
+    "& input":{
+      position: "absolute",
+      width: 76,
+      opacity: 0,
+      top: "25%",
+      height: 32,
+      zIndex: 1,
+      cursor: "pointer"
+    },
+    display: "flex",
+    justifyContent: "center"
+
   }
 });
 
@@ -210,6 +226,28 @@ class HomeUserProfileComponent extends React.Component {
     };
     this.GetInitial = this.GetInitial.bind(this);
     this.handleInut = this.handleInut.bind(this);
+    this.fileHandler = this.fileHandler.bind(this);
+    this.GetImageUrl = this.GetImageUrl.bind(this);
+  }
+
+  fileHandler(e){
+    e.preventDefault()
+    if (e.currentTarget.files){
+      this.setState({
+        avatar: e.currentTarget.files[0]
+      },()=>{
+        let formData = new FormData();
+        formData.append("data[avatar]",this.state.avatar)
+        this.props.UplaodUserAvatar(formData)
+      })
+      
+    }
+  }
+
+
+
+  GetImageUrl(){
+    return URL.createObjectURL(this.state.avatar);
   }
 
   componentDidMount(props) {
@@ -251,6 +289,8 @@ class HomeUserProfileComponent extends React.Component {
     });
   }
 
+
+
   render() {
     const { classes } = this.props;
     return (
@@ -262,7 +302,7 @@ class HomeUserProfileComponent extends React.Component {
                 <div className={classes.avatar_container}>
                   {this.state.avatar ? (
                     <div className={classes.avatar_content}>
-                      <Avatar className={classes.avatar} />
+                      <Avatar className={classes.avatar} src={this.GetImageUrl()} />
                       <Button
                         variant="outlined"
                         component="span"
@@ -281,15 +321,17 @@ class HomeUserProfileComponent extends React.Component {
                           {this.GetInitial()}
                         </Typography>
                       </Avatar>
-                      <input type="file" />
-
-                      <Button
-                        variant="outlined"
-                        component="span"
-                        className={classes.button}
-                      >
-                        Upload
-                      </Button>
+                      <div className={classes.upload_container}>
+                        <input type="file" onChange={(e) => this.fileHandler(e)}/>
+                        <Button
+                          variant="outlined"
+                          component="span"
+                          className={classes.button}
+                        >
+                          Upload
+                        </Button>
+                      </div>
+                     
                     </div>
                   )}
                 </div>
