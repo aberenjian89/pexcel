@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   validates :username, :session_token, :email, uniqueness: true
   has_one_attached :avatar
+  
+
   has_many :images,
      primary_key: :id,
      foreign_key: :owner_id,

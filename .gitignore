@@ -8,6 +8,8 @@
 /.bundle
 /.idea/*
 /storage/*
+.idea/PEXCEL.iml
+.idea/workspace.xml
 
 # Ignore all logfiles and tempfiles.
 /log/*
