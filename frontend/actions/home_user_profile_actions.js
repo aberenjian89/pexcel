@@ -17,13 +17,13 @@ export const UpdateHomeUser = user => ({
   data: user
 });
 
-export const APIHomeUser = (home_user_id, data) => dispatch =>
-  FetchHomeUser(home_user_id, data).then(user => {
+export const APIHomeUser = (home_user_id) => dispatch =>
+  FetchHomeUser(home_user_id).then(user => {
     return dispatch(RecieveHomeUser(user));
   });
 
-export const APIUpdateHomeUser = home_user_id => dispatch =>
-  FetchUpdateUser(home_user_id).then(user => {
+export const APIUpdateHomeUser = (home_user_id,data) => dispatch =>
+  FetchUpdateUser(home_user_id,data).then(user => {
     return dispatch(UpdateHomeUser(user));
   });
 

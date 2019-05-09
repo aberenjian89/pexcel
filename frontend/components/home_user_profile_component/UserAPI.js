@@ -5,13 +5,11 @@ export const FetchHomeUser = id =>
   });
 
 export const FetchUpdateUser = (id, data) =>
-  $.ajax({
-    method: "PUT",
-    url: `/api/users/${id}`,
-    contentType: false,
-    processData: false,
-    data: data
-  });
+    $.ajax({
+        method: "PATCH",
+        url: `/api/users/${id}`,
+        data: {data}
+    });
 
 export const UploadHomeUserAvatar = data =>
   $.ajax({

@@ -61,9 +61,10 @@ const styles = theme => ({
     marginTop: theme.spacing.unit
   },
   thought_description: {
-    maxWidth: 350,
-    maxHeight: 100,
-    overflow: "scroll"
+    overflow: "scroll",
+    share_thought:{
+      width: "50%"
+    }
   },
   avatar_container: {
     marginTop: 15,
@@ -221,6 +222,7 @@ class HomeUserProfileComponent extends React.Component {
       first_name: "",
       last_name: "",
       email: "",
+      share_thought: "",
       avatar: null
     };
     this.GetInitial = this.GetInitial.bind(this);
@@ -294,11 +296,12 @@ class HomeUserProfileComponent extends React.Component {
 
   updateHandler(e) {
     e.preventDefault();
-    let formdata = new FormData();
-    formdata.append("data[first_name]", this.state.first_name);
-    formdata.append("data[last_name]", this.state.last_name);
-    formdata.append("data[email]", this.state.email);
-    this.props.UpdateHomeUser(this.state.id, formdata);
+    let info = {
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
+      email: this.state.email
+    }
+    this.props.UpdateHomeUser(this.state.id, info);
   }
 
   RemoveAvatar(e) {
@@ -362,14 +365,26 @@ class HomeUserProfileComponent extends React.Component {
                     <Typography variant="subtitle1">Following: 0</Typography>
                   </div>
                   <div className={classes.thought_description}>
-                    <Typography>
-                      Lorem ipsum aliquet platea luctus bibendum vivamus aliquam
-                      lectus orci aliquam, consequat sodales condimentum aenean
-                      convallis porttitor at fames faucibus, neque vestibulum id
-                      luctus blandit potenti duis aenean congue sociosqu urna
-                      molestie consequat interdum torquent inceptos pretium per
-                      potenti tellus proin elit felis.
-                    </Typography>
+                    {/*<Typography>*/}
+                      {/*Lorem ipsum aliquet platea luctus bibendum vivamus aliquam*/}
+                      {/*lectus orci aliquam, consequat sodales condimentum aenean*/}
+                      {/*convallis porttitor at fames faucibus, neque vestibulum id*/}
+                      {/*luctus blandit potenti duis aenean congue sociosqu urna*/}
+                      {/*molestie consequat interdum torquent inceptos pretium per*/}
+                      {/*potenti tellus proin elit felis.*/}
+                    {/*</Typography>*/}
+                      <TextField type="text"
+                          name="share_thought"
+                          placeholder="What is in your mind?"
+                          margin="normal"
+                          variant="outlined"
+                          value={this.state.share_thought}
+                          multiline={true}
+                          className={classes.share_thought}
+                          rows={3}
+                          rowsMax={3}
+                          onChange={e => this.handleInut(e,"share_thought")}
+                      />
                   </div>
                 </div>
               </div>
