@@ -10,6 +10,8 @@ import Info from "@material-ui/icons/Info";
 import TextField from "@material-ui/core/TextField";
 import WatchLater from "@material-ui/icons/WatchLater";
 import { relative } from "path";
+import Snackbar from '@material-ui/core/Snackbar';
+
 
 const styles = theme => ({
   root: {
@@ -62,9 +64,10 @@ const styles = theme => ({
   },
   thought_description: {
     overflow: "scroll",
-    share_thought:{
-      width: "50%"
-    }
+    width: "100%"
+  },
+  share_thought_container:{
+    width : "50%"
   },
   avatar_container: {
     marginTop: 15,
@@ -211,7 +214,17 @@ const styles = theme => ({
     },
     display: "flex",
     justifyContent: "center"
+  },
+  snack_bar:{
+    textAlign: "center",
+    "& div":{
+      "& div:first-child":{
+        width: "100%",
+        textAlign:"center"
+      },
+    }
   }
+
 });
 
 class HomeUserProfileComponent extends React.Component {
@@ -222,8 +235,9 @@ class HomeUserProfileComponent extends React.Component {
       first_name: "",
       last_name: "",
       email: "",
-      share_thought: "",
-      avatar: null
+      short_thought: "",
+      avatar: null,
+      snack_bar_open: false
     };
     this.GetInitial = this.GetInitial.bind(this);
     this.handleInut = this.handleInut.bind(this);
@@ -231,6 +245,8 @@ class HomeUserProfileComponent extends React.Component {
     this.GetImageUrl = this.GetImageUrl.bind(this);
     this.RemoveAvatar = this.RemoveAvatar.bind(this);
     this.updateHandler = this.updateHandler.bind(this);
+    this.handlethought_description = this.handlethought_description.bind(this)
+    this.handleClose_Snackbar = this.handleClose_Snackbar.bind(this)
   }
 
   fileHandler(e) {
@@ -244,9 +260,22 @@ class HomeUserProfileComponent extends React.Component {
           let formData = new FormData();
           formData.append("data[avatar]", this.state.avatar);
           this.props.UplaodUserAvatar(formData);
+          this.setState({
+              snack_bar_open: true
+          })
         }
       );
     }
+  }
+
+  handlethought_description(e){
+    let thought = {
+        short_thought: this.state.short_thought
+    };
+    this.props.UpdateHomeUser(this.state.id, thought);
+    this.setState({
+        snack_bar_open: true
+    })
   }
 
   GetImageUrl() {
@@ -268,7 +297,8 @@ class HomeUserProfileComponent extends React.Component {
       last_name: nextprops.HomeUser.last_name,
       email: nextprops.HomeUser.email,
       location: nextprops.HomeUser.location,
-      avatar: nextprops.HomeUser.avatar_url
+      avatar: nextprops.HomeUser.avatar_url,
+      short_thought: nextprops.HomeUser.short_thought
     });
   }
 
@@ -302,11 +332,20 @@ class HomeUserProfileComponent extends React.Component {
       email: this.state.email
     }
     this.props.UpdateHomeUser(this.state.id, info);
+    this.setState({
+        snack_bar_open: true
+    })
   }
 
   RemoveAvatar(e) {
     e.preventDefault();
     this.props.RemoveAvatar();
+  }
+
+  handleClose_Snackbar(){
+    this.setState({
+        snack_bar_open: false
+    })
   }
 
   render() {
@@ -359,12 +398,12 @@ class HomeUserProfileComponent extends React.Component {
                     </div>
                   )}
                 </div>
-                <div>
+                <div className={classes.share_thought_container}>
                   <div className={classes.follower_content}>
                     <Typography variant="subtitle1">Followers: 0</Typography>
                     <Typography variant="subtitle1">Following: 0</Typography>
                   </div>
-                  <div className={classes.thought_description}>
+                  <div>
                     {/*<Typography>*/}
                       {/*Lorem ipsum aliquet platea luctus bibendum vivamus aliquam*/}
                       {/*lectus orci aliquam, consequat sodales condimentum aenean*/}
@@ -378,12 +417,13 @@ class HomeUserProfileComponent extends React.Component {
                           placeholder="What is in your mind?"
                           margin="normal"
                           variant="outlined"
-                          value={this.state.share_thought}
+                          value={this.state.short_thought || ""}
                           multiline={true}
-                          className={classes.share_thought}
                           rows={3}
+                          className={classes.thought_description}
                           rowsMax={3}
-                          onChange={e => this.handleInut(e,"share_thought")}
+                          onChange={e => this.handleInut(e,"short_thought")}
+                          onBlur={e => this.handlethought_description(e)}
                       />
                   </div>
                 </div>
@@ -480,6 +520,19 @@ class HomeUserProfileComponent extends React.Component {
             </Card>
           </div>
         </div>
+        <Snackbar open={this.state.snack_bar_open}
+                  anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'center',
+                  }}
+                  className={classes.snack_bar}
+                  autoHideDuration={4000}
+                  ContentProps={{
+                      'aria-describedby': 'message-id',
+                  }}
+                  onClose={this.handleClose_Snackbar}
+                  message={<span id="message-id">Updated Successfully</span>}
+        />
       </div>
     );
   }
