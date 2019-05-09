@@ -11,6 +11,7 @@ import TextField from "@material-ui/core/TextField";
 import WatchLater from "@material-ui/icons/WatchLater";
 import { relative } from "path";
 import Snackbar from '@material-ui/core/Snackbar';
+import moment from 'moment'
 
 
 const styles = theme => ({
@@ -63,7 +64,6 @@ const styles = theme => ({
     marginTop: theme.spacing.unit
   },
   thought_description: {
-    overflow: "scroll",
     width: "100%"
   },
   share_thought_container:{
@@ -237,6 +237,8 @@ class HomeUserProfileComponent extends React.Component {
       email: "",
       short_thought: "",
       avatar: null,
+      last_login: "",
+      member_date: "" ,
       snack_bar_open: false
     };
     this.GetInitial = this.GetInitial.bind(this);
@@ -247,6 +249,17 @@ class HomeUserProfileComponent extends React.Component {
     this.updateHandler = this.updateHandler.bind(this);
     this.handlethought_description = this.handlethought_description.bind(this)
     this.handleClose_Snackbar = this.handleClose_Snackbar.bind(this)
+    this.getDate = this.getDate.bind(this)
+  }
+
+  getDate(date_inquery){
+    if (date_inquery === 'member_since'){
+      let d = new moment(this.state.member_date)
+      return d.format('MM/YY')
+    }else{
+      let d = new moment(this.state.last_login)
+      return d.format('MM/DD/YY')
+    }
   }
 
   fileHandler(e) {
@@ -269,6 +282,7 @@ class HomeUserProfileComponent extends React.Component {
   }
 
   handlethought_description(e){
+
     let thought = {
         short_thought: this.state.short_thought
     };
@@ -298,7 +312,9 @@ class HomeUserProfileComponent extends React.Component {
       email: nextprops.HomeUser.email,
       location: nextprops.HomeUser.location,
       avatar: nextprops.HomeUser.avatar_url,
-      short_thought: nextprops.HomeUser.short_thought
+      short_thought: nextprops.HomeUser.short_thought,
+      member_date: nextprops.HomeUser.member_date,
+      last_login: nextprops.HomeUser.last_login
     });
   }
 
@@ -508,11 +524,11 @@ class HomeUserProfileComponent extends React.Component {
                   <div className={classes.information}>
                     <div className={classes.detail_activity}>
                       <Typography variant="body2">Member since:</Typography>
-                      <Typography>04/2019</Typography>
+                      <Typography variant="body2">{this.getDate("member_since")}</Typography>
                     </div>
                     <div className={classes.detail_activity}>
                       <Typography variant="body2">Last activity:</Typography>
-                      <Typography>04/04/2019</Typography>
+                      <Typography variant="body2">{this.getDate("last_activity")}</Typography>
                     </div>
                   </div>
                 </div>
