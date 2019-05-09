@@ -17,7 +17,8 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit
   },
   gridList: {
-    width: "100%"
+    width: "100%",
+    height: 450
   }
 });
 
@@ -28,6 +29,8 @@ class LandingComponent extends React.Component {
       images: []
     };
     this.handleImageView = this.handleImageView.bind(this);
+    this.handleImageSizeCol = this.handleImageSizeCol.bind(this)
+    this.handleImageSizeRows = this.handleImageSizeRows.bind(this)
   }
 
   componentDidMount() {
@@ -47,6 +50,22 @@ class LandingComponent extends React.Component {
     this.props.ImageViewModal();
   }
 
+  handleImageSizeCol(img){
+    if (img.size.width === img.size.height){
+      return 3
+    }else{
+      return 4
+    }
+  }
+
+  handleImageSizeRows(img){
+    if (img.size.width >= img.size.height){
+      return 3
+    }else if (img.size.height > img.size.width){
+      return 5
+    }
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -55,7 +74,8 @@ class LandingComponent extends React.Component {
           {this.state.images.map((img, key) => (
             <GridListTile
               key={key}
-              rows={2}
+              // cols={this.handleImageSizeCol(img)}
+              // rows={this.handleImageSizeRows(img)}
               onClick={e => this.handleImageView(e, key)}
             >
               <img src={img.file} alt={img.name} />

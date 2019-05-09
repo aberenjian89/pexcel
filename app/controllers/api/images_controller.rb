@@ -10,10 +10,8 @@ class Api::ImagesController < ApplicationController
 
   def create
     @image = current_user.images.create(image_params)
-    size = FastImage.size(url_for(@image.image_file))
-    # @image.original_width= size[0]
-    # @image.original_height = size[1]
     if @image.save
+      GetImageSizeJob.perform_later(@image.id)
       render json: "Images Uploaded Successful",status: 200
     else
       render json: @image.errors.full_message, status: 500
