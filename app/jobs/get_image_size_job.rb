@@ -8,7 +8,7 @@ class GetImageSizeJob < ApplicationJob
       size = FastImage.size(image.image_file.service_url)
       if size
         image.original_width = size[0]
-        image.original_height = size[0]
+        image.original_height = size[1]
         image.save
       else
         puts "Not able to get image size for image with ID of  #{image_id}"

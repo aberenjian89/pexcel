@@ -4,21 +4,40 @@ import { withStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
+import Masonry from 'react-masonry-component';
+
 
 const styles = theme => ({
   root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
+    // display: "flex",
+    // flexWrap: "wrap",
+    // justifyContent: "space-around",
     overflow: "hidden",
     backgroundColor: theme.palette.background.paper,
     marginTop: "3%",
-    marginRight: theme.spacing.unit,
-    marginLeft: theme.spacing.unit
+    // marginRight: theme.spacing.unit,
+    // marginLeft: theme.spacing.unit
   },
   gridList: {
     width: "100%",
-    height: 450
+  },
+  image:{
+      margin: 5,
+      [theme.breakpoints.up("xs")]: {
+          width: "100%"
+      },
+      [theme.breakpoints.up("sm")]: {
+          width: "32%"
+      },
+      [theme.breakpoints.up("md")]: {
+          width: "31.9%"
+      },
+      [theme.breakpoints.up("lg")]: {
+          width: "32.5%"
+      },
+      [theme.breakpoints.up("xl")]: {
+          width: "15%"
+      }
   }
 });
 
@@ -29,8 +48,7 @@ class LandingComponent extends React.Component {
       images: []
     };
     this.handleImageView = this.handleImageView.bind(this);
-    this.handleImageSizeCol = this.handleImageSizeCol.bind(this)
-    this.handleImageSizeRows = this.handleImageSizeRows.bind(this)
+    this.renderImages = this.renderImages.bind(this)
   }
 
   componentDidMount() {
@@ -50,38 +68,35 @@ class LandingComponent extends React.Component {
     this.props.ImageViewModal();
   }
 
-  handleImageSizeCol(img){
-    if (img.size.width === img.size.height){
-      return 3
-    }else{
-      return 4
-    }
-  }
-
-  handleImageSizeRows(img){
-    if (img.size.width >= img.size.height){
-      return 3
-    }else if (img.size.height > img.size.width){
-      return 5
-    }
+  renderImages(){
+    let {classes} = this.props
+    let ChildElement = this.state.images.map((img,key)=>{
+      return (
+            <img src={img.file} key={key} className={classes.image}/>
+      )
+    })
+    return ChildElement
   }
 
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <GridList cellHeight={180} cols={3} className={classes.gridList}>
-          {this.state.images.map((img, key) => (
-            <GridListTile
-              key={key}
-              // cols={this.handleImageSizeCol(img)}
-              // rows={this.handleImageSizeRows(img)}
-              onClick={e => this.handleImageView(e, key)}
-            >
-              <img src={img.file} alt={img.name} />
-            </GridListTile>
-          ))}
-        </GridList>
+        {/*<GridList cellHeight={180} cols={3} className={classes.gridList}>*/}
+          {/*{this.state.images.map((img, key) => (*/}
+            {/*<GridListTile*/}
+              {/*key={key}*/}
+              {/*cols={this.handleImageSizeCol(img)}*/}
+              {/*rows={this.handleImageSizeRows(img)}*/}
+              {/*onClick={e => this.handleImageView(e, key)}*/}
+            {/*>*/}
+              {/*<img src={img.file} alt={img.name}/>*/}
+            {/*</GridListTile>*/}
+          {/*))}*/}
+        {/*</GridList>*/}
+        <Masonry>
+            {this.renderImages()}
+        </Masonry>
       </div>
     );
   }
