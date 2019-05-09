@@ -106,8 +106,8 @@ class NavbarComponent extends React.Component {
     this.handleMobileMenuClose = this.handleMobileMenuClose.bind(this);
     this.OpenAuthModal = this.OpenAuthModal.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
-    this.handleRoute = this.handleRoute.bind(this);
     this.redirectToGallery = this.redirectToGallery.bind(this);
+    this.redirectToProfile = this.redirectToProfile.bind(this)
   }
 
   componentDidMount(props) {
@@ -118,6 +118,10 @@ class NavbarComponent extends React.Component {
 
   redirectToGallery(e) {
     this.props.history.push("/my_gallery");
+  }
+
+  redirectToProfile(e){
+    this.props.history.push("/my_profile")
   }
 
   componentWillReceiveProps(nextProps) {
@@ -157,18 +161,7 @@ class NavbarComponent extends React.Component {
     );
   }
 
-  handleRoute(route) {
-    switch (route) {
-      case "upload":
-        this.props.history.push("/upload");
-        break;
-      case "profile":
-        this.props.history.push("/profile");
-        break;
-      default:
-        break;
-    }
-  }
+
 
   OpenAuthModal(e, type) {
     this.props.ModalShow(type);
@@ -188,7 +181,7 @@ class NavbarComponent extends React.Component {
         open={isMenuOpen}
         onClose={this.handleMenuClose}
       >
-        <MenuItem onClick={this.handleMenuClose}>
+        <MenuItem onClick={()=>this.redirectToProfile()}>
           <IconButton color="inherit">
             <AccountCircle />
           </IconButton>

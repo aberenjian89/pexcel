@@ -10,6 +10,7 @@ import UploadContainer from "./upload_component/upload_container";
 import HomeUserGalleryContainer from "./home_user_gallery/home_user_gallery_container";
 import FooterComponent from "./footer_component/footer_component";
 import ImageViewContainer from "./image_view_component/image_view_container";
+import HomeUserProfileContainer from './home_user_profile_component/home_user_profile_container'
 
 const styles = theme => ({
   wrapper: {
@@ -37,6 +38,11 @@ class AppComponent extends React.Component {
               exact
               path="/my_gallery"
               component={HomeUserGalleryContainer}
+            />
+            <ProtectedAuth
+              exact
+              path="/my_profile"
+              component={HomeUserProfileContainer}
             />
           </Switch>
         </div>
