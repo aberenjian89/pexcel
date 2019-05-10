@@ -184,7 +184,7 @@ class HomeUserGalleryComponent extends React.Component {
                 {this.state.images.map((img,key)=> (
                     <div key={key} onMouseEnter={(e)=>this.DisplayTileBar(e,key)} onMouseLeave={(e)=>this.HideTileBar(e,key)}>
                       <div className={classes.image_container}>
-                        <img src={img.file} key={key} className={classes.image}/>
+                        <img src={img.file} key={key} className={classes.image} onClick={e => this.handleImageView(e,key)}/>
                         <div className={classes.image_tile_bar} id={key}>
                             <div>
                                 <IconButton className={classes.icon_container} onClick={(e)=> this.handleRemove(e,key,img)}>
