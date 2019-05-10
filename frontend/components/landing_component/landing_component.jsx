@@ -1,25 +1,42 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-import GridListTileBar from "@material-ui/core/GridListTileBar";
+import Masonry from 'react-masonry-component';
+
 
 const styles = theme => ({
   root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
     overflow: "hidden",
     backgroundColor: theme.palette.background.paper,
     marginTop: "3%",
-    marginRight: theme.spacing.unit,
-    marginLeft: theme.spacing.unit
+    '& div':{
+        margin: "0 auto"
+    }
+
   },
   gridList: {
-    width: "100%"
+    width: "100%",
+  },
+  image:{
+      margin: 5,
+      [theme.breakpoints.up("xs")]: {
+          width: "400px"
+      },
+      [theme.breakpoints.up("sm")]: {
+          width: "700px"
+      },
+      [theme.breakpoints.up("md")]: {
+          width: "500px"
+      },
+      [theme.breakpoints.up("lg")]: {
+          width: "370px"
+      },
+      [theme.breakpoints.up("xl")]: {
+          width: "785px"
+      }
   }
 });
+
 
 class LandingComponent extends React.Component {
   constructor(props) {
@@ -28,6 +45,7 @@ class LandingComponent extends React.Component {
       images: []
     };
     this.handleImageView = this.handleImageView.bind(this);
+    this.renderImages = this.renderImages.bind(this)
   }
 
   componentDidMount() {
@@ -47,21 +65,43 @@ class LandingComponent extends React.Component {
     this.props.ImageViewModal();
   }
 
+  renderImages(){
+    let {classes} = this.props
+    let ChildElement = this.state.images.map((img,key)=>{
+      return (
+            <img src={img.file} key={key} className={classes.image}/>
+      )
+    })
+    return ChildElement
+  }
+
   render() {
     const { classes } = this.props;
+    const masonryOptions = {
+        isFitWidth: true,
+        percentPosition: true
+
+    }
     return (
       <div className={classes.root}>
-        <GridList cellHeight={180} cols={3} className={classes.gridList}>
-          {this.state.images.map((img, key) => (
-            <GridListTile
-              key={key}
-              rows={2}
-              onClick={e => this.handleImageView(e, key)}
-            >
-              <img src={img.file} alt={img.name} />
-            </GridListTile>
-          ))}
-        </GridList>
+        {/*<GridList cellHeight={180} cols={3} className={classes.gridList}>*/}
+          {/*{this.state.images.map((img, key) => (*/}
+            {/*<GridListTile*/}
+              {/*key={key}*/}
+              {/*cols={this.handleImageSizeCol(img)}*/}
+              {/*rows={this.handleImageSizeRows(img)}*/}
+              {/*onClick={e => this.handleImageView(e, key)}*/}
+            {/*>*/}
+              {/*<img src={img.file} alt={img.name}/>*/}
+            {/*</GridListTile>*/}
+          {/*))}*/}
+        {/*</GridList>*/}
+        <div>
+            <Masonry
+            options={masonryOptions}>
+                {this.renderImages()}
+            </Masonry>
+        </div>
       </div>
     );
   }

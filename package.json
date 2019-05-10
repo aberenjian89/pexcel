@@ -17,6 +17,7 @@
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-masonry-component": "^6.2.1",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redis": "^2.8.0",
