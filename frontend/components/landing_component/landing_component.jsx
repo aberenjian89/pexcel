@@ -69,7 +69,7 @@ class LandingComponent extends React.Component {
     let {classes} = this.props
     let ChildElement = this.state.images.map((img,key)=>{
       return (
-            <img src={img.file} key={key} className={classes.image}/>
+            <img src={img.file} key={key} className={classes.image} onClick={e => this.handleImageView(e,key)}/>
       )
     })
     return ChildElement
