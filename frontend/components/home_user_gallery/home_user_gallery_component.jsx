@@ -14,29 +14,32 @@ import Masonry from 'react-masonry-component';
 
 const style = theme => ({
   root: {
-    // display: "flex",
-    // flexWrap: "wrap",
-    // justifyContent: "space-around",
-    // overflow: "hidden",
-    // backgroundColor: theme.palette.background.paper,
-    // marginTop: "3%",
-    // marginRight: theme.spacing.unit,
-    // marginLeft: theme.spacing.unit
-    // // minHeight: "calc(100vh - 17vh)"
+      marginTop: theme.spacing.unit,
       overflow: "hidden",
-      '& div':{
-          margin: "0 auto"
-      }
+      // '& div:first-child':{
+      //     margin: "0 auto"
+      // }
   },
   gridList: {
     width: "100%"
   },
+  masonry:{
+    margin: "0 auto"
+  },
+  icon_container:{
+    cursor: "inherit",
+    padding: 0,
+    paddingLeft: 12,
+    paddingRight: 12,
+    paddingBottom: 6,
+    paddingTop: 6
+  },
   icon: {
-    margin: theme.spacing.unit,
-    fontSize: 32,
+    fontSize: 30,
+    cursor: "pointer",
     color: "#fff",
     "& :hover": {
-      color: "#f44336"
+      // color: "#b71c1c"
     }
   },
   empty_gallery_container: {
@@ -56,12 +59,36 @@ const style = theme => ({
     position: "relative"
   },
   image_tile_bar:{
+    height: 50,
+    background: "rgba(50, 50, 50, 0.75)",
     position: "absolute",
-    borderTop: "1px solid red",
-    "width": "100%",
-    "margin": "0 auto",
-    top: "90%"
-
+    width: "97%",
+    bottom: "1.5%",
+    right: 0,
+    left: "2%",
+    opacity: 0.6,
+    display: "flex",
+    visibility: "hidden",
+    justifyContent: "flex-end",
+    zIndex: 4,
+    "-webkit-box-shadow": "0px -6px 3px rgba(50, 50, 50, 0.75)",
+    "-moz-box-shadow": "0px -6px 3px rgba(50, 50, 50, 0.75)",
+    "box-shadow": "0px -6px 3px rgba(50, 50, 50, 0.75)",
+    [theme.breakpoints.up("xs")]: {
+      width: "90%"
+    },
+    // [theme.breakpoints.up("sm")]: {
+    //   width: "700px"
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //   width: "500px"
+    // },
+    [theme.breakpoints.up("lg")]: {
+      width: "97%"
+    },
+    // [theme.breakpoints.up("xl")]: {
+    //   width: "785px"
+    // }
   },
   image:{
       margin: 5,
@@ -87,10 +114,13 @@ class HomeUserGalleryComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: []
+      images: [],
+      current_hover_index: null
     };
     this.handleRemove = this.handleRemove.bind(this);
     this.handleImageView = this.handleImageView.bind(this);
+    this.DisplayTileBar = this.DisplayTileBar.bind(this);
+    this.HideTileBar = this.HideTileBar.bind(this);
   }
 
   componentDidMount(props) {
@@ -114,6 +144,16 @@ class HomeUserGalleryComponent extends React.Component {
     this.props.ImageViewModal();
   }
 
+  DisplayTileBar(e,k){
+      let element = $(`#${k}`)
+      element.css('visibility','visible')
+  }
+
+  HideTileBar(e,k){
+      let element = $(`#${k}`)
+      element.css('visibility','hidden')
+  }
+
   render() {
     const { classes } = this.props;
     const masonryOptions = {
@@ -124,13 +164,17 @@ class HomeUserGalleryComponent extends React.Component {
     return (
       <div className={classes.root}>
         {this.state.images.length > 0 ? (
-            <Masonry options={masonryOptions}>
+            <Masonry options={masonryOptions} className={classes.masonry}>
                 {this.state.images.map((img,key)=> (
-                    <div>
+                    <div key={key} onMouseEnter={(e)=>this.DisplayTileBar(e,key)} onMouseLeave={(e)=>this.HideTileBar(e,key)}>
                       <div className={classes.image_container}>
                         <img src={img.file} key={key} className={classes.image}/>
-                        <div className={classes.image_tile_bar}>
-
+                        <div className={classes.image_tile_bar} id={key}>
+                            <div>
+                                <IconButton className={classes.icon_container} onClick={(e)=> this.handleRemove(e,key,img)}>
+                                    <DeleteIcon className={classes.icon} />
+                                </IconButton>
+                            </div>
                         </div>
                       </div>
                     </div>
