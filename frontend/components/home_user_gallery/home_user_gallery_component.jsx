@@ -32,7 +32,17 @@ const style = theme => ({
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 6,
-    paddingTop: 6
+    paddingTop: 6,
+    [theme.breakpoints.up("xs")]: {
+    },
+    [theme.breakpoints.up("sm")]: {
+    },
+    [theme.breakpoints.up("md")]: {
+    },
+    [theme.breakpoints.up("lg")]: {
+    },
+    [theme.breakpoints.up("xl")]: {
+    }
   },
   icon: {
     fontSize: 30,
@@ -75,20 +85,26 @@ const style = theme => ({
     "-moz-box-shadow": "0px -6px 3px rgba(50, 50, 50, 0.75)",
     "box-shadow": "0px -6px 3px rgba(50, 50, 50, 0.75)",
     [theme.breakpoints.up("xs")]: {
-      width: "90%"
+      display: "none"
     },
-    // [theme.breakpoints.up("sm")]: {
-    //   width: "700px"
-    // },
-    // [theme.breakpoints.up("md")]: {
-    //   width: "500px"
-    // },
+    [theme.breakpoints.up("sm")]: {
+      display: "none"
+    },
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+      width: "98%",
+      left: "1%",
+    },
     [theme.breakpoints.up("lg")]: {
-      width: "97%"
+      width: "98%",
+      left: "1%",
+
     },
-    // [theme.breakpoints.up("xl")]: {
-    //   width: "785px"
-    // }
+    [theme.breakpoints.up("xl")]: {
+        width: "98%",
+        left: "1%",
+        bottom: "1%"
+    }
   },
   image:{
       margin: 5,
