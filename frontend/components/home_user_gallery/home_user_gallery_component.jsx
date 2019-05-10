@@ -52,6 +52,17 @@ const style = theme => ({
   empty_gallery_text: {
     color: "#bdbdbd"
   },
+  image_container:{
+    position: "relative"
+  },
+  image_tile_bar:{
+    position: "absolute",
+    borderTop: "1px solid red",
+    "width": "100%",
+    "margin": "0 auto",
+    top: "90%"
+
+  },
   image:{
       margin: 5,
       [theme.breakpoints.up("xs")]: {
@@ -115,7 +126,14 @@ class HomeUserGalleryComponent extends React.Component {
         {this.state.images.length > 0 ? (
             <Masonry options={masonryOptions}>
                 {this.state.images.map((img,key)=> (
-                    <img src={img.file} key={key} className={classes.image}/>
+                    <div>
+                      <div className={classes.image_container}>
+                        <img src={img.file} key={key} className={classes.image}/>
+                        <div className={classes.image_tile_bar}>
+
+                        </div>
+                      </div>
+                    </div>
                 ))}
             </Masonry>
         ) : (
