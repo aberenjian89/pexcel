@@ -57,7 +57,6 @@ class ImageViewComponent extends React.Component {
     if (this.state.current_index == null) {
       return;
     }
-    debugger;
     return this.state.image_list[this.state.current_index].file;
   }
 

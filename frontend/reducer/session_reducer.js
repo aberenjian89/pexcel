@@ -23,7 +23,6 @@ const SessionReducer = (state = _initialestate,action)=>{
         case "AUTH_ERROR":
             return merge({},state,{errors: action.data});
         case "AUTH_CLEAR_ERROR":
-        debugger
             return merge({},state,{errors: null})
         default:
             return state
