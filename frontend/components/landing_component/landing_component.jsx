@@ -1,22 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-import GridListTileBar from "@material-ui/core/GridListTileBar";
 import Masonry from 'react-masonry-component';
 
 
 const styles = theme => ({
   root: {
-    // display: "flex",
-    // flexWrap: "wrap",
-    // justifyContent: "space-around",
     overflow: "hidden",
     backgroundColor: theme.palette.background.paper,
     marginTop: "3%",
-    // marginRight: theme.spacing.unit,
-    // marginLeft: theme.spacing.unit
+    '& div':{
+        margin: "0 auto"
+    }
+
   },
   gridList: {
     width: "100%",
@@ -24,22 +20,23 @@ const styles = theme => ({
   image:{
       margin: 5,
       [theme.breakpoints.up("xs")]: {
-          width: "100%"
+          width: "400px"
       },
       [theme.breakpoints.up("sm")]: {
-          width: "32%"
+          width: "700px"
       },
       [theme.breakpoints.up("md")]: {
-          width: "31.9%"
+          width: "500px"
       },
       [theme.breakpoints.up("lg")]: {
-          width: "32.5%"
+          width: "370px"
       },
       [theme.breakpoints.up("xl")]: {
-          width: "15%"
+          width: "785px"
       }
   }
 });
+
 
 class LandingComponent extends React.Component {
   constructor(props) {
@@ -80,6 +77,11 @@ class LandingComponent extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const masonryOptions = {
+        isFitWidth: true,
+        percentPosition: true
+
+    }
     return (
       <div className={classes.root}>
         {/*<GridList cellHeight={180} cols={3} className={classes.gridList}>*/}
@@ -94,9 +96,12 @@ class LandingComponent extends React.Component {
             {/*</GridListTile>*/}
           {/*))}*/}
         {/*</GridList>*/}
-        <Masonry>
-            {this.renderImages()}
-        </Masonry>
+        <div>
+            <Masonry
+            options={masonryOptions}>
+                {this.renderImages()}
+            </Masonry>
+        </div>
       </div>
     );
   }

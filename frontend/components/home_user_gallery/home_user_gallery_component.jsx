@@ -9,18 +9,24 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import Typography from "@material-ui/core/Typography";
 import PhotoLibrary from "@material-ui/icons/PhotoLibrary";
 import { debug } from "util";
+import Masonry from 'react-masonry-component';
+
 
 const style = theme => ({
   root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    overflow: "hidden",
-    backgroundColor: theme.palette.background.paper,
-    marginTop: "3%",
-    marginRight: theme.spacing.unit,
-    marginLeft: theme.spacing.unit
-    // minHeight: "calc(100vh - 17vh)"
+    // display: "flex",
+    // flexWrap: "wrap",
+    // justifyContent: "space-around",
+    // overflow: "hidden",
+    // backgroundColor: theme.palette.background.paper,
+    // marginTop: "3%",
+    // marginRight: theme.spacing.unit,
+    // marginLeft: theme.spacing.unit
+    // // minHeight: "calc(100vh - 17vh)"
+      overflow: "hidden",
+      '& div':{
+          margin: "0 auto"
+      }
   },
   gridList: {
     width: "100%"
@@ -45,6 +51,24 @@ const style = theme => ({
   },
   empty_gallery_text: {
     color: "#bdbdbd"
+  },
+  image:{
+      margin: 5,
+      [theme.breakpoints.up("xs")]: {
+          width: "400px"
+      },
+      [theme.breakpoints.up("sm")]: {
+          width: "700px"
+      },
+      [theme.breakpoints.up("md")]: {
+          width: "500px"
+      },
+      [theme.breakpoints.up("lg")]: {
+          width: "370px"
+      },
+      [theme.breakpoints.up("xl")]: {
+          width: "785px"
+      }
   }
 });
 
@@ -81,30 +105,19 @@ class HomeUserGalleryComponent extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const masonryOptions = {
+          isFitWidth: true,
+          percentPosition: true
+
+      }
     return (
       <div className={classes.root}>
         {this.state.images.length > 0 ? (
-          <GridList className={classes.gridList} cols={3} cellHeight={150}>
-            {this.state.images.map((img, key) => (
-              <GridListTile key={key} rows={2}>
-                <img
-                  src={img.file}
-                  alt={img.name}
-                  onClick={e => this.handleImageView(e, key)}
-                />
-                <GridListTileBar
-                  actionIcon={
-                    <IconButton
-                      className={classes.icon}
-                      onClick={e => this.handleRemove(e, key, img)}
-                    >
-                      <DeleteIcon />
-                    </IconButton>
-                  }
-                />
-              </GridListTile>
-            ))}
-          </GridList>
+            <Masonry options={masonryOptions}>
+                {this.state.images.map((img,key)=> (
+                    <img src={img.file} key={key} className={classes.image}/>
+                ))}
+            </Masonry>
         ) : (
           <div className={classes.empty_gallery_container}>
             <PhotoLibrary
