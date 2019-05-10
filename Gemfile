@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -28,12 +28,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
-gem "paperclip", ">=3"
-gem 'aws-sdk-v1'
-#gem 'aws-sdk', '~> 2'
-#gem 'aws-sdk','~> 2.3'
+gem 'aws-sdk-s3'
 gem 'figaro'
 
+gem 'fastimage'
+gem 'sidekiq'
+gem 'mini_magick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

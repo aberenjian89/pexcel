@@ -6,6 +6,10 @@
 
 # Ignore bundler config.
 /.bundle
+/.idea/*
+/storage/*
+.idea/PEXCEL.iml
+.idea/workspace.xml
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -15,9 +19,10 @@
 
 /node_modules
 /yarn-error.log
-
+/dump.rdb
 .byebug_history
 
 # Ignore application configuration
 /config/application.yml
 /config/cloudinary.yml
+/config/storage.yml

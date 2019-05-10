@@ -3,19 +3,24 @@ class Api::ImagesController < ApplicationController
     @images = Image.all
   end
 
-  def recent_images
+  def landing_recent_images
     @images = Image.all
+    render :landing_recent_images
   end
 
   def create
-    @image = Image.new(image_params)
-    @image.author_id = current_user.id
+    @image = current_user.images.create(image_params)
     if @image.save
-      render  :show
+      GetImageSizeJob.perform_later(@image.id)
+      render json: "Images Uploaded Successful",status: 200
     else
-
-      render json: @image.errors.full_messages, status: 422
+      render json: @image.errors.full_message, status: 500
     end
+  end
+
+  def home_user_gallery
+    @images = current_user.images
+    render :user_gallery
   end
 
   def update
@@ -39,25 +44,26 @@ class Api::ImagesController < ApplicationController
   def destroy
     @image = current_user.images.find(params[:id])
     if @image.destroy
-      render :show
+      @images = current_user.images
+      render :user_gallery
     else
       render json: @image.errors.full_messages, status: 422
     end
   end
 
   def show
-    @image = Image.find(params[:id])
-    if @image
-      render :show
-    else
-      render json: @image.errors.full_messages, status: 422
-    end
+    # @image = Image.find(params[:id])
+    # if @image
+    #   render :show
+    # else
+    #   render json: @image.errors.full_messages, status: 422
+    # end
   end
 
 
   private
   def image_params
-    params.require(:image).permit(:img_title,:img_location,:author_id, :img_desc,:date_taken,:category, :img)
+    params.require(:image).permit(:name, :image_file)
   end
   def image_params_update
     params.require(:img).permit(:img_title,:img_location,:author_id, :img_desc,:date_taken,:category)
