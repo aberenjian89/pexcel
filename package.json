@@ -40,6 +40,7 @@
     "webpack-cli": "^3.3.0"
   },
   "scripts": {
+    "preinstall": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack -w",
     "postinstall": "webpack"
