@@ -16,11 +16,13 @@ module PEXCEL
     # -- all .rb files in that directory are automatically loaded.
 
     config.before_configuration do
-      secrets_file = File.join(Rails.root, 'config', 'secrets.yml')
-      YAML.load(File.open(secrets_file)).each do |key,value|
-        if key == ENV['RAILS_ENV']
-          value.each do |k,v|
-           ENV[k]=v
+      if ENV['RAILS_ENV'] == 'development'
+        secrets_file = File.join(Rails.root, 'config', 'secrets.yml')
+        YAML.load(File.open(secrets_file)).each do |key,value|
+          if key == ENV['RAILS_ENV']
+            value.each do |k,v|
+              ENV[k]=v
+            end
           end
         end
       end
