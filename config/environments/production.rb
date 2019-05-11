@@ -64,6 +64,7 @@ Rails.application.configure do
 
   config.active_storage.service = :production
 
+  config.require_master_key = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

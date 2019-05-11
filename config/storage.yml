@@ -1,0 +1,14 @@
+development:
+  service: <%= ENV['service'] %>
+  access_key_id: <%= ENV['access_key_id'] %>
+  secret_access_key: <%= ENV['secret_access_key'] %>
+  bucket: <%= ENV['bucket'] %>
+  region: <%= ENV['region'] %>
+
+
+production:
+   service: <%= ENV['service'] %>
+   access_key_id: <%= ENV['access_key_id'] %>
+   secret_access_key: <%= ENV['secret_access_key'] %>
+   bucket: <%= ENV['bucket'] %>
+   region: <%= ENV['region'] %>
