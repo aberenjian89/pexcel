@@ -7,7 +7,7 @@ let devPlugins = []; // if using any plugins for development
 let prodPlugins = [
   new webpack.DefinePlugin({
     "process.env": {
-      NODE_ENV: JSON.stringify("production")
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
     }
   })
 ];
