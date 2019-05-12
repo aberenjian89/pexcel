@@ -42,8 +42,7 @@
   "scripts": {
     "build": "npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack -w",
-    "postinstall": "webpack"
+    "start": "webpack -w"
   },
   "engines": {
     "node": "6.10.1",
