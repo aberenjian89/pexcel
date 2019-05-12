@@ -4,7 +4,7 @@ Pexcel is a web application similar 500px which allow user to upload
 their own photos  and share it with other users. it will also allow user explore other 
 user's photos. User also able to add/edit image information.
 
-![](https://github.com/aberenjian89/pexcel/blob/master/docs/HomePageScreenShot.png?raw=true)
+![](https://github.com/aberenjian89/pexcel/blob/master/docs/home_page.png?raw=true)
 
 # Technology Used
 
