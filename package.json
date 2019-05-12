@@ -24,7 +24,8 @@
     "redis": "^2.8.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "webpack": "^4.29.6"
+    "webpack": "^4.29.6",
+    "redux-logger": "^3.0.6"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -40,7 +41,6 @@
     "webpack-cli": "^3.3.0"
   },
   "scripts": {
-    "preinstall": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack -w",
     "postinstall": "webpack"
